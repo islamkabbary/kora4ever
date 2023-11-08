@@ -8968,7 +8968,7 @@ progress {
   font-weight: 400;
   line-height: 1;
   color: #212529;
-  background-color: #2A3038;
+  background-color: #ffffff;
   background-clip: padding-box;
   border: 1px solid #2c2e33;
   appearance: none;
@@ -10640,7 +10640,7 @@ textarea.is-invalid.tt-hint {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center; }
-  
+
   .btn-group-vertical > .btn,
   .fc .btn-group-vertical > button,
   .ajax-upload-dragdrop .btn-group-vertical > .ajax-file-upload,
@@ -17310,7 +17310,7 @@ code {
   font-weight: normal;
   font-size: 0.875rem;
   padding: 0.625rem 0.6875rem;
-  background-color: #2A3038;
+  background-color: #ffffff;
   border-radius: 2px;
   color: #ffffff; }
   .form-control:focus, .asColorPicker-input:focus, .dataTables_wrapper select:focus, .jsgrid .jsgrid-table .jsgrid-filter-row input:focus[type=text],
@@ -17318,7 +17318,7 @@ code {
   .tt-query:focus,
   .tt-hint:focus {
     border: 1px solid rgba(71, 164, 71, 0.5);
-    background-color: #2A3038; }
+    background-color: #ffffff; }
   .form-control.form-control-lg, .form-control-lg.asColorPicker-input, .dataTables_wrapper select.form-control-lg, .jsgrid .jsgrid-table .jsgrid-filter-row input.form-control-lg[type=text],
   .jsgrid .jsgrid-table .jsgrid-filter-row select.form-control-lg, .jsgrid .jsgrid-table .jsgrid-filter-row input.form-control-lg[type=number], .select2-container--default .form-control-lg.select2-selection--single, .select2-container--default .select2-selection--single .form-control-lg.select2-search__field, .form-control-lg.typeahead,
   .form-control-lg.tt-query,
@@ -18283,9 +18283,10 @@ div.tagsinput {
     .table th img, .jsgrid .jsgrid-table th img,
     .table td img,
     .jsgrid .jsgrid-table td img {
-      width: 30px;
-      height: 30px;
-      border-radius: 100%; }
+      width: 200px;
+      height: 150px;
+      /* border-radius: 100%; */
+     }
     .table th .badge, .jsgrid .jsgrid-table th .badge,
     .table td .badge,
     .jsgrid .jsgrid-table td .badge {
@@ -18301,7 +18302,7 @@ div.tagsinput {
   .table .table-dark, .jsgrid .jsgrid-table .table-dark {
     background: #212529; }
   .table.table-contextual, .jsgrid .table-contextual.jsgrid-table {
-    color: #ffffff; }
+    color: #000000; }
 
 .table > :not(:last-child) > :last-child > *, .jsgrid .jsgrid-table > :not(:last-child) > :last-child > *, .jsgrid .jsgrid-table > :not(:last-child) > :last-child > * {
   border-bottom-color: #2c2e33; }
@@ -18311,7 +18312,7 @@ div.tagsinput {
 
 .nav-tabs .nav-link {
   background: #000000;
-  color: #ffffff;
+  color: #000000;
   border-radius: 0;
   border: 1px solid #2c2e33;
   padding: .75rem 1.5rem; }
@@ -19697,7 +19698,7 @@ div.tagsinput {
   max-width: 100%; }
 
 .typeahead {
-  background-color: #2A3038; }
+  background-color: #ffffff; }
   .typeahead:focus {
     border-color: #2c2e33; }
 

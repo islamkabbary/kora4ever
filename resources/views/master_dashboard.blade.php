@@ -28,10 +28,6 @@
     <link rel="stylesheet" href="{{ asset('assets/assetsdash/Select/css/style.css') }}">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="{{ asset('assets/assetsdash/images/favicon.png') }}" />
-    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     @yield('styles')
     @livewireStyles
 
@@ -44,16 +40,19 @@
             <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
                 <a class="sidebar-brand brand-logo" href="{{ route('dashboard') }}"><img
                         src="{{ asset('assets/images/logo.svg') }}" alt="logo" /></a>
-                <a class="sidebar-brand brand-logo-mini" href="{{ route('dashboard') }}"><img
-                        src="{{ asset('assets/images/logo-mini.svg') }}" alt="logo" /></a>
+                <a class="sidebar-brand brand-logo-mini" href="{{ route('dashboard') }}">
+                    {{-- <img src="{{ asset('assets/images/logo-mini.svg') }}" alt="logo" /> --}}
+                </a>
             </div>
             <ul class="nav">
                 <li class="nav-item profile">
                     <div class="profile-desc">
                         <div class="profile-pic">
                             <div class="count-indicator">
-                                <img class="img-xs rounded-circle " src="{{ Auth::user()->profile_photo_url }}"
-                                    alt="{{ Auth::user()->name }}">
+                                @if (Auth::user()->profile_photo_url)
+                                    <img class="img-xs rounded-circle " src="{{ Auth::user()->profile_photo_url }}"
+                                        alt="{{ Auth::user()->name }}">
+                                @endif
                                 <span class="count bg-success"></span>
                             </div>
                             <div class="profile-name">
@@ -86,7 +85,7 @@
                 </li> --}}
                 {{-- leagues --}}
                 <li class="nav-item menu-items {{ Request::is('dashboard/leagues') ? 'active' : '' }}">
-                    <a class="nav-link" href="{{ route('leagues.dashboard') }}">
+                    <a class="nav-link" href="{{ route('create_leagues') }}">
                         <span class="menu-icon">
                             <i class="mdi mdi-soccer"></i>
                         </span>
@@ -163,8 +162,9 @@
             <!-- partial:partials/_navbar.html -->
             <nav class="navbar p-0 fixed-top d-flex flex-row">
                 <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
-                    <a class="navbar-brand brand-logo-mini" href="{{ route('dashboard') }}"><img
-                            src="{{ asset('images/logo-mini.svg') }}" alt="logo" /></a>
+                    <a class="navbar-brand brand-logo-mini" href="{{ route('dashboard') }}">
+                        {{-- <img src="{{ asset('images/logo-mini.svg') }}" alt="logo" /> --}}
+                        </a>
                 </div>
                 <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
                     <button class="navbar-toggler navbar-toggler align-self-center" type="button"
@@ -273,7 +273,7 @@
     <!-- End custom js for this page -->
     <!-- Custom js for this page -->
     <script src="{{ asset('assets/js/file-upload.js') }}"></script>
-    <script src="{{ asset('assets/js/typeahead.js') }}"></script>
+    {{-- <script src="{{ asset('assets/js/typeahead.js') }}"></script> --}}
     @livewireScripts
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 

@@ -19,6 +19,11 @@ class News extends Model
         return $this->belongsTo(Leauge::class,'leauge_id','id');
     }
 
+    public function team()
+    {
+        return $this->belongsTo(Team::class,'team_id','id');
+    }
+
     public function media()
     {
         return $this->hasMany(MediaNews::class);

@@ -16,8 +16,9 @@ return new class extends Migration
         Schema::create('leauges', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->enum('type', ['league', 'cup' , 'supercup'])->default('league');
-            $table->string('country');
+            $table->enum('type', ['league', 'cup', 'supercup', 'other'])->default('league');
+            $table->text('logo')->nullable();
+            $table->foreignId('country_id')->nullable()->constrained('countries');
             $table->timestamps();
         });
     }

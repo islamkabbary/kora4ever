@@ -13,10 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('news_has_tags', function (Blueprint $table) {
+        Schema::create('media_leauges_and_teams', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('news_id')->nullable()->constrained('news')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('tag_id')->nullable()->constrained('tags')->onUpdate('cascade')->onDelete('cascade');
+            $table->string('url',2000);
+            $table->foreignId('leauge_id')->nullable()->constrained('leauges');
+            $table->foreignId('team_id')->nullable()->constrained('teams');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('news_has_tags');
+        Schema::dropIfExists('media_leauges_and_teams');
     }
 };

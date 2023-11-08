@@ -2,7 +2,7 @@
 
 @section('title','Leagues')
 @section('content')
-    @livewire('leauge-component', [], key(1))
+    @livewire('leauge-component')
 @endsection
 
 

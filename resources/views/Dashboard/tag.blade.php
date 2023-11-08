@@ -3,5 +3,5 @@
 
 @section('title' , 'Tag')
 @section('content')
-@livewire('tag-component', [], key(1))
+@livewire('tag-component')
 @endsection

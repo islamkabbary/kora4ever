@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('news_has_tags', function (Blueprint $table) {
+        Schema::create('countries', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('news_id')->nullable()->constrained('news')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('tag_id')->nullable()->constrained('tags')->onUpdate('cascade')->onDelete('cascade');
+            $table->string('name');
+            $table->text('logo')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('news_has_tags');
+        Schema::dropIfExists('countries');
     }
 };

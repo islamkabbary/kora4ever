@@ -5,10 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class NewsHasTag extends Model
+class MediaLeaugesAndTeams extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'news_id', 'tag_id'
-    ];
 }

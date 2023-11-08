@@ -4,7 +4,7 @@ namespace App\Helpers;
 
 use Illuminate\Support\Facades\Storage;
 
-class FileHelper 
+class FileHelper
 {
     public static function upload_file($folder_path, $uploaded_file)
     {

@@ -8835,7 +8835,7 @@ pre {
   font-weight: 400;
   line-height: 1;
   color: #495057;
-  background-color: #2A3038;
+  background-color: #ffffff;
   background-clip: padding-box;
   border: 1px solid #2c2e33;
   border-radius: 2px;
@@ -8920,7 +8920,7 @@ select.form-control:focus::-ms-value, select.asColorPicker-input:focus::-ms-valu
 select.tt-query:focus::-ms-value,
 select.tt-hint:focus::-ms-value {
   color: #495057;
-  background-color: #2A3038; }
+  background-color: #ffffff; }
 
 .form-control-file,
 .form-control-range {
@@ -10095,7 +10095,7 @@ input[type="button"].btn-block {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center; }
-  
+
   .btn-group-vertical > .btn,
   .fc .btn-group-vertical > button,
   .ajax-upload-dragdrop .btn-group-vertical > .ajax-file-upload,
@@ -10442,7 +10442,7 @@ input[type="button"].btn-block {
   .asColorPicker-wrap > .custom-select:not(:first-child) {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0; }
-  
+
   .input-group > .custom-file,
   .asColorPicker-wrap > .custom-file {
     display: flex;
@@ -10875,7 +10875,7 @@ input[type="button"].btn-block {
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); }
     .custom-select:focus::-ms-value {
       color: #495057;
-      background-color: #2A3038; }
+      background-color: #ffffff; }
   .custom-select[multiple], .custom-select[size]:not([size="1"]) {
     height: auto;
     padding-right: 0.75rem;
@@ -15282,7 +15282,7 @@ a.text-dark:hover, a.text-dark:focus {
     border: 1px solid #000; }
   .table, .jsgrid .jsgrid-table {
     border-collapse: collapse !important; }
-    
+
     .table td,
     .jsgrid .jsgrid-table td, .table th, .jsgrid .jsgrid-table th {
       background-color: #ffffff !important; }
@@ -16928,7 +16928,7 @@ code {
   font-weight: normal;
   font-size: 0.875rem;
   padding: 0.625rem 0.6875rem;
-  background-color: #2A3038;
+  background-color: #ffffff;
   border-radius: 2px;
   color: #ffffff; }
   .form-control:focus, .asColorPicker-input:focus, .dataTables_wrapper select:focus, .jsgrid .jsgrid-table .jsgrid-filter-row input:focus[type=text],
@@ -16936,7 +16936,7 @@ code {
   .tt-query:focus,
   .tt-hint:focus {
     border: 1px solid rgba(71, 164, 71, 0.5);
-    background-color: #2A3038; }
+    background-color: #ffffff; }
   .form-control.form-control-lg, .form-control-lg.asColorPicker-input, .dataTables_wrapper select.form-control-lg, .jsgrid .jsgrid-table .jsgrid-filter-row input.form-control-lg[type=text],
   .jsgrid .jsgrid-table .jsgrid-filter-row select.form-control-lg, .jsgrid .jsgrid-table .jsgrid-filter-row input.form-control-lg[type=number], .select2-container--default .form-control-lg.select2-selection--single, .select2-container--default .select2-selection--single .form-control-lg.select2-search__field, .form-control-lg.typeahead,
   .form-control-lg.tt-query,
@@ -19738,7 +19738,7 @@ div.tagsinput {
   max-width: 100%; }
 
 .typeahead {
-  background-color: #2A3038; }
+  background-color: #ffffff; }
   .typeahead:focus {
     border-color: #2c2e33; }
 

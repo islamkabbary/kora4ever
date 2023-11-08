@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\LeaugeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\TagController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,11 +34,17 @@ Route::middleware(['auth:sanctum'])->get('/dashboard-match-live-team', function 
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::prefix('dashboard')->group(function () {
         //News
-        Route::get('/create-news',[NewsController::class,'create'])->name('create_news');
+        Route::get('/create-news', [NewsController::class, 'create'])->name('create_news');
         //News
-        Route::get('/leagues', function () {
-            return view('Dashboard.leagues');
-        })->name('leagues.dashboard');
+        //League
+        Route::get('/leagues', [LeaugeController::class, 'create'])->name('create_leagues');
+        //League
+        //Tag
+        Route::get('/tag', [TagController::class, 'create'])->name('create_leagues');
+        //Tag
+        Route::get('/test', function () {
+            return view('Dashboard.test');
+        });
         Route::get('/channel', function () {
             return view('Dashboard.channel');
         })->name('channel.dashboard');

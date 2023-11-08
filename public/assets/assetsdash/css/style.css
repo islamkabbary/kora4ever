@@ -11603,7 +11603,7 @@ progress {
     font-weight: 400;
     line-height: 1;
     color: #212529;
-    background-color: #2A3038;
+    background-color: #ffffff;
     background-clip: padding-box;
     border: 1px solid #2c2e33;
     appearance: none;
@@ -25274,7 +25274,7 @@ code {
     font-weight: normal;
     font-size: 0.875rem;
     padding: 0.625rem 0.6875rem;
-    background-color: #2A3038;
+    background-color: #ffffff;
     border-radius: 2px;
     color: #ffffff;
 }
@@ -25291,7 +25291,7 @@ code {
 .tt-query:focus,
 .tt-hint:focus {
     border: 1px solid rgba(71, 164, 71, 0.5);
-    background-color: #2A3038;
+    background-color: #ffffff;
 }
 
 .form-control.form-control-lg,
@@ -28781,7 +28781,8 @@ div.tagsinput span.tag a {
 }
 
 .typeahead {
-    background-color: #2A3038;
+    background-color: #ffffff;
+    color: #000000;
 }
 
 .typeahead:focus {
