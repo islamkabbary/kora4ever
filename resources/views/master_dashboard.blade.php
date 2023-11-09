@@ -44,27 +44,7 @@
                     {{-- <img src="{{ asset('assets/images/logo-mini.svg') }}" alt="logo" /> --}}
                 </a>
             </div>
-            <ul class="nav" style="margin-top: 60px">
-                <li class="nav-item profile">
-                    <div class="profile-desc">
-                        <div class="profile-pic">
-                            <div class="count-indicator">
-                                @if (Auth::user()->profile_photo_url)
-                                    <img class="img-xs rounded-circle " src="{{ Auth::user()->profile_photo_url }}"
-                                        alt="{{ Auth::user()->name }}">
-                                @endif
-                                {{-- <span class="count bg-success"></span> --}}
-                            </div>
-                            <div class="profile-name">
-                                <h5 class="mb-0 font-weight-normal">{{ Auth::user()->name }}</h5>
-                                <span>ADMIN</span>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="nav-item nav-category">
-                    <span class="nav-link">Navigation</span>
-                </li>
+            <ul class="nav" style="margin-top: 50px">
                 {{-- dashboard --}}
                 <li class="nav-item menu-items {{ Request::is('dashboard-match-live-team') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('dashboard') }}">
