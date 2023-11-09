@@ -39,12 +39,12 @@
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
             <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
                 <a class="sidebar-brand brand-logo" href="{{ route('dashboard') }}"><img
-                        src="{{ asset('assets/images/logo.svg') }}" alt="logo" /></a>
+                        src="{{ asset('images/logokoraforever.png') }}" alt="logo" style="margin-top: 35px;"/></a>
                 <a class="sidebar-brand brand-logo-mini" href="{{ route('dashboard') }}">
                     {{-- <img src="{{ asset('assets/images/logo-mini.svg') }}" alt="logo" /> --}}
                 </a>
             </div>
-            <ul class="nav">
+            <ul class="nav" style="margin-top: 60px">
                 <li class="nav-item profile">
                     <div class="profile-desc">
                         <div class="profile-pic">
@@ -53,7 +53,7 @@
                                     <img class="img-xs rounded-circle " src="{{ Auth::user()->profile_photo_url }}"
                                         alt="{{ Auth::user()->name }}">
                                 @endif
-                                <span class="count bg-success"></span>
+                                {{-- <span class="count bg-success"></span> --}}
                             </div>
                             <div class="profile-name">
                                 <h5 class="mb-0 font-weight-normal">{{ Auth::user()->name }}</h5>
@@ -92,6 +92,15 @@
                         <span class="menu-title">Leagues</span>
                     </a>
                 </li>
+                {{-- Teams --}}
+                <li class="nav-item menu-items {{ Request::is('dashboard/teams') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ url('dashboard/teams') }}">
+                        <span class="menu-icon">
+                            <i class="mdi mdi-file-document-box"></i>
+                        </span>
+                        <span class="menu-title">Teams</span>
+                    </a>
+                </li>
                 {{-- Commentators --}}
                 {{-- <li class="nav-item menu-items {{ Request::is('dashboard/commentators') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('commentators.dashboard') }}">
@@ -108,15 +117,6 @@
                             <i class="mdi mdi-video-switch"></i>
                         </span>
                         <span class="menu-title">Channel</span>
-                    </a>
-                </li> --}}
-                {{-- Teams --}}
-                {{-- <li class="nav-item menu-items {{ Request::is('dashboard/teams') ? 'active' : '' }}">
-                    <a class="nav-link" href="{{ url('dashboard/teams') }}">
-                        <span class="menu-icon">
-                            <i class="mdi mdi-file-document-box"></i>
-                        </span>
-                        <span class="menu-title">Teams</span>
                     </a>
                 </li> --}}
                 {{-- Teams Leauge --}}
@@ -139,7 +139,7 @@
                 </li>
                 {{-- Tag --}}
                 <li class="nav-item menu-items {{ Request::is('dashboard/tag') ? 'active' : '' }}">
-                    <a class="nav-link" href="{{ route('tag.dashboard') }}">
+                    <a class="nav-link" href="{{ route('create_tags') }}">
                         <span class="menu-icon">
                             <i class="mdi mdi-soccer"></i>
                         </span>
@@ -164,7 +164,7 @@
                 <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
                     <a class="navbar-brand brand-logo-mini" href="{{ route('dashboard') }}">
                         {{-- <img src="{{ asset('images/logo-mini.svg') }}" alt="logo" /> --}}
-                        </a>
+                    </a>
                 </div>
                 <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
                     <button class="navbar-toggler navbar-toggler align-self-center" type="button"
@@ -183,19 +183,21 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link" id="profileDropdown" href="#" data-bs-toggle="dropdown">
                                 <div class="navbar-profile">
+                                    @if (Auth::user()->profile_photo_url)
                                     <img class="img-xs rounded-circle" src="{{ Auth::user()->profile_photo_url }}"
                                         alt="{{ Auth::user()->name }}">
+                                    @endif
                                     <p class="mb-0 d-none d-sm-block navbar-profile-name">{{ Auth::user()->name }}
                                     </p>
-                                    <i class="mdi mdi-menu-down d-none d-sm-block"></i>
+                                    {{-- <i class="mdi mdi-menu-down d-none d-sm-block"></i> --}}
                                 </div>
                             </a>
-                            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
+                            {{-- <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
                                 aria-labelledby="profileDropdown">
                                 <h6 class="p-3 mb-0">Profile</h6>
                                 <div class="dropdown-divider"></div>
                                 <div class="preview-item-content">
-                                    {{-- <a href="{{ route('profile.show') }}" class="dropdown-item preview-item"> --}}
+                                    <a href="{{ route('profile.show') }}" class="dropdown-item preview-item">
                                     <div class="preview-thumbnail">
                                         <div class="preview-icon bg-dark rounded-circle">
                                             <i class="mdi mdi-settings text-success"></i>
@@ -205,11 +207,10 @@
                                         <p class="preview-subject ellipsis mb-1 text-small">{{ __('Profile') }}
                                         </p>
                                     </div>
-                                    {{-- </a> --}}
                                 </div>
                                 <div class="dropdown-divider"></div>
                                 <div class="preview-item-content">
-                                    {{-- <form method="POST" action="{{ route('logout') }}">
+                                    <form method="POST" action="{{ route('logout') }}">
                                         @csrf
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
@@ -225,11 +226,11 @@
                                                     {{ __('Log Out') }}</p>
                                             </div>
                                         </a>
-                                    </form> --}}
+                                    </form>
                                 </div>
                                 <div class="dropdown-divider"></div>
                                 <p class="p-3 mb-0 text-center">Advanced settings</p>
-                            </div>
+                            </div> --}}
 
                         </li>
                     </ul>

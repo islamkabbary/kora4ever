@@ -3,7 +3,7 @@
 
 @section('title' , 'Teams')
 @section('content')
-@livewire('teams-component', [], key(1))
+@livewire('team-component')
 @endsection
 
 

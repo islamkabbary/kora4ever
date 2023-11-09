@@ -61,8 +61,10 @@ class CreateNewsComponent extends Component
                 if ($this->video_url) {
                     $news->media()->create(['url' => $this->video_url, 'type' => "video"]);
                 } else {
-                    $img = $this->image->store('news', 'public');
-                    $news->media()->create(['url' => $img]);
+                    if(!is_string($this->image)){
+                        $img = $this->image->store('news', 'public');
+                        $news->media()->create(['url' => $img]);
+                    }
                 }
             } catch (\Throwable $th) {
                 Log::info("CreateNewsComponent" . $th->getMessage());

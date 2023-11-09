@@ -4,14 +4,19 @@ namespace App\Http\Livewire;
 
 use App\Models\Leauge;
 use Livewire\Component;
+use Livewire\WithFileUploads;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class LeaugeComponent extends Component
 {
-
-    public $leauge , $leauge_id , $image ,$type ,$country_id;
+    use WithFileUploads, LivewireAlert;
+    public $name, $type, $image, $country_id, $leauge_id;
 
     protected $rules = [
-        'leauge' => 'required|max:25',
+        'name' => 'required',
+        'type' => 'required',
+        'country_id' => 'nullable',
+        'image' => 'required|image|max:1024',
     ];
 
     public function render()
@@ -26,48 +31,51 @@ class LeaugeComponent extends Component
 
     public function save()
     {
-        dd($this->type);
-        $this->validate();
-        if($this->leauge_id){
+        if ($this->leauge_id) {
             $leauge = Leauge::find($this->leauge_id);
-            $leauge->name = $this->leauge;
+            $leauge->name = $this->name;
             $leauge->type = $this->type;
-            $leauge->country = $this->country;
+            $leauge->country_id = $this->country_id;
+            if (!is_string($this->image)) {
+                $leauge->logo = $this->image->store('Leauges', 'public');
+            }
             $leauge->save();
-            $leauge->photo()->create(['type'=>'leauge', 'path'=> $this->image]);
-            $this->cleare();
-        }
-        else{
+            $this->clear();
+            $this->alert('success', "successfully updated");
+        } else {
+            $this->validate();
             $leauge = new Leauge();
-            $leauge->name = $this->leauge;
+            $leauge->name = $this->name;
             $leauge->type = $this->type;
-            $leauge->country = $this->country;
+            $leauge->country_id = $this->country_id;
+            $leauge->logo = $this->image->store('Leauges', 'public');
             $leauge->save();
-            $leauge->photo()->create(['type'=>'leauge', 'path'=> $this->image]);
-            $this->cleare();
+            $this->clear();
+            $this->alert('success', "successfully added");
         }
     }
 
-    public function cleare()
+    public function clear()
     {
-        $this->leauge = null ;
-        $this->image = null ;
-        $this->type = null ;
-        $this->country_id = null ;
+        $this->name = null;
+        $this->image = null;
+        $this->type = null;
+        $this->country_id = null;
     }
 
     function edit($leauge_id)
     {
         $leauge = Leauge::find($leauge_id);
         $this->leauge_id = $leauge->id;
-        $this->leauge = $leauge->name;
+        $this->name = $leauge->name;
         $this->type = $leauge->type;
-        $this->country_id = $leauge->country;
-        $this->image = $leauge->photo->path;
+        $this->country_id = $leauge->country_id;
+        $this->image = $leauge->logo;
     }
 
     function delete($leauge_id)
     {
         Leauge::destroy($leauge_id);
+        $this->alert('success', "successfully deleted");
     }
 }

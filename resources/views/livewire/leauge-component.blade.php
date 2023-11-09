@@ -1,25 +1,24 @@
 <div>
     <div class="container">
         <div class="row">
-            <div class="col-md-1 grid-margin stretch-card">
-            </div>
-            <div class="col-md-10 grid-margin stretch-card">
+            <div class="col-md-10 grid-margin stretch-card mx-auto">
                 <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">Leauge Name</h4>
+                    <div class="card-body" style="background: gray">
+                        <h4 class="card-title text-black">Leauge Name</h4>
                         <div class="form-group row">
                             <div class="col">
                                 <label>Name</label>
                                 <div id="the-basics">
-                                    <input class="typeahead" wire:model="leauge" type="text" placeholder="Name">
-                                    @error('leauge')
+                                    <input class="typeahead" wire:model.defer="name" type="text" placeholder="Name">
+                                    @error('name')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
                                 {{-- Image --}}
                                 <div class="form-group">
                                     <label for="Image" class="text-white">Image</label>
-                                    <input type="file" wire:model.defer="image" class="form-control" placeholder="Image URL">
+                                    <input type="file" wire:model.defer="image" class="form-control"
+                                        placeholder="Image URL">
                                     @error('image')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -44,7 +43,7 @@
                                                 <option value="{{ $country->id }}">{{ $country->name }}</option>
                                             @endforeach
                                         </x-select2>
-                                        @error('tag_id')
+                                        @error('country_id')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
@@ -55,8 +54,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-1 grid-margin stretch-card">
                 </div>
             </div>
             <div class="row">
@@ -74,7 +71,7 @@
                                             <th> Leauge Logo </th>
                                             <th> Leauge Type </th>
                                             <th> Leauge Country </th>
-                                            <th colspan="2"> &nbsp; </th>
+                                            <th> &nbsp; </th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -83,13 +80,13 @@
                                                 <td> {{ $loop->iteration }} </td>
                                                 <td> {{ $leauge->name }} </td>
                                                 <td>
-                                                    @if ($leauge->photo !== null)
-                                                        <img width="50" src='{{ $leauge->photo->path }}'
-                                                            class="img-fluid">
+                                                    @if ($leauge->logo)
+                                                        <img style="width: 100px;height: 80px;border-radius: 0px"
+                                                            src='{{ env('APP_URL') . '/storage/' . $leauge->logo }}'>
                                                     @endif
                                                 </td>
                                                 <td> {{ $leauge->type }} </td>
-                                                <td> {{ $leauge->country }} </td>
+                                                <td> {{ $leauge->country->name }} </td>
                                                 <td><a class='btn btn-success btn-sm text-light'
                                                         title='edit{{ $leauge->name }}'
                                                         wire:click='edit({{ $leauge->id }})' role='button'>Edit</a>
