@@ -39,19 +39,19 @@
 </head>
 
 <body>
-    {{-- @livewire('header-component') --}}
-    {{-- @livewire('slide-match-component') --}}
+    @livewire('header-component')
+    @livewire('slide-match-component')
     {{-- @livewire('slide-news-component') --}}
     <div class="mainContainer">
         @livewire('news-hero-page-component')
-        {{-- @livewire('block-news-component') --}}
-        {{-- @livewire('slide-more-news-component') --}}
+        @livewire('block-news-component')
+        @livewire('slide-more-news-component')
         {{-- @livewire('tv-news-component') --}}
-        {{-- @livewire('slide-team-component') --}}
-        {{-- @livewire('tabs-slide-news-component') --}}
+        @livewire('slide-team-component')
+        @livewire('tabs-slide-news-component')
     </div>
 
-    {{-- <footer>
+    <footer>
         <div class="footermenu">
             <ul class="row">
                 <li>
@@ -116,7 +116,7 @@
                 <i class="fa fa-rss" aria-hidden="true"></i>
             </a>
         </div>
-    </footer> --}}
+    </footer>
     <script src="{{ asset('Scripts/breaking-news-ticker.min.js') }}"></script>
     <script src="{{ asset('Scripts/swiper-bundle.min.js') }}"></script>
     <script src="{{ asset('Scripts/Mainfunctios.js') }}"></script>
