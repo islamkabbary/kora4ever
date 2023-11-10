@@ -6,26 +6,26 @@
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <link href="images/them/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <meta name="application-name" content="koraplus" />
-    <meta name="msapplication-starturl" content="http://koraplus.com/" />
+    <meta name="msapplication-starturl" content="https://kora4ever.be3o.com//" />
     <meta name="msapplication-tooltip" content="koraplus" />
-    <title>كورة بلس - شاهد مباريات الدوري المصري حصريًا </title>
+    <title>كورة فور ايفر - شاهد مباريات الدوري المصري حصريًا </title>
     <meta name="description" content="تابع أخر الأخبار من كل البطولات وشاهد مباريات الدوري المصري حصريا" />
     <meta name="keywords" content="" />
-    <link rel="canonical" href="https://koraplus.com/" />
+    <link rel="canonical" href="https://kora4ever.be3o.com/" />
     <meta property="og:locale" content="ar_AR" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="كورة بلس - شاهد مباريات الدوري المصري حصريًا " />
+    <meta property="og:title" content=">كورة فور ايفر - شاهد مباريات الدوري المصري حصريًا " />
     <meta property="og:description" content="تابع أخر الأخبار من كل البطولات وشاهد مباريات الدوري المصري حصريا" />
-    <meta property="og:url" content="http://koraplus.com/" />
-    <meta property="og:site_name" content="كورة بلس" />
+    <meta property="og:url" content="https://kora4ever.be3o.com//" />
+    <meta property="og:site_name" content="كورة فور ايفر" />
     <meta property="fb:app_id" content="395017902296517" />
-    <meta property="og:image" content="http://koraplus.com/images/them/onerror/Large789x539.png" />
+    {{-- <meta property="og:image" content="https://kora4ever.be3o.com//images/them/onerror/Large789x539.png" /> --}}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:description" content="تابع أخر الأخبار من كل البطولات وشاهد مباريات الدوري المصري حصريا" />
-    <meta name="twitter:title" content="كورة بلس - شاهد مباريات الدوري المصري حصريًا" />
-    <meta name="twitter:image:src" content="http://koraplus.com/images/them/onerror/Large789x539.png" />
-    <meta name="twitter:site" content="كورة بلس" />
-    <link rel="canonical" href="https://koraplus.com/" />
+    <meta name="twitter:title" content="كورة فور ايفر - شاهد مباريات الدوري المصري حصريًا" />
+    {{-- <meta name="twitter:image:src" content="https://kora4ever.be3o.com//images/them/onerror/Large789x539.png" /> --}}
+    <meta name="twitter:site" content="كورة فور ايفر" />
+    <link rel="canonical" href="https://kora4ever.be3o.com/" />
     <link href='{{ asset('Content/style.css') }}' media="all" rel='stylesheet' type='text/css'>
     <link href='{{ asset('Content/responsive.css') }}' media="all" rel='stylesheet' type='text/css'>
     <link href='{{ asset('Content/swiper-bundle.min.css') }}' media="all" rel='stylesheet' type='text/css'>

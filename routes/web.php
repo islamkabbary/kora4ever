@@ -64,3 +64,4 @@ Route::middleware(['auth:sanctum'])->group(function () {
 Route::get('/test', function () {
     return view('website.test');
 });
+Route::get('/Article/{id}', [NewsController::class, "Article"])->name('Article');
