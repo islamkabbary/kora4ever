@@ -38,8 +38,8 @@
         <!-- partial:partials/_sidebar.html -->
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
             <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-                <a class="sidebar-brand brand-logo" href="{{ route('dashboard') }}"><img
-                        src="{{ asset('images/logokoraforever.png') }}" alt="logo" style="margin-top: 35px;"/></a>
+                {{-- <a class="sidebar-brand brand-logo" href="{{ route('dashboard') }}"><img --}}
+                        {{-- src="{{ asset('images/logokoraforever.png') }}" alt="logo" style="margin-top: 35px;"/></a> --}}
                 <a class="sidebar-brand brand-logo-mini" href="{{ route('dashboard') }}">
                     {{-- <img src="{{ asset('assets/images/logo-mini.svg') }}" alt="logo" /> --}}
                 </a>

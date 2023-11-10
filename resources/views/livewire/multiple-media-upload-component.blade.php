@@ -1,8 +1,136 @@
-<script src="https://cdn.tailwindcss.com"></script>
+<style>
+    .block {
+        display: block;
+    }
+
+    .mb-6\.5px {
+        margin-bottom: 6.5px;
+    }
+
+    .ml-1 {
+        margin-left: 1rem;
+    }
+
+    .font-bold {
+        font-weight: bold;
+    }
+
+    .text-slate-700 {
+        color: #526374;
+        /* Replace with your color code */
+    }
+
+    .dark\:text-white\/80 {
+        color: rgba(255, 255, 255, 0.8);
+        /* Replace with your color code */
+    }
+
+    .text-xs {
+        font-size: 0.75rem;
+        /* Replace with your font size */
+    }
+
+    .dir-rtl {
+        direction: rtl;
+    }
+
+    /* Style for the container */
+    .file-upload-container {
+        width: 100%;
+        padding: 8px;
+        background-color: #f7fafc;
+        /* Replace with your color code */
+        border: 1px solid #cbd5e0;
+        /* Replace with your color code */
+        border-style: dashed;
+        border-radius: 8px;
+    }
+
+    /* Style for the image grid */
+    .image-grid {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        gap: 4px;
+        background-color: #1a202c;
+        /* Replace with your color code */
+        color: #ffffff;
+        /* Replace with your color code */
+    }
+
+    /* Style for each image item */
+    .image-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        background-color: #1a202c;
+        /* Replace with your color code */
+    }
+
+    /* Style for image */
+    .image {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+    }
+
+    /* Style for image info */
+    .image-info {
+        font-weight: lighter;
+        color: #718096;
+        /* Replace with your color code */
+    }
+
+    /* Style for remove button */
+    .remove-button {
+        padding: 2px;
+        margin-top: 4px;
+        font-size: 12px;
+        color: #e53e3e;
+        /* Replace with your color code */
+        border: 1px solid #e53e3e;
+        /* Replace with your color code */
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    /* Style for the progress bar */
+    .progress-container {
+        position: relative;
+        padding-top: 1px;
+    }
+
+    .progress-text {
+        font-size: 14px;
+        font-weight: bold;
+        color: #2d3748;
+        /* Replace with your color code */
+    }
+
+    .progress-bar {
+        height: 10px;
+        margin-bottom: 4px;
+        font-size: 12px;
+        color: #4caf50;
+        /* Replace with your color code */
+        background-color: #e2e8f0;
+        /* Replace with your color code */
+        border-radius: 4px;
+        overflow: hidden;
+    }
+
+    .progress-value {
+        height: 100%;
+        width: 0;
+        background-color: #48bb78;
+        /* Replace with your color code */
+    }
+</style>
 <label class="block text-sm">
-    <label class="block mb-[6.5px] ml-1 font-bold text-slate-700 dark:text-white/80 text-xs">
-        <p class="text-slate-700 font-bold dark:text-white/80" @if (app()->getLocale() == 'ar') dir="rtl" @endif>
-            {{ $title ?? '' }}</p>
+    <label
+        class="block mb-6.5px ml-1 font-bold text-slate-700 dark:text-white/80 text-xs @if (app()->getLocale() == 'ar') dir-rtl @endif">
+        <p class="text-slate-700 font-bold dark:text-white/80">
+            {{ $title ?? '' }}
+        </p>
         {{ $slot ?? '' }}
     </label>
 
