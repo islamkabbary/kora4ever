@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\NewsController;
@@ -57,4 +58,9 @@ Route::middleware(['auth:sanctum'])->group(function () {
         //     return view('Dashboard.commentators');
         // })->name('commentators.dashboard');
     });
+});
+
+//Web
+Route::get('/test', function () {
+    return view('website.test');
 });

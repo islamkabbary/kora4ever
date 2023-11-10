@@ -3,7 +3,8 @@
 
 @section('title','Match Live Dashboard')
 @section('content')
-    <div class="">
-        We are Good
+    <div style="display: flex;align-items: center;justify-content: center">
+        <img
+            src="{{ asset('images/them/logokoraforever.png') }}" alt="logo" style="width: 650px"/>
     </div>
 @endsection

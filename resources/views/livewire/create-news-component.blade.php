@@ -1,5 +1,5 @@
 <div>
-    @dump(123)
+    {{-- @dump(123) --}}
     <div class="container">
         <div class="row">
             <div class="col-md-12 grid-margin stretch-card mx-auto">

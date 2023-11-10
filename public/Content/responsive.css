@@ -1,0 +1,75 @@
+.swiperWeeksBlocks .swiper-WeekBlock .swiper-slide a{color:#000;}
+.dropdown .dropbtn{font-size: 1em;font-family: helveticabold;}
+.beforefooter img{max-width: 250px;margin:auto}
+.StatisticsAbsolute .GrayBottomBar{padding:10px 0;}
+.Noresult {border: 2px solid #d1d1d1;padding: 15px;border-radius: 5px;    margin: auto;}
+.Noresult p{font-size: 1em;font-family: helveticabold;text-align:center}
+.newSectionHeadBlock{height: 36px;padding: 0px 10px 0 0;width: 100%;align-items:center;border-right: 5px solid #b06466;margin-bottom: 10px;}
+.newSectionHeadTitle {align-items: center;color: #000;font-size: 1.1em;font-family: 'helveticaregular';}
+.newSectionHeadTitle a{color:#000}
+.newSectionHeadimg{margin-right: 5px;}
+.dropdown-content{z-index: 9;}
+.dropdown-content a{font-size: 1em;font-family: helveticaregular;}
+.championshipsNews{display: -webkit-box;display: -ms-flexbox;display: flex;-ms-flex-wrap: wrap;flex-wrap: wrap;}
+.championshipsNews .SecondNews{width:calc((100% - 26px)/ 3);margin-left:13px;margin-bottom:20px;background-color:#FFF;    border-top-left-radius: 20px;border-top-right-radius: 20px;}
+.championshipsNews .SecondNews:nth-child(3n+0){margin-left:0;}
+.championshipsNews .SearchResultBlock{display: -webkit-box;display: -ms-flexbox;display: flex;-ms-flex-wrap: wrap;flex-wrap: wrap;}
+.loginINBMenu{display:none;}
+.loginINBMenu p {
+    color: #b06466;
+    font-family: helveticabold;
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.centerBurger .socialIcons{
+    margin-top:18px
+}
+
+.centerBurger {
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 400px;
+    margin: auto;
+}
+
+
+
+.WLiveStreamMobile{display:none}
+
+
+@media (max-width: 800px) {
+.MatchCenterContainer{padding-top:55px;}
+.CenterAd{display:none}
+.leftHeader{display:none}
+.WLiveStreamMobile {display: block;width: 35px;height: 32px;position: absolute;left: 10px;top: 0;bottom: 0;margin: auto;}
+.WLiveStreamMobile img{position: absolute;top: 0;left: 0;}
+.rightHeader{padding-top: 0;padding-right: 0;width: 100%;justify-content: center;position:relative;align-items:center;}
+.MobileMenuicon{position: absolute;right: 14px;height: 60px;}
+.Mainlogo {width: 190px;margin:auto}
+.Championship-stats .select-dropdown{max-width:100%}
+.Championship-stats .select-dropdown select{max-width:100%}
+.MenuFullWidth{top: 53px;}
+.OneMatchBlock{margin-left:0;}
+.DaysTabs{padding-top:25px;    position: relative;}
+.watchAllMatches a{font-size:12px}
+.watchAllMatches i{margin-top:0px}
+.watchAllMatches{top:4px;}
+.MainMenuUL ul li{margin-bottom: 10px;}
+.MainMenuUL ul li::after{top: 10px;}
+.Head-Team .ArticleShareArea{display:none}
+.NewsRightBlock .LeaguesNews{display:none}
+.NewsleftBlock .LeaguesNews{display:none}
+.DivGoal{justify-content:center}
+
+ .letestNewsTeam .championshipsNews .SecondNews{width:100%;margin-left:0}
+ .PlayersAllDetails .radiusBlockArea{}
+ .loginINMenu{display:none;}
+ .loginINBMenu{display:block;}
+}
+
+@media (max-width: 365px) {
+    .swiperMatchCenter{width:calc(100% - 70px)}
+    .MatchCenterContainer .swiper-next{width: 35px;}
+    .MatchCenterContainer .swiper-prev{width:35px}
+}
