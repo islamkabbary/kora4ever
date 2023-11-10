@@ -13,7 +13,6 @@
                         </div>
                         <a href="Article/26581/منتخب-مصر-يسقط-أمام-إثيوبيا-بثنائية-في-التصفيات-المؤهلة-لكأس">
                             <img src="{{ env('APP_URL') . '/storage/' . $news[0]->media[0]->url }}"
-
                                 title="{{ $news[0]->tags[0]->name }}" alt="{{ $news[0]->tags[0]->name }}">
                         </a>
                         <div class="OneNewsTitleON">
@@ -37,8 +36,7 @@
                             </div>
                             <a href="Article/26582/موعد-المباراة-القادمة-لمنتخب-مصر-بعد-الخسارة-من-إثيوبيا-في">
                                 <img src="{{ env('APP_URL') . '/storage/' . $news[0]->media[0]->url }}"
-
-                                    title="{{ $news[0]->tags[0]->name }}" alt="{{ $news[0]->tags[0]->name }}">
+                               title="{{ $news[0]->tags[0]->name }}" alt="{{ $news[0]->tags[0]->name }}">
                             </a>
                             <div class="OneNewsTitleON">
                                 <h3>
@@ -60,7 +58,6 @@
                             </div>
                             <a href="Article/26582/موعد-المباراة-القادمة-لمنتخب-مصر-بعد-الخسارة-من-إثيوبيا-في">
                                 <img src="{{ env('APP_URL') . '/storage/' . $news[0]->media[0]->url }}"
-
                                     title="{{ $news[0]->tags[0]->name }}" alt="{{ $news[0]->tags[0]->name }}">
                             </a>
                             <div class="OneNewsTitleON">
@@ -86,7 +83,6 @@
                         </div>
                         <a href="Article/26582/موعد-المباراة-القادمة-لمنتخب-مصر-بعد-الخسارة-من-إثيوبيا-في">
                             <img src="{{ env('APP_URL') . '/storage/' . $news[0]->media[0]->url }}"
-
                                 title="{{ $news[0]->tags[0]->name }}" alt="{{ $news[0]->tags[0]->name }}">
                         </a>
                         <div class="OneNewsTitleON">
@@ -109,7 +105,6 @@
                         </div>
                         <a href="Article/26582/موعد-المباراة-القادمة-لمنتخب-مصر-بعد-الخسارة-من-إثيوبيا-في">
                             <img src="{{ env('APP_URL') . '/storage/' . $news[0]->media[0]->url }}"
-
                                 title="{{ $news[0]->tags[0]->name }}" alt="{{ $news[0]->tags[0]->name }}">
                         </a>
                         <div class="OneNewsTitleON">
@@ -132,7 +127,6 @@
                         </div>
                         <a href="Article/26582/موعد-المباراة-القادمة-لمنتخب-مصر-بعد-الخسارة-من-إثيوبيا-في">
                             <img src="{{ env('APP_URL') . '/storage/' . $news[0]->media[0]->url }}"
-
                                 title="{{ $news[0]->tags[0]->name }}" alt="{{ $news[0]->tags[0]->name }}">
                         </a>
                         <div class="OneNewsTitleON">

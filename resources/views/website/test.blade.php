@@ -39,7 +39,7 @@
 </head>
 
 <body>
-    @livewire('header-component')
+    {{-- @livewire('header-component') --}}
     {{-- @livewire('slide-match-component') --}}
     {{-- @livewire('slide-news-component') --}}
     <div class="mainContainer">
@@ -47,7 +47,7 @@
         {{-- @livewire('block-news-component') --}}
         {{-- @livewire('slide-more-news-component') --}}
         {{-- @livewire('tv-news-component') --}}
-        @livewire('slide-team-component')
+        {{-- @livewire('slide-team-component') --}}
         {{-- @livewire('tabs-slide-news-component') --}}
     </div>
 
