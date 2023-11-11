@@ -17,6 +17,8 @@ class TeamComponent extends Component
     public $logo;
     public $leauge_id = [];
 
+    protected $paginationTheme = 'bootstrap';
+
     protected $rules = [
         'name' => 'required|max:25',
         'logo' => 'required',

@@ -1,5 +1,5 @@
 <div>
-    <div class="AllTeamsBlockArea">
+    <div class="AllTeamsBlockArea" style="margin-top: 110px">
         <div class="swiper swiperTeams">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">

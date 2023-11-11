@@ -99,7 +99,7 @@
                     @endforelse
                 </tbody>
             </table>
-            {{-- {{ $teams->links() }} --}}
+            {{ $teams->links() }}
         </div>
     </div>
 </div>

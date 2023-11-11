@@ -278,13 +278,13 @@ $(document).ready(function () {
         },
         breakpoints: {
             640: {
-                slidesPerView: 3,
+                slidesPerView: 1,
             },
             768: {
-                slidesPerView: 3,
+                slidesPerView: 1,
             },
             1024: {
-                slidesPerView: 4,
+                slidesPerView: 2,
             },
         },
     });

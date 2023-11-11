@@ -41,14 +41,13 @@
 <body>
     @livewire('header-component')
     @livewire('slide-match-component')
-    {{-- @livewire('slide-news-component') --}}
     <div class="mainContainer">
         @livewire('news-hero-page-component')
-        @livewire('block-news-component')
-        @livewire('slide-more-news-component')
+        {{-- @livewire('block-news-component') --}}
+        {{-- @livewire('slide-more-news-component') --}}
         {{-- @livewire('tv-news-component') --}}
-        @livewire('slide-team-component')
-        @livewire('tabs-slide-news-component')
+        {{-- @livewire('slide-team-component') --}}
+        {{-- @livewire('tabs-slide-news-component') --}}
     </div>
 
     <footer>

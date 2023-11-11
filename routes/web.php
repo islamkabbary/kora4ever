@@ -61,7 +61,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
 });
 
 //Web
-Route::get('/test', function () {
+Route::get('/', function () {
     return view('website.test');
 });
 Route::get('/Article/{id}', [NewsController::class, "Article"])->name('Article');
