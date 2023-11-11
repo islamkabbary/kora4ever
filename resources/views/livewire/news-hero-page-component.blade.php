@@ -1,6 +1,6 @@
 <div>
-    <div class="row MainView" style="display: flex">
-        <div class="rightContainer">
+    <div class="row TV-writersBlockArea">
+        <div class="RightTvSection ">
             <div class="NewBlock">
                 <div class="NewsRightBlock">
                     <div class="OneNews">
@@ -142,35 +142,39 @@
                 </div>
             </div>
         </div>
-        <div class="TabsVideoDontMiss">
-            <div class="swiper mySwiperTabs">
-                <div class="swiper-wrapper tabsDMHeader">
-                    <div class="swiper-slide tab-link current" data-tab="tab-1">
-                        <p> الدوري المصري </p>
-                    </div>
-                    <div class="swiper-slide tab-link " data-tab="tab-2">
-                        <p> الدوري الانجليزي </p>
-                    </div>
-                    <div class="swiper-slide tab-link" data-tab="tab-3">
-                        <p> الدوري الاسباني </p>
-                    </div>
-                    {{-- <div class="swiper-slide tab-link" data-tab="tab-4">
-                        <p> الدوري السعودي </p>
-                    </div> --}}
-                </div>
-            </div>
-            <div id="tab-1" class="tab-content current">
-                @livewire('statistics-component', ['leauge' => 9])
-            </div>
-            <div id="tab-2" class="tab-content">
-                @livewire('statistics-component', ['leauge' => 1])
-            </div>
-            <div id="tab-3" class="tab-content">
-                @livewire('statistics-component', ['leauge' => 3])
-            </div>
-            {{-- <div id="tab-4" class="tab-content">
-                @livewire('statistics-component', ['leauge' => 12])
+        <div class="LeftTvSection">
+            {{-- <div class="mostWatched">
             </div> --}}
+            <div class="writersBlockArea">
+                <div class="swiper mySwiperTabs">
+                    <div class="swiper-wrapper tabsDMHeader">
+                        <div class="swiper-slide tab-link current" data-tab="tab-1">
+                            <p> الدوري المصري </p>
+                        </div>
+                        <div class="swiper-slide tab-link " data-tab="tab-2">
+                            <p> الدوري الانجليزي </p>
+                        </div>
+                        <div class="swiper-slide tab-link" data-tab="tab-3">
+                            <p> الدوري الاسباني </p>
+                        </div>
+                        {{-- <div class="swiper-slide tab-link" data-tab="tab-4">
+                            <p> الدوري السعودي </p>
+                        </div> --}}
+                    </div>
+                </div>
+                <div id="tab-1" class="tab-content current">
+                    @livewire('statistics-component', ['leauge' => 9])
+                </div>
+                <div id="tab-2" class="tab-content">
+                    @livewire('statistics-component', ['leauge' => 1])
+                </div>
+                <div id="tab-3" class="tab-content">
+                    @livewire('statistics-component', ['leauge' => 3])
+                </div>
+                {{-- <div id="tab-4" class="tab-content">
+                    @livewire('statistics-component', ['leauge' => 12])
+                </div> --}}
+            </div>
         </div>
     </div>
 </div>
