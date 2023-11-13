@@ -37,7 +37,7 @@ body {
 
 .mainContainer {
     width: 100%;
-    padding: 0 170px;
+    padding: 0 120px;
     margin: auto;
 }
 
@@ -693,7 +693,7 @@ header {
     background: #E8E8E8;
     position: relative;
     margin-bottom: 11px;
-    padding-top: 130px;
+    padding-top: 100px;
 }
 
 .RightALEftOneMatch {
@@ -703,8 +703,10 @@ header {
 
 .OneMatchBlock {
     background: #d3d3d3;
-    margin-left: 3px;
+    /* margin-left: 3px; */
     padding: 2px 10px 5px 10px;
+    border-radius:25px;
+    margin-bottom: 10px;
 }
 
 .RightOneMatch {
@@ -862,13 +864,19 @@ header {
 .DaysTabs {
     justify-content: center;
     align-items: center;
+    /* margin-top: 20px; */
+    margin-bottom: 10px;
+}
+.DaysTabs .row{
+    gap: 10px;
 }
 
 .DaysTabs li {
     background: #000;
     padding: 4px 10px;
-    width: 120px;
+    width: 110px;
     text-align: center;
+    border-radius: 10px;
 }
 
 .DaysTabs li a {
@@ -881,6 +889,7 @@ header {
 
 .DaysTabs li#current {
     background: #b06466;
+    border-radius: 10px;
 }
 
 /*.swiperMatchCenter .swiper-wrapper{justify-content:center}*/

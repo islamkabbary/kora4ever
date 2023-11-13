@@ -3,7 +3,7 @@
         <div class="row BlackHeaderBlock">
             <a href="section/35/كورة-مصرية/1">
                 <p class="TitleBlocksHeader">
-                    كورة مصرية
+                    {{ $nameLeauge }}
                 </p>
                 <img src="images/them/redcorner.png">
             </a>

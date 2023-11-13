@@ -40,15 +40,15 @@
 
 <body>
     @livewire('header-component')
-    @livewire('slide-match-component')
+    {{-- @livewire('slide-match-component') --}}
     {{-- @livewire('slide-more-news-component') --}}
     <div class="mainContainer">
         @livewire('news-hero-page-component')
-        @livewire('block-news-component')
-        @livewire('block-news-component')
-        @livewire('block-news-component')
+        @livewire('block-news-component', ['league' => 9])
+        @livewire('block-news-component', ['league' => 1])
+        @livewire('block-news-component', ['league' => 3])
         {{-- @livewire('tv-news-component') --}}
-        @livewire('slide-team-component')
+        {{-- @livewire('slide-team-component') --}}
         {{-- @livewire('tabs-slide-news-component') --}}
     </div>
 
@@ -56,25 +56,13 @@
         <div class="footermenu">
             <ul class="row">
                 <li>
-                    <a href="{{ env("APP_URL") }}" target="_blank">الرئيسية</a>
+                    <a href="{{ env('APP_URL') }}" target="_blank">الرئيسية</a>
                 </li>
                 <li>
                     <a href="#">الأخبار</a>
                 </li>
-                <li>
-                    <a href="#">TV+</a>
-                </li>
-                <li>
-                    <a href="#">المباريات</a>
-                </li>
-                <li>
-                    <a href="#">كورة مصرية</a>
-                </li>
-                <li>
-                    <a href="#">كورة أوروبية</a>
-                </li>
-                <li>
-                    <a href="#">رياضات أخرى</a>
+                <li class="">
+                    <a href="matches/allmatches" target="_parent">المباريات</a>
                 </li>
                 <li>
                     <a href="#">سياسة الخصوصية</a>

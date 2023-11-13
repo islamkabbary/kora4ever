@@ -2,14 +2,9 @@
     <header>
         <div class="row">
             <div class="row rightHeader">
-
                 <div class="MobileMenuicon">
                     <i class="fa fa-bars" aria-hidden="true"></i>
                     <i class="fa fa-times" aria-hidden="true"></i>
-                </div>
-
-                <div class="Mainlogo">
-                    <a href=""><img src="images/them/mainlogo.png" class="" alt="mainlogo" title=""></a>
                 </div>
                 <div class="searchHeaderMobile">
                     <i class="fa fa-search searchHeaderBtn" aria-hidden="true"></i>
@@ -30,26 +25,23 @@
                             <a href="all_news.html" target="_self">الأخبار</a>
                         </li>
                         <li class="">
-                            <a href="videos/AllVideos" target="_parent">+Tv</a>
-                        </li>
-                        <li class="">
                             <a href="matches/allmatches" target="_parent">المباريات</a>
                         </li>
                         <li class="">
-                            <a href="section/35/كورة-مصرية/1" target="_self">كورة مصرية</a>
+                            <a href="section/35/كورة-مصرية/1" target="_self">الدوري المصري</a>
                         </li>
                         <li class="">
-                            <a href="Section/37/كورة-نسائية/1" target="_parent">كورة نسائية</a>
+                            <a href="Section/10/كورة-أوروبية/1" target="_parent">الدوري الانجليزي</a>
                         </li>
                         <li class="">
-                            <a href="Section/10/كورة-أوروبية/1" target="_parent">كورة أوروبية</a>
+                            <a href="Section/14/رياضات-أخرى/1" target="_self">الدوري السعودي</a>
                         </li>
                         <li class="">
-                            <a href="Section/14/رياضات-أخرى/1" target="_self">رياضات أخرى</a>
+                            <a href="Section/14/رياضات-أخرى/1" target="_self">الدوري الاسباني</a>
                         </li>
                     </ul>
                 </div>
-                <div class="row loginAndlive">
+                {{-- <div class="row loginAndlive">
                     <div class="WLiveStream">
                         <a href="LiveStreams">
                             <div class="WLiveStreamWord">
@@ -58,7 +50,7 @@
                             </div>
                         </a>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
         <div class="row SearchAreaBlock">

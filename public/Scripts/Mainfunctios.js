@@ -287,6 +287,16 @@ $(document).ready(function () {
                 slidesPerView: 2,
             },
         },
+        // on: {
+        //     slideChange: function () {
+        //         var currentTab = this.slides[this.activeIndex];
+        //         console.log(currentTab);
+        //         var tabId = currentTab.getAttribute('data-tab');
+        //         console.log(tabId);
+        //         // Do something when the slide changes, for example, trigger a click on the corresponding tab-link
+        //         document.querySelector('.tab-link[data-tab="' + tabId + '"]').click();
+        //     }
+        // }
     });
 
     // Dont Misss

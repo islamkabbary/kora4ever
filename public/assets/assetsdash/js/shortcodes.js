@@ -25,7 +25,7 @@
             } else {
                 heroHeight = windowHeight - headerHeight;
             }
-            
+
             hero.css({ height: heroHeight + "px" });
             contentTopMargin = (heroHeight - contentHeight) / 2;
             heroContent.css("margin-top", contentTopMargin + "px");
@@ -92,7 +92,7 @@
 
                 setInterval(function() {
                     var number = current * -height;
-                    
+
                     first.css('margin-top', number + 'px');
                     if ( current === numberDivs ) {
                         first.css('margin-top', '0px');
@@ -350,7 +350,7 @@
                 $(this).find('.number').each(function() {
                     var to = $(this).data('to'),
                         speed = $(this).data('speed');
-                        
+
                     $(this).countTo({
                         to: to,
                         speed: speed
@@ -362,7 +362,7 @@
 
     var tabs =  function() {
         $('.themesflat-tabs').each(function(){
-            var 
+            var
             list ="",
             title = $(this).find('.item-title'),
             titleWrap = $(this).children('.tab-title') ;
@@ -466,7 +466,7 @@
         var iOS = ( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false );
         /*
          * Please note that background attachment fixed doesn't work on iOS
-         */ 
+         */
         if (!iOS) {
             $('.parallax').css({backgroundAttachment:'fixed'});
         } else {
@@ -508,7 +508,7 @@
                 '-webkit-animation-duration':   duration,
                 'animation-duration':           duration
             });
-        
+
             el.waypoint(function() {
                 el.addClass('animated').addClass(animate);
                 },{
@@ -579,11 +579,11 @@
     };
 
     var searchIcon = function () {
-        $(document).on('click', function(e) {   
-            var clickID = e.target.id;   
+        $(document).on('click', function(e) {
+            var clickID = e.target.id;
             if ( ( clickID !== 'input-search' ) ) {
-                $('.header-search-form').removeClass('show');                
-            } 
+                $('.header-search-form').removeClass('show');
+            }
         });
 
         $('.header-search-icon').on('click', function(event){
@@ -592,19 +592,19 @@
 
         $('.header-search-form').on('click', function(event){
             event.stopPropagation();
-        });        
+        });
 
         $('.header-search-icon').on('click', function (event) {
             if(!$('.header-search-form').hasClass( "show" )) {
-                $('.header-search-form').addClass('show');  
-                event.preventDefault();                
+                $('.header-search-form').addClass('show');
+                event.preventDefault();
             }
-                
+
             else
                 $('.header-search-form').removeClass('show');
                 event.preventDefault();
 
-        });      
+        });
     };
 
     // Dom Ready
