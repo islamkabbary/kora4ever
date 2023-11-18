@@ -1,5 +1,5 @@
 <div>
-    <div class="row TV-writersBlockArea">
+    <div class="row TV-writersBlockArea customHeder">
         <div class="RightTvSection ">
             <div class="row BlackHeaderBlock">
                 <div class="row">

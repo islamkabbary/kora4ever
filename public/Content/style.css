@@ -6301,6 +6301,10 @@ SectionHeadTitleDontMiss img {
 
 /*** TV-writersBlockArea ***/
 /* Tv */
+.customHeder {
+    margin-top: 110px;
+}
+
 .TV-writersBlockArea {
     align-items: start;
     margin-bottom: 30px
@@ -10342,11 +10346,33 @@ span.psw {
 }
 
 /*tablit*/
+@media (min-width: 768px){
+    .customHeder {
+        margin-top: 65px;
+        padding: 15px;
+    }
+}
+@media (min-width: 425px){
+    .customHeder {
+        margin-top: 60px;
+        padding: 25px;
+    }
+}
+@media (max-width: 425px){
+    .customHeder {
+        margin-top: 60px;
+        padding: 20px;
+    }
+}
+@media (min-width: 1500px){
+    .customHeder {
+        margin-top: 160px !important;
+    }
+}
 @media (min-width: 801px) and (max-width: 1024px) {
     .fixedMostRead {
         display: none;
     }
-
     .mainContainer,
     .InnerContainer {
         padding: 10px

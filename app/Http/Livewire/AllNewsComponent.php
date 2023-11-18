@@ -22,8 +22,8 @@ class AllNewsComponent extends Component
         return view('livewire.all-news-component',['news' => $news , 'leauges' => $leauges]);
     }
 
-    // public function paginationView()
-    // {
-    //     return 'pagination';
-    // }
+    public function paginationView()
+    {
+        return 'pagination';
+    }
 }

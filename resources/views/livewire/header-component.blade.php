@@ -2,17 +2,14 @@
     <header>
         <div class="row">
             <div class="row rightHeader">
+
                 <div class="MobileMenuicon">
                     <i class="fa fa-bars" aria-hidden="true"></i>
                     <i class="fa fa-times" aria-hidden="true"></i>
                 </div>
-                <div class="searchHeaderMobile">
-                    <i class="fa fa-search searchHeaderBtn" aria-hidden="true"></i>
-                </div>
-                <div class="WLiveStreamMobile">
-                    <a href="LiveStreams">
-                        <img src="images/them/WLiveStreamMobile.png" />
-                    </a>
+
+                <div class="Mainlogo">
+                    <a href="/"><img src="{{ asset('images/them/mainlogo.png') }}" class="" alt="mainlogo" title=""></a>
                 </div>
             </div>
             <div class="row leftHeader">

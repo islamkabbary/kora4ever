@@ -11,30 +11,6 @@
                     <a href="{{ route('Article', ['id' => $post->id]) }}"> {{ $post->title }} </a>
                 </li>
             @endforeach
-            @foreach ($most as $i => $post)
-                <li>
-                    <span>{{ $i + 1 }}</span>
-                    <a href="{{ route('Article', ['id' => $post->id]) }}"> {{ $post->title }} </a>
-                </li>
-            @endforeach
-            @foreach ($most as $i => $post)
-                <li>
-                    <span>{{ $i + 1 }}</span>
-                    <a href="{{ route('Article', ['id' => $post->id]) }}"> {{ $post->title }} </a>
-                </li>
-            @endforeach
-            @foreach ($most as $i => $post)
-                <li>
-                    <span>{{ $i + 1 }}</span>
-                    <a href="{{ route('Article', ['id' => $post->id]) }}"> {{ $post->title }} </a>
-                </li>
-            @endforeach
-            @foreach ($most as $i => $post)
-                <li>
-                    <span>{{ $i + 1 }}</span>
-                    <a href="{{ route('Article', ['id' => $post->id]) }}"> {{ $post->title }} </a>
-                </li>
-            @endforeach
             <li>
                 {{-- <img src="{{ asset('images/logo03.png') }}" alt="logo03"> --}}
             </li>

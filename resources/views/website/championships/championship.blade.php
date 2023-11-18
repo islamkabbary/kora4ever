@@ -2,14 +2,15 @@
 @section('mainContainer')
     {{-- start content --}}
     <input type="hidden" value="1" id="tabNum" />
-    <div class="row InnerContainer" style="margin-top: 100px">
-        <div class="RightInner">
+    <div class="row TV-writersBlockArea customHeder">
+        <div class="RightTvSection ">
             <div class="row Team">
                 <div class="HeaderTeamCon">
                     <div class="row Head-Team">
                         <div class="LogoTeam">
-                            <img src="{{ asset($leauge->logo) }}" alt="{{ $leauge->name }} 2021 - 2022"
-                                title="{{ $leauge->name }} 2021 - 2022" onerror="this.src='images/staticimg/Team01.png'">
+                            <img src="{{ env('APP_URL') . '/storage/' . $leauge->logo }}"
+                                alt="{{ $leauge->name }} 2021 - 2022" title="{{ $leauge->name }} 2021 - 2022"
+                                onerror="this.src='images/staticimg/Team01.png'">
                         </div>
                         <div class="NameTeam">
                             <h3>
@@ -51,7 +52,7 @@
                                     <div class="ImageSliderFixedHeight">
                                         {{-- <a href="{{ route('team', ['id' => $team->id]) }}"> --}}
                                         {{-- @foreach ($team->logos as $logo) --}}
-                                        <img src="{{ asset($team->path) }}" title="{{ $team->name }}"
+                                        <img src="{{ asset($team->logo) }}" title="{{ $team->name }}"
                                             alt="{{ $team->name }}">
                                         {{-- @endforeach --}}
                                         {{-- </a> --}}
@@ -71,11 +72,10 @@
                         <div class="SecondNews">
                             <div class="secondNewsBlockImage">
                                 <a href="{{ route('Article', ['id' => $post->id]) }}">
-                                    @foreach ($post->photos as $photo)
-                                        <img src="{{ $photo->path }}" class="OneSResultImage"
-                                            onerror="this.src='{{ asset('images/onerror/Large789x539.png') }}'"
-                                            title="{{ $post->title }}">
-                                    @endforeach
+                                    <img src="{{ env('APP_URL') . '/storage/' . $post->media[0]->url }}"
+                                        class="OneSResultImage"
+                                        onerror="this.src='{{ asset('images/onerror/Large789x539.png') }}'"
+                                        title="{{ $post->title }}">
                                 </a>
                             </div>
                             <div class="secondNewsTitleON">
@@ -95,16 +95,16 @@
                                         @if ($post->tags)
                                             @foreach ($post->tags->take(2) as $tag)
                                                 <div class="AOneTagSmall">
-                                                    <a href="{{ route('TagNews', ['id' => $tag->id]) }}">
-                                                        <p>{{ $tag->name }} </p>
-                                                    </a>
+                                                    {{-- <a href="{{ route('TagNews', ['id' => $tag->id]) }}"> --}}
+                                                    <p>{{ $tag->name }} </p>
+                                                    {{-- </a> --}}
                                                 </div>
                                             @endforeach
                                         @else
                                             <div class="AOneTagSmall">
-                                                <a href="{{ route('TagNews', ['id' => 1]) }}">
-                                                    <p>أخبار</p>
-                                                </a>
+                                                {{-- <a href="{{ route('TagNews', ['id' => 1]) }}"> --}}
+                                                <p>أخبار</p>
+                                                {{-- </a> --}}
                                             </div>
                                         @endif
                                     </div>
@@ -126,11 +126,10 @@
                                 <p> الفرق</p>
                             </button>
                             <div class="dropdown-content" id="CHdropdownTeam1">
-                                <a
-                                    href="{{ route('championship', ['id' => $leauge->id]) }}">{{ __('messages.All teams') }}</a>
+                                <a href="{{ route('championship', ['id' => $leauge->id]) }}">All teams</a>
                                 @foreach ($teams as $teams)
                                     {{-- <a href="{{ route('team', ['id' => $teams->id]) }}"> --}}
-                                    {{ __("messages.$teams->name") }}
+                                    {{ $teams->name }}
                                     {{-- </a> --}}
                                 @endforeach
                             </div>
@@ -419,7 +418,7 @@
                 <div>
                     <div class="row ChMatchesH">
                         <div class="row MatchHeaderTitle">
-                            <p> ترتيب الفرق فى {{ __("messages.$leauge->name") }}</p>
+                            <p> ترتيب الفرق فى {{ $leauge->name }}</p>
                         </div>
                     </div>
                 </div>
@@ -502,109 +501,6 @@
                     </div>
                 </div>
             </div>
-            {{-- <div id="Chtab6" class="championshipsBlock">
-                <div class="allnewsDiv">
-                    <div class="SearchResultBlock championshipsVideos">
-                        @if ($video !== null)
-                            <div class="SecondNews">
-                                <div class="secondNewsBlockImage">
-                                    <a href="{{ route('Article', ['id' => $video->id]) }}">
-                                        @foreach ($video->photos as $photo)
-                                            <img src="{{ $photo->path }}" class="OneSResultImage1"
-                                                onerror="this.src='/images/onerror/Large789x539.png'"
-                                                title="الأهلي وبيراميدز" alt="الأهلي وبيراميدز">
-                                        @endforeach
-                                        <img src="{{ asset('images/tvicon.png') }}" class="IconPlayTabsTags"
-                                            alt="tvicon">
-                                    </a>
-                                    <span class="overlay"></span>
-                                </div>
-                                <div class="secondNewsTitleON">
-                                    <h3>
-                                        <a href="{{ route('Article', ['id' => $video->id]) }}">
-                                            {{ $video->title }}
-                                        </a>
-                                    </h3>
-                                    <div class="ArticleDateBlock">
-                                        <div class="row ArticleDate">
-                                            <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                            <p> {{ $video->created_at->diffForHumans() }} </p>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="row ArticleTagSmall">
-                                            @if ($video->tags)
-                                                @foreach ($video->tags->take(2) as $tag)
-                                                    <div class="AOneTagSmall">
-                                                        <a href="{{ route('TagNews', ['id' => $tag->id]) }}">
-                                                            <p>{{ $tag->name }} </p>
-                                                        </a>
-                                                    </div>
-                                                @endforeach
-                                            @else
-                                                <div class="AOneTagSmall">
-                                                    <a href="{{ route('TagNews', ['id' => 1]) }}">
-                                                        <p>أخبار</p>
-                                                    </a>
-                                                </div>
-                                            @endif
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            @if ($videos)
-                                @foreach ($videos as $one_Video)
-                                    <div class="SecondNews">
-                                        <div class="secondNewsBlockImage">
-                                            <a href="{{ route('Article', ['id' => $one_Video->id]) }}">
-                                                @foreach ($one_Video->photos as $photo)
-                                                    <img src="{{ $photo->path }}" class="OneSResultImage"
-                                                        onerror="this.src='images/mainlogo.png'">
-                                                @endforeach
-                                                <img src="{{ asset('images/tvicon.png') }}" class="IconPlayTabsTags"
-                                                    alt="tvicon">
-                                            </a>
-                                            <span class="overlay"></span>
-                                        </div>
-                                        <div class="secondNewsTitleON">
-                                            <h3>
-                                                <a href="{{ route('Article', ['id' => $one_Video->id]) }}">
-                                                    {{ $one_Video->title }}
-                                                </a>
-                                            </h3>
-                                            <div class="ArticleDateBlock">
-                                                <div class="row ArticleDate">
-                                                    <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                                    <p> {{ $one_Video->created_at->diffForHumans() }} </p>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <div class="row ArticleTagSmall">
-                                                    @if ($one_Video->tags)
-                                                        @foreach ($one_Video->tags->take(2) as $tag)
-                                                            <div class="AOneTagSmall">
-                                                                <a href="{{ route('TagNews', ['id' => $tag->id]) }}">
-                                                                    <p>{{ $tag->name }} </p>
-                                                                </a>
-                                                            </div>
-                                                        @endforeach
-                                                    @else
-                                                        <div class="AOneTagSmall">
-                                                            <a href="{{ route('TagNews', ['id' => 1]) }}">
-                                                                <p>أخبار</p>
-                                                            </a>
-                                                        </div>
-                                                    @endif
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endforeach
-                            @endif
-                        @endif
-                    </div>
-                </div>
-            </div> --}}
             <div id="Chtab7" class="championshipsBlock">
                 <div class="row AlbumleftBlock">
                     <div class="Noresult">
@@ -613,7 +509,7 @@
                 </div>
             </div>
         </div>
-        <div class="LeftInner">
+        <div class="LeftTvSection">
             @livewire('left-side-bar-component')
         </div>
     </div>

@@ -1,5 +1,5 @@
 <div>
-    <div class="row TV-writersBlockArea" style="margin-top: 110px">
+    <div class="row TV-writersBlockArea customHeder">
         <div class="RightTvSection ">
             <div class="allnewsDiv NewsPage">
                 <div class="row ArticleLatestTitleBlock">
