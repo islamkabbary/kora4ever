@@ -40,16 +40,8 @@
 
 <body>
     @livewire('header-component')
-    {{-- @livewire('slide-match-component') --}}
-    {{-- @livewire('slide-more-news-component') --}}
     <div class="mainContainer">
-        @livewire('news-hero-page-component')
-        @livewire('block-news-component', ['league' => 9])
-        @livewire('block-news-component', ['league' => 1])
-        @livewire('block-news-component', ['league' => 3])
-        {{-- @livewire('tv-news-component') --}}
-        {{-- @livewire('slide-team-component') --}}
-        {{-- @livewire('tabs-slide-news-component') --}}
+        @yield('mainContainer')
     </div>
 
     <footer>

@@ -1,9 +1,4 @@
-@extends('master_website')
-
-
-@section('title', 'Live-Match | All News ')
-@section('content')
-    {{-- start content --}}
+@extends('website.master_website')
+@section('mainContainer')
         @livewire('all-news-component')
-    {{-- end content --}}
 @endsection

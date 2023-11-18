@@ -63,7 +63,8 @@ class CreateNewsComponent extends Component
                 } else {
                     if(!is_string($this->image)){
                         $img = $this->image->store('news', 'public');
-                        $news->media()->create(['url' => $img]);
+                        $news->media()->delete();
+                        // $news->media()->create(['url' => $img]);
                     }
                 }
             } catch (\Throwable $th) {

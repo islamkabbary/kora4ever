@@ -13,4 +13,9 @@ class Leauge extends Model
     {
         return $this->belongsTo(Country::class);
     }
+
+    public function teams()
+    {
+        return $this->hasMany(Team::class,'id');
+    }
 }

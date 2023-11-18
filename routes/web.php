@@ -1,11 +1,13 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\LeaugeController;
+use App\Models\Leauge;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,17 +19,14 @@ use App\Http\Controllers\LeaugeController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-
-
+//Web
+Route::get('/', [HomeController::class, "index"])->name('home');
+Route::get('/all-news', [NewsController::class, "index"])->name('all_news');
+Route::get('/Article/{id}', [NewsController::class, "Article"])->name('Article');
+Route::get('/championship/{id}', [LeaugeController::class, "show"])->name('championship');
+Route::get('/championships', [LeaugeController::class, "index"])->name('all_championships');
 
 // Dashboard
 Route::middleware(['auth:sanctum'])->get('/dashboard-match-live-team', function () {
@@ -59,9 +58,3 @@ Route::middleware(['auth:sanctum'])->group(function () {
         // })->name('commentators.dashboard');
     });
 });
-
-//Web
-Route::get('/', function () {
-    return view('website.test');
-});
-Route::get('/Article/{id}', [NewsController::class, "Article"])->name('Article');

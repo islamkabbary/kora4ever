@@ -18,26 +18,26 @@
             <div class="row leftHeader">
                 <div class="Mainmenu">
                     <ul class="row">
-                        <li class="">
-                            <a href="" target="_self">الرئيسية</a>
+                        <li>
+                            <a href="{{ env('APP_URL') }}" target="_self">الرئيسية</a>
                         </li>
-                        <li class="">
-                            <a href="all_news.html" target="_self">الأخبار</a>
+                        <li>
+                            <a href="{{ route('all_news') }}" target="_self">الأخبار</a>
                         </li>
-                        <li class="">
+                        <li>
                             <a href="matches/allmatches" target="_parent">المباريات</a>
                         </li>
-                        <li class="">
-                            <a href="section/35/كورة-مصرية/1" target="_self">الدوري المصري</a>
+                        <li>
+                            <a href="{{ route('championship', ['id' => 9]) }}" target="_self">الدوري المصري</a>
                         </li>
-                        <li class="">
-                            <a href="Section/10/كورة-أوروبية/1" target="_parent">الدوري الانجليزي</a>
+                        <li>
+                            <a href="{{ route('championship', ['id' => 1]) }}" target="_parent">الدوري الانجليزي</a>
                         </li>
-                        <li class="">
-                            <a href="Section/14/رياضات-أخرى/1" target="_self">الدوري السعودي</a>
+                        <li>
+                            <a href="{{ route('championship', ['id' => 5]) }}" target="_self">الدوري الاسباني</a>
                         </li>
-                        <li class="">
-                            <a href="Section/14/رياضات-أخرى/1" target="_self">الدوري الاسباني</a>
+                        <li>
+                            <a href="{{ route('championship', ['id' => 25]) }}" target="_self">الدوري السعودي</a>
                         </li>
                     </ul>
                 </div>

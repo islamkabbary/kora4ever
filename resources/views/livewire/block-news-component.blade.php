@@ -5,7 +5,7 @@
                 <p class="TitleBlocksHeader">
                     {{ $nameLeauge }}
                 </p>
-                <img src="images/them/redcorner.png">
+                {{-- <img src="images/them/redcorner.png"> --}}
             </a>
         </div>
         <div>
