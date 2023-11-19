@@ -10,7 +10,7 @@
                         <div class="LogoTeam">
                             <img src="{{ env('APP_URL') . '/storage/' . $leauge->logo }}"
                                 alt="{{ $leauge->name }} 2021 - 2022" title="{{ $leauge->name }} 2021 - 2022"
-                                onerror="this.src='images/them/staticimg/Team01.png'">
+                               >
                         </div>
                         <div class="NameTeam">
                             <h3>
