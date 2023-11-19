@@ -32,10 +32,10 @@
     {{-- <link href='{{ asset('Content/jQueryUI.css') }}' media="all" rel='stylesheet' type='text/css'> --}}
     <link href='{{ asset('Content/font-awesome.min.css') }}' media="all" rel='stylesheet' type='text/css'>
     <script src="{{ asset('Scripts/jquery-v3.4.1.min.j') }}s"></script>
-    <link rel="stylesheet" href="{{ asset('Content/lightgallery.css') }}" />
-    <link rel="stylesheet" href="{{ asset('Content/lg-zoom.css') }}" />
-    <link rel="stylesheet" href="{{ asset('Content/justifiedGallery.css') }}" />
-    <link rel="stylesheet" href="{{ asset('Content/lg-thumbnail.css') }}" />
+    <link rel="stylesheet" href="{{ asset('Content/lightgallery.css?') }}" />
+    <link rel="stylesheet" href="{{ asset('Content/lg-zoom.css?') }}" />
+    <link rel="stylesheet" href="{{ asset('Content/justifiedGallery.css?') }}" />
+    <link rel="stylesheet" href="{{ asset('Content/lg-thumbnail.css?') }}" />
 </head>
 
 <body>
