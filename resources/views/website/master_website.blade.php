@@ -26,7 +26,7 @@
     {{-- <meta name="twitter:image:src" content="https://kora4ever.be3o.com//images/them/onerror/Large789x539.png" /> --}}
     <meta name="twitter:site" content="كورة فور ايفر" />
     <link rel="canonical" href="https://kora4ever.be3o.com/" />
-    <link href='{{ asset('Content/style.css') }}' media="all" rel='stylesheet' type='text/css'>
+    <link href='{{ asset('Content/style.css?v=2') }}' media="all" rel='stylesheet' type='text/css'>
     <link href='{{ asset('Content/responsive.css') }}' media="all" rel='stylesheet' type='text/css'>
     <link href='{{ asset('Content/swiper-bundle.min.css') }}' media="all" rel='stylesheet' type='text/css'>
     {{-- <link href='{{ asset('Content/jQueryUI.css') }}' media="all" rel='stylesheet' type='text/css'> --}}
