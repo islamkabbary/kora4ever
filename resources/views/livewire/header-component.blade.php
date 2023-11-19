@@ -31,7 +31,7 @@
                             <a href="{{ route('championship', ['id' => 1]) }}" target="_parent">الدوري الانجليزي</a>
                         </li>
                         <li>
-                            <a href="{{ route('championship', ['id' => 5]) }}" target="_self">الدوري الاسباني</a>
+                            <a href="{{ route('championship', ['id' => 3]) }}" target="_self">الدوري الاسباني</a>
                         </li>
                         <li>
                             <a href="{{ route('championship', ['id' => 25]) }}" target="_self">الدوري السعودي</a>

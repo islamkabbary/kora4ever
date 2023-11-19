@@ -89,6 +89,9 @@ class LeaugeSeeder extends Seeder
             [
                 'name' => 'FA Cup', 'country_id' => 226, 'type' => 'cup', 'logo' => 'images/Leauges/FACup.png',
             ],
+            [
+                'name' => 'FA Cup', 'country_id' => 187, 'type' => 'league', 'logo' => 'images/Leauges/saudi_pro_league.png',
+            ],
         ];
         foreach ($leauges as  $leauge) {
             $l = new Leauge;

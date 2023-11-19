@@ -16,6 +16,6 @@ class Leauge extends Model
 
     public function teams()
     {
-        return $this->hasMany(Team::class,'id');
+        return $this->belongsToMany(Team::class, 'team_has_leauges');
     }
 }

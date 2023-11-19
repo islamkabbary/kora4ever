@@ -6301,10 +6301,6 @@ SectionHeadTitleDontMiss img {
 
 /*** TV-writersBlockArea ***/
 /* Tv */
-.customHeder {
-    margin-top: 110px;
-}
-
 .TV-writersBlockArea {
     align-items: start;
     margin-bottom: 30px
@@ -10345,6 +10341,16 @@ span.psw {
     font-size: 11px;
 }
 
+@media (min-width: 1440px){
+    .customHeder {
+        margin-top: 160px !important;
+    }
+}
+@media (min-width: 1024px){
+    .customHeder {
+        margin-top: 110px !important;
+    }
+}
 /*tablit*/
 @media (min-width: 768px){
     .customHeder {
@@ -10352,21 +10358,10 @@ span.psw {
         padding: 15px;
     }
 }
-@media (min-width: 425px){
-    .customHeder {
-        margin-top: 60px;
-        padding: 25px;
-    }
-}
 @media (max-width: 425px){
     .customHeder {
         margin-top: 60px;
         padding: 20px;
-    }
-}
-@media (min-width: 1500px){
-    .customHeder {
-        margin-top: 160px !important;
     }
 }
 @media (min-width: 801px) and (max-width: 1024px) {

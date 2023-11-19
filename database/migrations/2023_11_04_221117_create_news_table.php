@@ -21,6 +21,9 @@ return new class extends Migration
             $table->foreignId('team_id')->constrained('teams');
             $table->foreignId('leauge_id')->constrained('leauges');
             $table->foreignId('news_id')->nullable()->constrained('news');
+            $table->boolean('show_as_main_news')->default(false);
+            $table->boolean('show_from_the_five_main_news')->default(false);
+            $table->boolean('show_in_most_read')->default(false);
             $table->foreignId('created_by')->constrained('users');
             $table->foreignId('updated_by')->nullable()->constrained('users');
             $table->timestamps();

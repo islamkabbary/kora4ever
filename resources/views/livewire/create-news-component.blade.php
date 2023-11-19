@@ -1,5 +1,12 @@
 <div>
-    {{-- @dump(123) --}}
+    <style>
+        input[type="checkbox"] {
+            width: 20px;
+            /* Set the desired width */
+            height: 20px;
+            /* Set the desired height */
+        }
+    </style>
     <div class="container">
         <div class="row">
             <div class="col-md-12 grid-margin stretch-card mx-auto">
@@ -83,6 +90,28 @@
                                 @enderror
                             </div>
                             {{-- Team --}}
+                            <div class="form-group mt-2"
+                                style="display: grid;grid-template-columns: repeat(12, minmax(0, 1fr));">
+                                @if (!App\Models\News::where('show_as_main_news', 1)->first())
+                                    <div style="grid-column: span 4 / span 4;">
+                                        <input type="checkbox" wire:model="show_as_main_news">
+                                        <label for="show_as_main_news" class="text-white p-1">show as main news</label>
+                                    </div>
+                                @endif
+                                @if (App\Models\News::where('show_in_most_read', 1)->count() <= 5)
+                                    <div style="grid-column: span 4 / span 4;">
+                                        <input type="checkbox" wire:model="show_in_most_read">
+                                        <label for="show_in_most_read" class="text-white p-1">show in most read</label>
+                                    </div>
+                                @endif
+                                @if (App\Models\News::where('show_from_the_five_main_news', 1)->count() < 5)
+                                    <div style="grid-column: span 4 / span 4;">
+                                        <input type="checkbox" wire:model="show_from_the_five_main_news">
+                                        <label for="show_from_the_five_main_news" class="text-white p-1">show from the
+                                            five main news</label>
+                                    </div>
+                                @endif
+                            </div>
                             <div class="form-group">
                                 <a type="button" onclick="save_editor()" id="saveEditor" class="btn btn-primary mb-4">
                                     Save </a>

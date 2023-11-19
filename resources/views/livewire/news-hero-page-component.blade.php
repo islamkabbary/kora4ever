@@ -7,138 +7,76 @@
                         <div class="LeaguesNews">
                             <a href="section/31/كأس-أمم-إفريقيا/1">
                                 <p>
-                                    {{ $news[0]->tags[0]->name }}
+                                    {{ $main_news->tags[0]->name }}
                                 </p>
                             </a>
                         </div>
-                        <a href="{{ route('Article', ['id' => $news[0]->id]) }}">
-                            <img src="{{ env('APP_URL') . '/storage/' . $news[0]->media[0]->url }}"
-                                title="{{ $news[0]->tags[0]->name }}" alt="{{ $news[0]->tags[0]->name }}">
+                        <a href="{{ route('Article', ['id' => $main_news->id]) }}">
+                            <img src="{{ env('APP_URL') . '/storage/' . $main_news->media[0]->url }}"
+                                title="{{ $main_news->tags[0]->name }}" alt="{{ $main_news->tags[0]->name }}">
                         </a>
                         <div class="OneNewsTitleON">
                             <h3>
                                 <a class="OneNewsTitleOne"
-                                    href="{{ route('Article', ['id' => $news[0]->id]) }}">{{ $news[0]->title }}</a>
+                                    href="{{ route('Article', ['id' => $main_news->id]) }}">{{ $main_news->title }}</a>
                             </h3>
                         </div>
-                        <a href="{{ route('Article', ['id' => $news[0]->id]) }}">
+                        <a href="{{ route('Article', ['id' => $main_news->id]) }}">
                             <span class="overlay"></span>
                         </a>
                     </div>
                     <div class="RTwoNewsLeft">
+                        @foreach ($five_main_news as $news)
                         <div class="OneNews">
                             <div class="LeaguesNews">
                                 <a href="section/31/كأس-أمم-إفريقيا/1">
                                     <p>
-                                        {{ $news[0]->tags[1]->name ? $news[0]->tags[1]->name : $news[0]->tags[0]->name }}
+                                        {{ $news->tags[1]->name ? $news->tags[1]->name : $news->tags[0]->name }}
                                     </p>
                                 </a>
                             </div>
-                            <a href="{{ route('Article', ['id' => $news[0]->id]) }}">
-                                <img src="{{ env('APP_URL') . '/storage/' . $news[0]->media[0]->url }}"
-                                    title="{{ $news[0]->tags[0]->name }}" alt="{{ $news[0]->tags[0]->name }}">
+                            <a href="{{ route('Article', ['id' => $news->id]) }}">
+                                <img src="{{ env('APP_URL') . '/storage/' . $news->media[0]->url }}"
+                                    title="{{ $news->tags[0]->name }}" alt="{{ $news->tags[0]->name }}">
                             </a>
                             <div class="OneNewsTitleON">
                                 <h3>
                                     <a class="OneNewsTitleONA"
-                                        href="{{ route('Article', ['id' => $news[0]->id]) }}">{{ $news[0]->title }}</a>
+                                        href="{{ route('Article', ['id' => $news->id]) }}">{{ $news->title }}</a>
                                 </h3>
                             </div>
-                            <a href="{{ route('Article', ['id' => $news[0]->id]) }}">
+                            <a href="{{ route('Article', ['id' => $news->id]) }}">
                                 <span class="overlay"></span>
                             </a>
                         </div>
-                        <div class="OneNews">
-                            <div class="LeaguesNews">
-                                <a href="section/31/كأس-أمم-إفريقيا/1">
-                                    <p>
-                                        {{ $news[0]->tags[2]->name ? $news[0]->tags[2]->name : $news[0]->tags[0]->name }}
-                                    </p>
-                                </a>
-                            </div>
-                            <a href="{{ route('Article', ['id' => $news[0]->id]) }}">
-                                <img src="{{ env('APP_URL') . '/storage/' . $news[0]->media[0]->url }}"
-                                    title="{{ $news[0]->tags[0]->name }}" alt="{{ $news[0]->tags[0]->name }}">
-                            </a>
-                            <div class="OneNewsTitleON">
-                                <h3>
-                                    <a class="OneNewsTitleONA"
-                                        href="{{ route('Article', ['id' => $news[0]->id]) }}">{{ $news[0]->title }}</a>
-                                </h3>
-                            </div>
-                            <a href="{{ route('Article', ['id' => $news[0]->id]) }}">
-                                <span class="overlay"></span>
-                            </a>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
                 <div class="row NewsleftBlock">
+                    @foreach ($threeNewsUnderMain as $news)
                     <div class="OneNews">
                         <div class="LeaguesNews">
                             <a href="section/31/كأس-أمم-إفريقيا/1">
                                 <p>
-                                    {{ $news[0]->tags[3]->name ? $news[0]->tags[3]->name : $news[0]->tags[0]->name }}
+                                    {{ $news->tags[0]->name ? $news->tags[0]->name : $news->tags[0]->name }}
                                 </p>
                             </a>
                         </div>
-                        <a href="{{ route('Article', ['id' => $news[0]->id]) }}">
-                            <img src="{{ env('APP_URL') . '/storage/' . $news[0]->media[0]->url }}"
-                                title="{{ $news[0]->tags[0]->name }}" alt="{{ $news[0]->tags[0]->name }}">
+                        <a href="{{ route('Article', ['id' => $news->id]) }}">
+                            <img src="{{ env('APP_URL') . '/storage/' . $news->media[0]->url }}"
+                                title="{{ $news->tags[0]->name }}" alt="{{ $news->tags[0]->name }}">
                         </a>
                         <div class="OneNewsTitleON">
                             <h3>
                                 <a class="OneNewsTitleONA"
-                                    href="{{ route('Article', ['id' => $news[0]->id]) }}">{{ $news[0]->title }}</a>
+                                    href="{{ route('Article', ['id' => $news->id]) }}">{{ $news->title }}</a>
                             </h3>
                         </div>
-                        <a href="{{ route('Article', ['id' => $news[0]->id]) }}">
+                        <a href="{{ route('Article', ['id' => $news->id]) }}">
                             <span class="overlay"></span>
                         </a>
                     </div>
-                    <div class="OneNews">
-                        <div class="LeaguesNews">
-                            <a href="section/31/كأس-أمم-إفريقيا/1">
-                                <p>
-                                    {{ $news[0]->tags[0]->name }}
-                                </p>
-                            </a>
-                        </div>
-                        <a href="{{ route('Article', ['id' => $news[0]->id]) }}">
-                            <img src="{{ env('APP_URL') . '/storage/' . $news[0]->media[0]->url }}"
-                                title="{{ $news[0]->tags[0]->name }}" alt="{{ $news[0]->tags[0]->name }}">
-                        </a>
-                        <div class="OneNewsTitleON">
-                            <h3>
-                                <a class="OneNewsTitleONA"
-                                    href="{{ route('Article', ['id' => $news[0]->id]) }}">{{ $news[0]->title }}</a>
-                            </h3>
-                        </div>
-                        <a href="{{ route('Article', ['id' => $news[0]->id]) }}">
-                            <span class="overlay"></span>
-                        </a>
-                    </div>
-                    <div class="OneNews">
-                        <div class="LeaguesNews">
-                            <a href="section/31/كأس-أمم-إفريقيا/1">
-                                <p>
-                                    {{ $news[0]->tags[0]->name }}
-                                </p>
-                            </a>
-                        </div>
-                        <a href="{{ route('Article', ['id' => $news[0]->id]) }}">
-                            <img src="{{ env('APP_URL') . '/storage/' . $news[0]->media[0]->url }}"
-                                title="{{ $news[0]->tags[0]->name }}" alt="{{ $news[0]->tags[0]->name }}">
-                        </a>
-                        <div class="OneNewsTitleON">
-                            <h3>
-                                <a class="OneNewsTitleONA"
-                                    href="{{ route('Article', ['id' => $news[0]->id]) }}">{{ $news[0]->title }}</a>
-                            </h3>
-                        </div>
-                        <a href="{{ route('Article', ['id' => $news[0]->id]) }}">
-                            <span class="overlay"></span>
-                        </a>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

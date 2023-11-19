@@ -16,7 +16,7 @@ class CreateNewsComponent extends Component
 {
     use WithFileUploads, LivewireAlert;
 
-    public $title, $body, $image, $video_url, $tag_id = [], $news_id, $leauge_id, $team_id;
+    public $title, $body, $image, $video_url, $tag_id = [], $news_id, $leauge_id, $team_id, $show_as_main_news, $show_from_the_five_main_news, $show_in_most_read;
     protected $listeners = ['add'];
 
     protected $rules = [
@@ -44,11 +44,14 @@ class CreateNewsComponent extends Component
         if ($this->news_id) {
             try {
                 $news = News::find($this->news_id);
-                $news->title = $this->title;
                 $news->body = $this->body;
+                $news->title = $this->title;
                 $news->team_id = $this->team_id;
                 $news->leauge_id = $this->leauge_id;
                 $news->created_by = Auth::user()->id;
+                $news->show_as_main_news = $this->show_as_main_news ? true : false;
+                $news->show_in_most_read = $this->show_in_most_read ? true : false;
+                $news->show_from_the_five_main_news = $this->show_from_the_five_main_news ? true : false;
                 $news->save();
                 if ($this->tag_id) {
                     foreach ($this->tag_id as $tag) {
@@ -61,7 +64,7 @@ class CreateNewsComponent extends Component
                 if ($this->video_url) {
                     $news->media()->create(['url' => $this->video_url, 'type' => "video"]);
                 } else {
-                    if(!is_string($this->image)){
+                    if (!is_string($this->image)) {
                         $img = $this->image->store('news', 'public');
                         $news->media()->delete();
                         // $news->media()->create(['url' => $img]);
@@ -79,6 +82,9 @@ class CreateNewsComponent extends Component
                 $news->body = $this->body;
                 $news->team_id = $this->team_id;
                 $news->leauge_id = $this->leauge_id;
+                $news->show_as_main_news = $this->show_as_main_news ? true : false;
+                $news->show_in_most_read = $this->show_in_most_read ? true : false;
+                $news->show_from_the_five_main_news = $this->show_from_the_five_main_news ? true : false;
                 $news->created_by = Auth::user()->id;
                 $news->save();
                 if ($this->tag_id) {
@@ -92,7 +98,7 @@ class CreateNewsComponent extends Component
                 if ($this->video_url) {
                     $news->media()->create(['url' => $this->video_url, 'type' => "video"]);
                 } else {
-                    if(!is_string($this->image)){
+                    if (!is_string($this->image)) {
                         $img = $this->image->store('news', 'public');
                         $news->media()->create(['url' => $img]);
                     }

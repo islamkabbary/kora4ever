@@ -13,7 +13,7 @@ class BlockNewsComponent extends Component
     public function render()
     {
         $nameLeauge = Leauge::find($this->league)->name;
-        $news = News::all();
-        return view('livewire.block-news-component', ['news' => $news,'nameLeauge'=>$nameLeauge]);
+        $fourNews = News::take(4)->get();
+        return view('livewire.block-news-component', ['fourNews' => $fourNews, 'nameLeauge' => $nameLeauge]);
     }
 }

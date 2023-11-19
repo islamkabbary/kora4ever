@@ -8,11 +8,12 @@ use Livewire\Component;
 
 class LeftSideBarComponent extends Component
 {
+    public $league;
+
     public function render()
     {
-        $news = News::first();
-        $most = News::orderBy('id', 'desc')->take(5)->get();
-        $egyptianLeague = Leauge::where('name', 'Egyptian Premier League')->first();
-        return view('livewire.left-side-bar-component', ['most' => $most, 'news' => $news, 'egyptianLeague' => $egyptianLeague]);
+        $most = News::where('show_in_most_read', 1)->take(5)->get();
+        $egyptianLeague = Leauge::where('id', $this->league)->first();
+        return view('livewire.left-side-bar-component', ['most' => $most, 'egyptianLeague' => $egyptianLeague]);
     }
 }

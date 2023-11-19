@@ -510,7 +510,7 @@
             </div>
         </div>
         <div class="LeftTvSection">
-            @livewire('left-side-bar-component')
+            @livewire('left-side-bar-component', ['league' => $leauge->id])
         </div>
     </div>
     {{-- end content --}}

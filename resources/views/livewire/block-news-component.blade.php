@@ -10,74 +10,25 @@
         </div>
         <div>
             <div class="newHomeSections">
+                @foreach ($fourNews as $news)
                 <div class="newSectionView">
                     <div class="secondNewsBlockImage">
                         <a href="Article/26567/مران-الزمالك-مشاركة-شيكابالا-وحفني-وتأهيل-حازم-والمثلوثي-واوناجم">
                             <img class="secondNewsImage"
-                                src="{{ env('APP_URL') . '/storage/' . $news[0]->media[0]->url }}"
+                                src="{{ env('APP_URL') . '/storage/' . $news->media[0]->url }}"
                                 onerror="this.src='images/them/onerror/Large789x539.png';"
-                                title="{{ $news[0]->tags[0]->name }}" alt="{{ $news[0]->tags[0]->name }}">
+                                title="{{ $news->tags[0]->name }}" alt="{{ $news->tags[0]->name }}">
                         </a>
                     </div>
                     <div class="secondNewsTitleON">
                         <h3>
                             <a href="Article/26567/مران-الزمالك-مشاركة-شيكابالا-وحفني-وتأهيل-حازم-والمثلوثي-واوناجم">
-                                {{ $news[0]->title }}
+                                {{ $news->title }}
                             </a>
                         </h3>
                     </div>
                 </div>
-                <div class="newSectionView">
-                    <div class="secondNewsBlockImage">
-                        <a href="Article/26567/مران-الزمالك-مشاركة-شيكابالا-وحفني-وتأهيل-حازم-والمثلوثي-واوناجم">
-                            <img class="secondNewsImage"
-                                src="{{ env('APP_URL') . '/storage/' . $news[0]->media[0]->url }}"
-                                onerror="this.src='images/them/onerror/Large789x539.png';"
-                                title="{{ $news[0]->tags[0]->name }}" alt="{{ $news[0]->tags[0]->name }}">
-                        </a>
-                    </div>
-                    <div class="secondNewsTitleON">
-                        <h3>
-                            <a href="Article/26567/مران-الزمالك-مشاركة-شيكابالا-وحفني-وتأهيل-حازم-والمثلوثي-واوناجم">
-                                {{ $news[0]->title }}
-                            </a>
-                        </h3>
-                    </div>
-                </div>
-                <div class="newSectionView">
-                    <div class="secondNewsBlockImage">
-                        <a href="Article/26567/مران-الزمالك-مشاركة-شيكابالا-وحفني-وتأهيل-حازم-والمثلوثي-واوناجم">
-                            <img class="secondNewsImage"
-                                src="{{ env('APP_URL') . '/storage/' . $news[0]->media[0]->url }}"
-                                onerror="this.src='images/them/onerror/Large789x539.png';"
-                                title="{{ $news[0]->tags[0]->name }}" alt="{{ $news[0]->tags[0]->name }}">
-                        </a>
-                    </div>
-                    <div class="secondNewsTitleON">
-                        <h3>
-                            <a href="Article/26567/مران-الزمالك-مشاركة-شيكابالا-وحفني-وتأهيل-حازم-والمثلوثي-واوناجم">
-                                {{ $news[0]->title }}
-                            </a>
-                        </h3>
-                    </div>
-                </div>
-                <div class="newSectionView">
-                    <div class="secondNewsBlockImage">
-                        <a href="Article/26567/مران-الزمالك-مشاركة-شيكابالا-وحفني-وتأهيل-حازم-والمثلوثي-واوناجم">
-                            <img class="secondNewsImage"
-                                src="{{ env('APP_URL') . '/storage/' . $news[0]->media[0]->url }}"
-                                onerror="this.src='images/them/onerror/Large789x539.png';"
-                                title="{{ $news[0]->tags[0]->name }}" alt="{{ $news[0]->tags[0]->name }}">
-                        </a>
-                    </div>
-                    <div class="secondNewsTitleON">
-                        <h3>
-                            <a href="Article/26567/مران-الزمالك-مشاركة-شيكابالا-وحفني-وتأهيل-حازم-والمثلوثي-واوناجم">
-                                {{ $news[0]->title }}
-                            </a>
-                        </h3>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

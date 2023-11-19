@@ -62,25 +62,28 @@
                         </a>
                     </h4>
                     <div class="row">
-                        {{-- @foreach ($last as $last_post) --}}
+                        @php
+                            $last = App\Models\News::orderBy('id', 'desc')->take(3)->get();
+                        @endphp
+                        @foreach ($last as $last_post)
                             <div class="OneCollection">
                                 <div class="secondNewsBlockImage">
-                                    <a href="{{ route('Article', ['id' => $news->id]) }}">
-                                        <img src="{{ env('APP_URL') . '/storage/' . $news->media[0]->url }}"
+                                    <a href="{{ route('Article', ['id' => $last_post->id]) }}">
+                                        <img src="{{ env('APP_URL') . '/storage/' . $last_post->media[0]->url }}"
                                             onerror="this.src={{ asset('images/onerror/Large329x224.png') }}"
                                             class="OneCollectionImg">
                                     </a>
                                 </div>
                                 <div class="row OneCollectionBG">
                                     <h3 class="OneCollectionTitle">
-                                        <a href="{{ route('Article', ['id' => $news->id]) }}">
-                                            {{ $news->title }}
+                                        <a href="{{ route('Article', ['id' => $last_post->id]) }}">
+                                            {{ $last_post->title }}
                                         </a>
                                     </h3>
                                 </div>
                                 <div class="row ArticleDateBlock">
                                     <div class="row ArticleTagSmall">
-                                        @foreach ($news->tags->take(2) as $tag)
+                                        @foreach ($last_post->tags->take(2) as $tag)
                                             <div class="AOneTagSmall">
                                                 {{-- <a href="{{ route('TagNews', ['id' => $tag->id]) }}"> --}}
                                                     <p>{{ $tag->name }}</p>
@@ -92,77 +95,11 @@
                                 <div class="row ArticleDateBlock">
                                     <div class="row ArticleDate">
                                         <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                        <p>{{ $news->created_at->diffForHumans() }} </p>
+                                        <p>{{ $last_post->created_at->diffForHumans() }} </p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="OneCollection">
-                                <div class="secondNewsBlockImage">
-                                    <a href="{{ route('Article', ['id' => $news->id]) }}">
-                                        <img src="{{ env('APP_URL') . '/storage/' . $news->media[0]->url }}"
-                                            onerror="this.src={{ asset('images/onerror/Large329x224.png') }}"
-                                            class="OneCollectionImg">
-                                    </a>
-                                </div>
-                                <div class="row OneCollectionBG">
-                                    <h3 class="OneCollectionTitle">
-                                        <a href="{{ route('Article', ['id' => $news->id]) }}">
-                                            {{ $news->title }}
-                                        </a>
-                                    </h3>
-                                </div>
-                                <div class="row ArticleDateBlock">
-                                    <div class="row ArticleTagSmall">
-                                        @foreach ($news->tags->take(2) as $tag)
-                                            <div class="AOneTagSmall">
-                                                {{-- <a href="{{ route('TagNews', ['id' => $tag->id]) }}"> --}}
-                                                    <p>{{ $tag->name }}</p>
-                                                {{-- </a> --}}
-                                            </div>
-                                        @endforeach
-                                    </div>
-                                </div>
-                                <div class="row ArticleDateBlock">
-                                    <div class="row ArticleDate">
-                                        <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                        <p>{{ $news->created_at->diffForHumans() }} </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="OneCollection">
-                                <div class="secondNewsBlockImage">
-                                    <a href="{{ route('Article', ['id' => $news->id]) }}">
-                                        <img src="{{ env('APP_URL') . '/storage/' . $news->media[0]->url }}"
-                                            onerror="this.src={{ asset('images/onerror/Large329x224.png') }}"
-                                            class="OneCollectionImg">
-                                    </a>
-                                </div>
-                                <div class="row OneCollectionBG">
-                                    <h3 class="OneCollectionTitle">
-                                        <a href="{{ route('Article', ['id' => $news->id]) }}">
-                                            {{ $news->title }}
-                                        </a>
-                                    </h3>
-                                </div>
-                                <div class="row ArticleDateBlock">
-                                    <div class="row ArticleTagSmall">
-                                        @foreach ($news->tags->take(2) as $tag)
-                                            <div class="AOneTagSmall">
-                                                {{-- <a href="{{ route('TagNews', ['id' => $tag->id]) }}"> --}}
-                                                    <p>{{ $tag->name }}</p>
-                                                {{-- </a> --}}
-                                            </div>
-                                        @endforeach
-                                    </div>
-                                </div>
-                                <div class="row ArticleDateBlock">
-                                    <div class="row ArticleDate">
-                                        <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                        <p>{{ $news->created_at->diffForHumans() }} </p>
-                                    </div>
-                                </div>
-                            </div>
-                        {{-- @endforeach --}}
+                        @endforeach
                     </div>
                 </div>
                 {{-- @if ($video && $video->count() > 0)

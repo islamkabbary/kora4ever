@@ -12,18 +12,12 @@ class AllNewsComponent extends Component
     use WithPagination;
 
     public $posts;
-    protected $paginationTheme = 'bootstrap';
+    // protected $paginationTheme = 'bootstrap';
 
     public function render()
     {
-        // $news   = News::orderBy('created_at', 'DESC')->paginate(18);
-        $news   = News::orderBy('created_at', 'DESC')->first();
+        $news   = News::orderBy('created_at', 'DESC')->paginate(60);
         $leauges = Leauge::orderBy('id', 'asc')->take(3)->get();
-        return view('livewire.all-news-component',['news' => $news , 'leauges' => $leauges]);
-    }
-
-    public function paginationView()
-    {
-        return 'pagination';
+        return view('livewire.all-news-component',['all_news' => $news , 'leauges' => $leauges]);
     }
 }

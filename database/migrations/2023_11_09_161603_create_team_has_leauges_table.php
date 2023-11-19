@@ -25,7 +25,7 @@ return new class extends Migration
             $table->integer('ga');
             $table->integer('gd');
             $table->integer('points');
-            $table->foreignId('next')->constrained('teams')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('next')->constrained('teams')->nullable()->onUpdate('cascade')->onDelete('cascade');
             $table->string('group')->nullable();
             $table->timestamps();
         });
