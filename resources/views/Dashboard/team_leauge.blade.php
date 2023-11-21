@@ -3,6 +3,6 @@
 
 @section('title' , 'Teams Leauge')
 @section('content')
-@livewire('teams-leauge-component', [], key(1))
+@livewire('team-leauge-component', [], key(1))
 @endsection
 

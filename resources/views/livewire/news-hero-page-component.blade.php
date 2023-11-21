@@ -5,7 +5,7 @@
                 <div class="NewsRightBlock">
                     <div class="OneNews">
                         <div class="LeaguesNews">
-                            <a href="section/31/كأس-أمم-إفريقيا/1">
+                            <a href="{{ route('TagNews', ['id' => $main_news->tags[0]->id]) }}">
                                 <p>
                                     {{ $main_news->tags[0]->name }}
                                 </p>
@@ -29,7 +29,7 @@
                         @foreach ($five_main_news as $news)
                         <div class="OneNews">
                             <div class="LeaguesNews">
-                                <a href="section/31/كأس-أمم-إفريقيا/1">
+                                <a href="{{ route('TagNews', ['id' => $main_news->tags[0]->id]) }}">
                                     <p>
                                         {{ $news->tags[1]->name ? $news->tags[1]->name : $news->tags[0]->name }}
                                     </p>
@@ -56,7 +56,7 @@
                     @foreach ($threeNewsUnderMain as $news)
                     <div class="OneNews">
                         <div class="LeaguesNews">
-                            <a href="section/31/كأس-أمم-إفريقيا/1">
+                            <a href="{{ route('TagNews', ['id' => $news->tags[0]->id]) }}">
                                 <p>
                                     {{ $news->tags[0]->name ? $news->tags[0]->name : $news->tags[0]->name }}
                                 </p>

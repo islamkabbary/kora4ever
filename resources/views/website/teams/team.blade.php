@@ -2,117 +2,143 @@
 @section('mainContainer')
     {{-- start content --}}
     <input type="hidden" value="1" id="tabNum" />
-    <div class="row TV-writersBlockArea customHeder">
-        <div class="RightTvSection ">
+    <div class="row InnerContainer customHeder">
+        <div class="RightInner">
             <div class="row Team">
                 <div class="HeaderTeamCon">
                     <div class="row Head-Team">
                         <div class="LogoTeam">
-                            <img src="{{ env('APP_URL') . '/storage/' . $leauge->logo }}"
-                                alt="{{ __("messages.$leauge->name") }} 2021 - 2022" title="{{ __("messages.$leauge->name") }} 2021 - 2022"
-                               >
+                            <img src="{{ env('APP_URL') . '/storage/' . $team->logo }}"
+                                title="{{ __("messages.$team->name") }}" alt="{{ __("messages.$team->name") }}">
                         </div>
                         <div class="NameTeam">
                             <h3>
-                                {{ __("messages.$leauge->name") }} 2021 - 2022
+                                {{ __("messages.$team->name") }}
                             </h3>
-                            <span>
-                                تابع الدوري
-                            </span>
-                            <div class="ArticleShareArea" style="border:none">
-                                <div class="shareiconAbs">
-                                    <img src="{{ asset('images/shareicon.png') }}" alt="shareicon">
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <ul class="row listUl">
-                        <li>
-                            <a href="" title="Chtab1">
-                                أخبار
+                        <li class="AvtiveLi">
+                            <a href="" title="Teamtab1">
+                                نظرة عامة
                             </a>
                         </li>
                         <li>
-                            <a href="" title="Chtab3">
+                            <a href="" title="Teamtab2">
                                 مباريات
                             </a>
                         </li>
                         <li>
-                            <a href="" title="Chtab5">
-                                ترتيب الفرق
+                            <a href="" title="Teamtab3">
+                                أخبار
                             </a>
                         </li>
                     </ul>
                 </div>
-                <div class="AllTeamsBlockInners">
-                    <div class="swiperTeamsInners">
-                        <div class="swiper-wrapper">
-                            @foreach ($teams as $team)
-                                <div class="swiper-slide">
-                                    <div class="ImageSliderFixedHeight">
-                                        <a href="{{ route('team', ['id' => $team->id]) }}">
-                                        <img src="{{ asset($team->logo) }}" title="{{ __("messages.$team->name") }}"
-                                            alt="{{ __("messages.$team->name") }}">
-                                        </a>
-                                    </div>
-                                    <a href="#">{{ __("messages.$team->name") }}</a>
-                                </div>
-                            @endforeach
+            </div>
+            <div id="Teamtab1" class="TeamTabsBlock">
+                <ul class="row statsTeam">
+                </ul>
+                <div class="NumTeamOFCHamp">
+                    <div class="row newSectionHeadBlock">
+                        <div class="row newSectionHeadTitle">
+                            ترتيب {{ __("messages.$team->name") }}
                         </div>
                     </div>
-                    <div class="swiper-next"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
-                    <div class="swiper-prev"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
-                </div>
-            </div>
-            <div id="Chtab1" class="championshipsBlock ss">
-                <div class="championshipsNews">
-                    @foreach ($news as $post)
-                        <div class="SecondNews">
-                            <div class="secondNewsBlockImage">
-                                <a href="{{ route('Article', ['id' => $post->id]) }}">
-                                    <img src="{{ env('APP_URL') . '/storage/' . $post->media[0]->url }}"
-                                        class="OneSResultImage"
-                                        onerror="this.src='{{ asset('images/onerror/Large789x539.png') }}'"
-                                        title="{{ $post->title }}">
-                                </a>
-                            </div>
-                            <div class="secondNewsTitleON">
-                                <h3>
-                                    <a href="{{ route('Article', ['id' => $post->id]) }}">
-                                        {{ $post->title }}
-                                    </a>
-                                </h3>
-                                <div class="ArticleDateBlock">
-                                    <div class="row ArticleDate">
-                                        <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                        <p>{{ $post->created_at->diffForHumans() }}</p>
-                                    </div>
+                    @foreach ($leagues as $league)
+                        <div class="TableChamNad">
+                            <div class="row Head-Team">
+                                <div class="LogoTeam-League">
+                                    <img src="{{ env('APP_URL') . '/storage/' . $league->logo }}" alt="logo league">
                                 </div>
+                                @php
+                                    $result = \App\Models\TeamHasLeauge::where('team_id', $team->id)
+                                        ->where('leauge_id', $league->id)
+                                        ->first();
+                                @endphp
+                                <div class="NameTeam">
+                                    <h3>
+                                        <a href="#">
+                                            {{ __("messages.$team->name") }}
+                                        </a>
+                                    </h3>
+                                </div>
+                            </div>
+
+                            <div class="TeamsStatistics MatchPageStatistics">
+                                <ul class="row HeadStatistics">
+                                    <li>
+                                        <p>#</p>
+                                    </li>
+                                    <li>
+                                        <p>الفريق</p>
+                                    </li>
+                                    <li>
+                                        <p>ل</p>
+                                    </li>
+                                    <li>
+                                        <p>ف</p>
+                                    </li>
+                                    <li>
+                                        <p>ه</p>
+                                    </li>
+                                    <li>
+                                        <p>ت</p>
+                                    </li>
+                                    <li>
+                                        <p>له</p>
+                                    </li>
+                                    <li>
+                                        <p>عليه</p>
+                                    </li>
+                                    <li>
+                                        <p>فرق</p>
+                                    </li>
+                                    <li>
+                                        <p>ن</p>
+                                    </li>
+                                </ul>
                                 <div>
-                                    <div class="row ArticleTagSmall">
-                                        @if ($post->tags)
-                                            @foreach ($post->tags->take(2) as $tag)
-                                                <div class="AOneTagSmall">
-                                                    <a href="{{ route('TagNews', ['id' => $tag->id]) }}">
-                                                    <p>{{ $tag->name }} </p>
-                                                    </a>
-                                                </div>
-                                            @endforeach
-                                        @else
-                                            <div class="AOneTagSmall">
-                                                <a href="{{ route('TagNews', ['id' => 1]) }}">
-                                                <p>أخبار</p>
-                                                </a>
-                                            </div>
-                                        @endif
-                                    </div>
+                                    <ul class="row DetailsStatistics">
+                                        <li>
+                                            <p>2</p>
+                                        </li>
+                                        <li>
+                                            <a
+                                                href="{{ route('team', ['id' => $team->id]) }}">{{ __("messages.$team->name") }}</a>
+                                        </li>
+                                        <li>
+                                            <p>{{ $result->played }}</p>
+                                        </li>
+                                        <li>
+                                            <p>{{ $result->won }}</p>
+                                        </li>
+                                        <li>
+                                            <p>{{ $result->drawn }}</p>
+                                        </li>
+                                        <li>
+                                            <p>{{ $result->lost }}</p>
+                                        </li>
+                                        <li>
+                                            <p>{{ $result->ga }}</p>
+                                        </li>
+                                        <li>
+                                            <p>{{ $result->gd }}</p>
+                                        </li>
+                                        <li>
+                                            <p>{{ $result->gf }}</p>
+                                        </li>
+                                        <li>
+                                            <p>{{ $result->points }}</p>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
                     @endforeach
                 </div>
             </div>
-            <div id="Chtab3" class="championshipsBlock">
+            <div id="Teamtab2" class="TeamTabsBlock">
                 <div class="row ChMatchesH">
                     <div class="row MatchHeaderTitle">
                         <p> جميع المباريات</p>
@@ -120,89 +146,22 @@
                     <div class="filterNews">
                         <i class="fa fa-filter" aria-hidden="true"></i>
                         <div class="dropdown">
-                            <button class="dropbtn CHdropdownTeam">
-                                <p> الفرق</p>
+                            <button class="dropbtn TeamdropdownWeek ">
+                                <p> كل البطولات</p>
                             </button>
-                            <div class="dropdown-content" id="CHdropdownTeam1">
-                                <a href="{{ route('championship', ['id' => $leauge->id]) }}">All teams</a>
-                                @foreach ($teams as $teams)
-                                    <a href="{{ route('team', ['id' => $teams->id]) }}">
-                                    {{ __("messages.$teams->name") }}
-                                    </a>
+                            <div class="dropdown-content" id="TeamdropWeek1">
+                                <a href="/team/207/الأهلي?team=0"> كل البطولات</a>
+                                @foreach ($leagues as $leauge)
+                                    <a href="/team/207/الأهلي?league=1359"> {{ __('messages.' . $leauge->name) }} </a>
                                 @endforeach
                             </div>
                         </div>
                     </div>
                 </div>
-                <div style="position:relative">
-                    <div class="row Week-calendar">
-                        {{-- <div dir="rtl" class="swiper swiperWeeksBlocks">
-                            <ul class="swiper-wrapper swiper-WeekBlock ">
-                                <li class="swiper-slide">
-                                    <a href="championships/1400/الدوري-المصري-الممتاز?date=06/11/2022">
-                                        11 يونيو 2022
-                                    </a>
-                                </li>
-                                <li class="swiper-slide">
-                                    <a href="championships/1400/الدوري-المصري-الممتاز?date=06/12/2022">
-                                        12 يونيو 2022
-                                    </a>
-                                </li>
-                                <li class="swiper-slide">
-                                    <a href="championships/1400/الدوري-المصري-الممتاز?date=06/13/2022">
-                                        13 يونيو 2022
-                                    </a>
-                                </li>
-                                <li class="swiper-slide">
-                                    <a href="championships/1400/الدوري-المصري-الممتاز?date=06/14/2022">
-                                        14 يونيو 2022
-                                    </a>
-                                </li>
-                                <li class="swiper-slide">
-                                    <a href="championships/1400/الدوري-المصري-الممتاز?date=06/15/2022">
-                                        15 يونيو 2022
-                                    </a>
-                                </li>
-                                <li class="swiper-slide">
-                                    <a href="championships/1400/الدوري-المصري-الممتاز?date=06/16/2022">
-                                        16 يونيو 2022
-                                    </a>
-                                </li>
-                                <li class="swiper-slide">
-                                    <a href="championships/1400/الدوري-المصري-الممتاز?date=06/17/2022">
-                                        17 يونيو 2022
-                                    </a>
-                                </li>
-                                <li class="swiper-slide">
-                                    <a href="championships/1400/الدوري-المصري-الممتاز?date=06/18/2022">
-                                        18 يونيو 2022
-                                    </a>
-                                </li>
-                                <li class="swiper-slide">
-                                    <a href="championships/1400/الدوري-المصري-الممتاز?date=06/19/2022">
-                                        19 يونيو 2022
-                                    </a>
-                                </li>
-                            </ul>
-
-                            <div class="swiper-next swiper-next-WeekBlock"><i class="fa fa-chevron-right"
-                                    aria-hidden="true"></i></div>
-                            <div class="swiper-prev swiper-prev-WeekBlock"><i class="fa fa-chevron-left"
-                                    aria-hidden="true"></i></div>
-                        </div> --}}
-                        <div></div>
-                        {{-- <div class=" Match-calendar">
-                            <i class="fa fa-calendar" aria-hidden="true"></i>
-                        </div> --}}
-                    </div>
-                    <div class="row ">
-                        <div id="datepicker" class="calendar "></div>
-                    </div>
-                </div>
-                {{-- @if ($matches->count() > 0)
-                    <h4 class="CHNameleague">{{ __("messages.$leauge->name") }}</h4>
-                @endif
-                <div class=" divListMatch">
+                {{-- @php
+                    $allMatches['today'] = \App\Models\CreateMatch::where('date', Carbon\Carbon::today()->toDateString())->get();
+                @endphp --}}
+                {{-- <div class=" divListMatch">
                     <ul class="LICardMatch">
                         @if ($matches->count() > 0)
                             @foreach ($matches as $match)
@@ -294,7 +253,6 @@
                                                             <p> -- </p>
                                                         </div>
                                                         <div class="MPageCenterInCenter">
-                                                            <p>{{ $match->status = __('messages.start soon') }}</p>
                                                         </div>
                                                         <div class="MPageLeftInCenter">
                                                             <p> -- </p>
@@ -402,8 +360,7 @@
                             <li class="row" matchid="0">
                                 <div class="row newSectionHeadBlock">
                                     <div class="row newSectionHeadTitle">
-                                        <p class="text-center">
-                                            {{ __('messages.No Matches For This championship For Today') }}
+                                        <p class="text-center"> {{ __('messages.No Matches For This Team For Today') }}
                                         </p>
                                     </div>
                                 </div>
@@ -412,102 +369,71 @@
                     </ul>
                 </div> --}}
             </div>
-            <div id="Chtab5" class="championshipsBlock">
-                <div>
-                    <div class="row ChMatchesH">
-                        <div class="row MatchHeaderTitle">
-                            <p> ترتيب الفرق فى {{ __("messages.$leauge->name") }}</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="Group-Championships">
-                    <div class="head-Group">
-                        <a href="">
-                        </a>
-                    </div>
-                    <div class="TableChamNad">
-                        <div class="TeamsStatistics MatchPageStatistics">
-                            <ul class="row HeadStatistics">
-                                <li>
-                                    <p>الترتيب</p>
-                                </li>
-                                <li>
-                                    <p>الفريق</p>
-                                </li>
-                                <li>
-                                    <p>ل</p>
-                                </li>
-                                <li>
-                                    <p>ف</p>
-                                </li>
-                                <li>
-                                    <p>ه</p>
-                                </li>
-                                <li>
-                                    <p>ت</p>
-                                </li>
-                                <li>
-                                    <p>له</p>
-                                </li>
-                                <li>
-                                    <p>عليه</p>
-                                </li>
-                                <li>
-                                    <p>نقاط</p>
-                                </li>
-                            </ul>
-                            <div>
-                                @foreach ($table as $i => $team)
-                                    <ul class="row DetailsStatistics">
-                                        <li>
-                                            <p>{{ $i + 1 }}</p>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                @php
-                                                    $team_name = \App\Models\Team::find($team->team_id)->name;
-                                                @endphp
-                                                {{ __("messages.$team_name") }}
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">{{ $team->played }}</a>
-                                        </li>
-                                        <li>
-                                            <p>{{ $team->won }}</p>
-                                        </li>
-                                        <li>
-                                            <p>{{ $team->drawn }}</p>
-                                        </li>
-                                        <li>
-                                            <p>{{ $team->lost }}</p>
-                                        </li>
-                                        <li>
-                                            <p>{{ $team->gf }}</p>
-                                        </li>
-                                        <li>
-                                            <p>{{ $team->ga }}</p>
-                                        </li>
-                                        <li>
-                                            <p>{{ $team->gd }}</p>
-                                        </li>
-                                    </ul>
-                                @endforeach
-
+            <div id="Teamtab3" class="TeamTabsBlock">
+                @if (count($news) > 0)
+                    <div class="letestNewsTeam">
+                        <div class="row newSectionHeadBlock">
+                            <div class="row newSectionHeadTitle">
+                                <a href="">
+                                    آخر الأخبار
+                                </a>
                             </div>
                         </div>
+                        <div class="championshipsNews">
+                            @foreach ($news as $post)
+                                <div class="SecondNews">
+                                    <div class="secondNewsBlockImage">
+                                        <a href="{{ route('Article', ['id' => $post->id]) }}">
+                                            <img src="{{ env('APP_URL') . '/storage/' . $post->media[0]->url }}"
+                                                class="OneSResultImage" title="{{ $post->title }}">
+                                        </a>
+                                    </div>
+                                    <div class="secondNewsTitleON">
+                                        <h3>
+                                            <a href="{{ route('Article', ['id' => $post->id]) }}">
+                                                {{ $post->title }}
+                                            </a>
+                                        </h3>
+                                        <div>
+                                            <div class="row ArticleTagSmall">
+                                                @if ($post->tags)
+                                                    @foreach ($post->tags->take(2) as $tag)
+                                                        <div class="AOneTagSmall">
+                                                            <a href="{{ route('TagNews', ['id' => $tag->id]) }}">
+                                                            <p>{{ $tag->name }} </p>
+                                                            </a>
+                                                        </div>
+                                                    @endforeach
+                                                @else
+                                                    <div class="AOneTagSmall">
+                                                        <a href="{{ route('TagNews', ['id' => 1]) }}">
+                                                            <p>أخبار</p>
+                                                        </a>
+                                                    </div>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="ArticleDateBlock">
+                                            <div class="row ArticleDate">
+                                                <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                                <p> {{ $post->created_at->diffForHumans() }} </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div id="Chtab7" class="championshipsBlock">
-                <div class="row AlbumleftBlock">
-                    <div class="Noresult">
-                        <p> لا توجد البومات</p>
+                @else
+                    <div class="row newSectionHeadBlock">
+                        <div class="row newSectionHeadTitle">
+                            <p class="text-center"> {{ __('messages.No News For This Team For Now') }} </p>
+                        </div>
                     </div>
-                </div>
+                @endif
             </div>
         </div>
-        <div class="LeftTvSection">
+        <div class="LeftInner">
             @livewire('left-side-bar-component', ['league' => $leauge->id])
         </div>
     </div>

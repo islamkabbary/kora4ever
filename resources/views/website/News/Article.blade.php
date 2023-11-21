@@ -48,9 +48,9 @@
                 <div class="row ArticleTagsBlock clear">
                     @foreach ($news->tags as $tag)
                         <div class="AOneTagSmall">
-                            {{-- <a href="{{ route('TagNews', ['id' => $tag->id]) }}"> --}}
+                            <a href="{{ route('TagNews', ['id' => $tag->id]) }}">
                                 <p>{{ $tag->name }}</p>
-                            {{-- </a> --}}
+                            </a>
                         </div>
                     @endforeach
                 </div>
@@ -85,9 +85,9 @@
                                     <div class="row ArticleTagSmall">
                                         @foreach ($last_post->tags->take(2) as $tag)
                                             <div class="AOneTagSmall">
-                                                {{-- <a href="{{ route('TagNews', ['id' => $tag->id]) }}"> --}}
+                                                <a href="{{ route('TagNews', ['id' => $tag->id]) }}">
                                                     <p>{{ $tag->name }}</p>
-                                                {{-- </a> --}}
+                                                </a>
                                             </div>
                                         @endforeach
                                     </div>
@@ -154,7 +154,7 @@
             </div>
         </div>
         <div class="LeftInner fixedMostRead">
-            @livewire('left-side-bar-component')
+            @livewire('left-side-bar-component', ['league' => $news->leauge->id])
         </div>
         {{-- <script>
             $(document).ready(function() {

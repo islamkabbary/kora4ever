@@ -39,7 +39,8 @@
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
             <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
                 <a class="sidebar-brand brand-logo" href="{{ route('dashboard') }}"><img
-                    src="{{ asset('images/logokoraforever.png') }}" alt="logo" style="margin-top: 10px;margin-left: 50px;width: 80px;height: 70px;"/></a>
+                        src="{{ asset('images/logokoraforever.png') }}" alt="logo"
+                        style="margin-top: 10px;margin-left: 50px;width: 80px;height: 70px;" /></a>
                 <a class="sidebar-brand brand-logo-mini" href="{{ route('dashboard') }}">
                     {{-- <img src="{{ asset('assets/images/logo-mini.svg') }}" alt="logo" /> --}}
                 </a>
@@ -52,6 +53,15 @@
                             <i class="mdi mdi-speedometer"></i>
                         </span>
                         <span class="menu-title">Dashboard</span>
+                    </a>
+                </li>
+                {{-- News --}}
+                <li class="nav-item menu-items {{ Request::is('dashboard/create-news') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ url('dashboard/create-news') }}">
+                        <span class="menu-icon">
+                            <i class="mdi mdi-file-document-box"></i>
+                        </span>
+                        <span class="menu-title">News</span>
                     </a>
                 </li>
                 {{-- Create Matches --}}
@@ -81,24 +91,6 @@
                         <span class="menu-title">Teams</span>
                     </a>
                 </li>
-                {{-- Commentators --}}
-                {{-- <li class="nav-item menu-items {{ Request::is('dashboard/commentators') ? 'active' : '' }}">
-                    <a class="nav-link" href="{{ route('commentators.dashboard') }}">
-                        <span class="menu-icon">
-                            <i class="mdi mdi-soccer"></i>
-                        </span>
-                        <span class="menu-title">Commentators</span>
-                    </a>
-                </li> --}}
-                {{-- Channel --}}
-                {{-- <li class="nav-item menu-items {{ Request::is('dashboard/channel') ? 'active' : '' }}">
-                    <a class="nav-link" href="{{ route('channel.dashboard') }}">
-                        <span class="menu-icon">
-                            <i class="mdi mdi-video-switch"></i>
-                        </span>
-                        <span class="menu-title">Channel</span>
-                    </a>
-                </li> --}}
                 {{-- Teams Leauge --}}
                 {{-- <li class="nav-item menu-items {{ Request::is('dashboard/teams_leauge') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ url('dashboard/teams_leauge') }}">
@@ -108,15 +100,6 @@
                         <span class="menu-title">Teams Leauge</span>
                     </a>
                 </li> --}}
-                {{-- Post --}}
-                <li class="nav-item menu-items {{ Request::is('dashboard/create-news') ? 'active' : '' }}">
-                    <a class="nav-link" href="{{ url('dashboard/create-news') }}">
-                        <span class="menu-icon">
-                            <i class="mdi mdi-file-document-box"></i>
-                        </span>
-                        <span class="menu-title">News</span>
-                    </a>
-                </li>
                 {{-- Tag --}}
                 <li class="nav-item menu-items {{ Request::is('dashboard/tag') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('create_tags') }}">
@@ -124,6 +107,24 @@
                             <i class="mdi mdi-soccer"></i>
                         </span>
                         <span class="menu-title">Tag</span>
+                    </a>
+                </li>
+                {{-- Commentators --}}
+                <li class="nav-item menu-items {{ Request::is('dashboard/commentators') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('commentators.dashboard') }}">
+                        <span class="menu-icon">
+                            <i class="mdi mdi-soccer"></i>
+                        </span>
+                        <span class="menu-title">Commentators</span>
+                    </a>
+                </li>
+                {{-- Channel --}}
+                <li class="nav-item menu-items {{ Request::is('dashboard/channel') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('channel.dashboard') }}">
+                        <span class="menu-icon">
+                            <i class="mdi mdi-video-switch"></i>
+                        </span>
+                        <span class="menu-title">Channel</span>
                     </a>
                 </li>
                 {{-- TO WebSite --}}

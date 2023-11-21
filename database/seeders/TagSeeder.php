@@ -5,7 +5,6 @@ namespace Database\Seeders;
 use App\Models\Leauge;
 use App\Models\Tag;
 use App\Models\Team;
-use App\Models\Teams;
 use Illuminate\Database\Seeder;
 
 class TagSeeder extends Seeder
@@ -17,7 +16,7 @@ class TagSeeder extends Seeder
      */
     public function run()
     {
-        $names = Teams::all()->pluck('name')->toArray();
+        $names = Team::all()->pluck('name')->toArray();
 
         foreach ($names as $name) {
             Tag::create([

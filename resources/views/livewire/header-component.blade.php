@@ -92,32 +92,29 @@
 
             <ul class="row MainMenuUL">
                 <li class="firstLevel">
-                    <h2><a href="all_news.html" target="_self">أخبار</a></h2>
+                    <h2><a href="{{ route('all_news') }}" target="_self">أخبار</a></h2>
                     <ul>
-                        <li>
+                        {{-- <li>
                             <a href="Section/48/%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1-%D9%85%D8%B5%D8%B1%D9%8A%D8%A9/1"
                                 target="_self">
-                                أخبار مصرية
+                                أخبار م
                             </a>
+                        </li> --}}
+                        <li>
+                            <a href="{{ route('championship', ['id' => 9]) }}" target="_self">الدوري المصري</a>
                         </li>
                         <li>
-                            <a href="FakhrMasr/index" target="_self">
-                                محترفون
-                            </a>
+                            <a href="{{ route('championship', ['id' => 1]) }}" target="_parent">الدوري الانجليزي</a>
                         </li>
                         <li>
-                            <a href="Section/52/%D8%A7%D9%86%D8%AA%D9%82%D8%A7%D9%84%D8%A7%D8%AA/1" target="_self">
-                                انتقالات
-                            </a>
+                            <a href="{{ route('championship', ['id' => 3]) }}" target="_self">الدوري الاسباني</a>
                         </li>
                         <li>
-                            <a href="https://koraplus.com/Editor/Index" target="_self">
-                                مقالات
-                            </a>
+                            <a href="{{ route('championship', ['id' => 25]) }}" target="_self">الدوري السعودي</a>
                         </li>
                     </ul>
                 </li>
-                <li class="firstLevel">
+               {{-- <li class="firstLevel">
                     <h2><a href="section/35/كورة-مصرية/1" target="_parent">كورة مصرية</a></h2>
                     <ul>
                         <li>
@@ -144,7 +141,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="firstLevel">
+                 <li class="firstLevel">
                     <h2><a href="#" target="_parent">TV+</a></h2>
                     <ul>
                         <li>
@@ -381,7 +378,7 @@
                             </a>
                         </li>
                     </ul>
-                </li>
+                </li> --}}
             </ul>
         </div>
     </header>

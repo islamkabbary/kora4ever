@@ -27,6 +27,8 @@ Route::get('/all-news', [NewsController::class, "index"])->name('all_news');
 Route::get('/Article/{id}', [NewsController::class, "Article"])->name('Article');
 Route::get('/championship/{id}', [LeaugeController::class, "show"])->name('championship');
 Route::get('/championships', [LeaugeController::class, "index"])->name('all_championships');
+Route::get('/team/{id}', [TeamController::class, 'show'])->name('team');
+Route::get('/tag/{id}', [TagController::class, 'show'])->name('TagNews');
 
 // Dashboard
 Route::middleware(['auth:sanctum'])->get('/dashboard-match-live-team', function () {
@@ -46,15 +48,12 @@ Route::middleware(['auth:sanctum'])->group(function () {
         Route::get('/teams_leauge', function () {
             return view('Dashboard.team_leauge');
         })->name('teams_leauge.dashboard');
-        // Route::get('/test', function () {
-        //     return view('Dashboard.test');
-        // });
-        // Route::get('/channel', function () {
-        //     return view('Dashboard.channel');
-        // })->name('channel.dashboard');
+        Route::get('/channel', function () {
+            return view('Dashboard.channel');
+        })->name('channel.dashboard');
+        Route::get('/commentators', function () {
+            return view('Dashboard.commentators');
+        })->name('commentators.dashboard');
         // Route::get('/create-matches', [CreateMatchController::class, "create"])->name('create_matches');
-        // Route::get('/commentators', function () {
-        //     return view('Dashboard.commentators');
-        // })->name('commentators.dashboard');
     });
 });
