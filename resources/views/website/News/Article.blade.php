@@ -1,7 +1,21 @@
 @extends('website.master_website')
 @section('mainContainer')
+    <style>
+        @media (min-width: 768px) {
+            .customPageHiro {
+                margin-top: 100px;
+                padding: 0px 75px !important;
+            }
+        }
+        @media (min-width: 425px) {
+            .customPageHiro {
+                margin-top: 100px;
+                padding: 0px 20px;
+            }
+        }
+    </style>
     {{-- start content --}}
-    <div class="row InnerContainer" style="margin-top: 100px;padding: 0px 75px">
+    <div class="row InnerContainer customPageHiro">
         <div class="RightInner">
             <div class="articlebody" title="{{ $news->title }}" newsid="26557">
                 <div class="articleMainTitle">
@@ -11,7 +25,7 @@
                     <div class="ArticleTimeAndAuthor">
                         <div class="row AuthorIconBlock">
                             <i class="fa fa-pencil" aria-hidden="true"></i>
-                            <p> كتب : اسلام قباري </p>
+                            <p> كتب : {{ $news->created_by_user ? $news->created_by_user->name : 'إسلام قباري' }} </p>
                         </div>
                         <div class="row TimeIconBlock">
                             <i class="fa fa-clock-o" aria-hidden="true"></i>
@@ -63,7 +77,9 @@
                     </h4>
                     <div class="row">
                         @php
-                            $last = App\Models\News::orderBy('id', 'desc')->take(3)->get();
+                            $last = App\Models\News::orderBy('id', 'desc')
+                                ->take(3)
+                                ->get();
                         @endphp
                         @foreach ($last as $last_post)
                             <div class="OneCollection">
