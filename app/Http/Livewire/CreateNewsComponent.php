@@ -74,7 +74,8 @@ class CreateNewsComponent extends Component
                 Log::info("CreateNewsComponent" . $th->getMessage());
             }
             $this->clear();
-            $this->alert('success', "successfully updated");
+            return "success";
+            // $this->alert('success', "successfully updated");
         } else {
             try {
                 $news = new News;
@@ -103,8 +104,10 @@ class CreateNewsComponent extends Component
                         $news->media()->create(['url' => $img]);
                     }
                 }
-                $this->clear();
-                $this->alert('success', "successfully added");
+                // $this->clear();
+                dd(123);
+                return "success";
+                // $this->alert('success', "successfully added");
             } catch (\Throwable $th) {
                 Log::info("CreateNewsComponent" . $th->getMessage());
             }

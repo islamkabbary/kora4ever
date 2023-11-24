@@ -18,6 +18,6 @@ use App\Http\Livewire\CreateNewsComponent;
 */
 
 Route::post('login', [AuthController::class,'login']);
-Route::post('/create-news', [CreateNewsComponent::class, 'add']);
+Route::post('/create-news', [NewsController::class, 'create']);
 Route::post('logout', [AuthController::class,'logout']);
 Route::post('change-password', [AuthController::class,'change_password']);

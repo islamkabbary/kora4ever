@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class MatcheController extends Controller
 {
-    //
+    public function create()
+    {
+        try {
+            return view("Dashboard.create_match");
+        } catch (\Throwable $th) {
+        }
+    }
 }

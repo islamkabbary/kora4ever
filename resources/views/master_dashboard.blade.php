@@ -65,14 +65,14 @@
                     </a>
                 </li>
                 {{-- Create Matches --}}
-                {{-- <li class="nav-item menu-items {{ Request::is('dashboard/create-matches') ? 'active' : '' }}">
+                <li class="nav-item menu-items {{ Request::is('dashboard/create-matches') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('create_matches') }}">
                         <span class="menu-icon">
                             <i class="mdi mdi-playlist-play"></i>
                         </span>
                         <span class="menu-title"> Create Matches </span>
                     </a>
-                </li> --}}
+                </li>
                 {{-- leagues --}}
                 <li class="nav-item menu-items {{ Request::is('dashboard/leagues') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('create_leagues') }}">
@@ -128,14 +128,14 @@
                     </a>
                 </li>
                 {{-- TO WebSite --}}
-                {{-- <li class="nav-item menu-items">
+                <li class="nav-item menu-items">
                     <a class="nav-link" target="__blank" href="{{ url('/') }}">
                         <span class="menu-icon">
                             <i class="mdi mdi-file-document-box"></i>
                         </span>
                         <span class="menu-title">WebSite</span>
                     </a>
-                </li> --}}
+                </li>
             </ul>
         </nav>
         <!-- partial -->

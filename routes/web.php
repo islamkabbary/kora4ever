@@ -1,13 +1,13 @@
 <?php
 
-use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TagController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\LeaugeController;
-use App\Models\Leauge;
+use App\Http\Controllers\MatcheController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,6 +45,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
         //Team
         Route::get('/teams', [TeamController::class, "create"])->name('create_teams');
         //Team
+        Route::get('/create-matches', [MatcheController::class, "create"])->name('create_matches');
         Route::get('/teams_leauge', function () {
             return view('Dashboard.team_leauge');
         })->name('teams_leauge.dashboard');
@@ -54,6 +55,5 @@ Route::middleware(['auth:sanctum'])->group(function () {
         Route::get('/commentators', function () {
             return view('Dashboard.commentators');
         })->name('commentators.dashboard');
-        // Route::get('/create-matches', [CreateMatchController::class, "create"])->name('create_matches');
     });
 });
