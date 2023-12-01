@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Tag;
 use App\Models\News;
 use App\Models\Team;
+use App\Models\Matche;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -27,7 +28,7 @@ class TeamController extends Controller
                 $leagues[] = $leauge;
             }
         }
-        // $matches = CreateMatch::where('team1', $team->id)->orWhere('team2', $team->id)->get()->take(10);
+        $matches = Matche::where('team1', $team->id)->orWhere('team2', $team->id)->get();
         // $videos =  News::where('type', 'video')->with('tags')->whereHas(
         //     'tags',
         //     function ($query) use ($team) {
@@ -38,6 +39,6 @@ class TeamController extends Controller
         $news = News::where('team_id', $id)->get();
         // dd($news);
         // return view("team", compact('team', 'leagues', 'matches', 'news', 'videos'));
-        return view("website.teams.team", compact('team', 'leagues', 'news'));
+        return view("website.teams.team", compact('team', 'leagues', 'news','matches'));
     }
 }

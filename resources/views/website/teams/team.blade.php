@@ -158,10 +158,10 @@
                         </div>
                     </div>
                 </div>
-                {{-- @php
-                    $allMatches['today'] = \App\Models\CreateMatch::where('date', Carbon\Carbon::today()->toDateString())->get();
-                @endphp --}}
-                {{-- <div class=" divListMatch">
+                @php
+                    $allMatches['today'] = \App\Models\Matche::where('date', Carbon\Carbon::today()->toDateString())->get();
+                @endphp
+                <div class=" divListMatch">
                     <ul class="LICardMatch">
                         @if ($matches->count() > 0)
                             @foreach ($matches as $match)
@@ -171,7 +171,7 @@
                                             <div class="MPageRightOneMatch" id="MPageRightOneMatch_61152">
                                                 <div class="MPageImageOneMatchHeight">
                                                     @php
-                                                        $path = $match->teamOne->logos->pop()->path;
+                                                        $path = $match->teamOne->logo;
                                                         $name = $match->teamOne->name;
                                                     @endphp
                                                     <a href="">
@@ -272,7 +272,7 @@
                                             <div class="MPageLeftOneMatch" id="MPageLeftOneMatch_61152">
                                                 <div class="MPageImageOneMatchHeight">
                                                     @php
-                                                        $path2 = $match->teamTwo->logos->pop()->path;
+                                                        $path2 = $match->teamTwo->logo;
                                                         $name = $match->teamTwo->name;
                                                     @endphp
                                                     <a href="">
@@ -328,7 +328,7 @@
                                                         </li>
                                                         <li>
                                                             @php
-                                                                $name = \App\Models\Teams::find($one->team_id)->name;
+                                                                $name = \App\Models\Team::find($one->team_id)->name;
                                                             @endphp
                                                             <a href="">
                                                                 {{ __("messages.$name") }}
@@ -367,7 +367,7 @@
                             </li>
                         @endif
                     </ul>
-                </div> --}}
+                </div>
             </div>
             <div id="Teamtab3" class="TeamTabsBlock">
                 @if (count($news) > 0)

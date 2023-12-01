@@ -4199,6 +4199,7 @@ footer {
 
 .ChMatchesTeam {
     width: calc(100% - 10%);
+    /* width:100%; */
     align-self: center
 }
 
@@ -4250,7 +4251,7 @@ footer {
     display: none;
     width: calc(100% - 8%);
     background-color: #EFEFEF;
-    margin-right: 8%;
+    /* margin-right: 8%; */
     padding: 30px
 }
 
@@ -10361,7 +10362,7 @@ span.psw {
 @media (max-width: 425px){
     .customHeder {
         margin-top: 60px;
-        padding: 20px;
+        padding: 6px;
     }
 }
 @media (min-width: 801px) and (max-width: 1024px) {

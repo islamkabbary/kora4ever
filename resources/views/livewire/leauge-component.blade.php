@@ -26,7 +26,7 @@
                                 {{-- Type --}}
                                 <div class="form-group">
                                     <label for="exampleSelectGender">Leauge Type </label>
-                                    <select class="form-control" wire:model='type' id="exampleSelectGender">
+                                    <select class="form-control" wire:model.defer='type' id="exampleSelectGender">
                                         <option>Select Leauge Type</option>
                                         <option value="league"> League </option>
                                         <option value="cup"> Cup </option>
@@ -38,7 +38,7 @@
                                     @enderror
                                     {{-- Country --}}
                                     <div class="form-group mt-2">
-                                        <x-select2 id="country_id" wire:model='country_id' title="country">
+                                        <x-select2 id="country_id" wire:model.defer='country_id' title="country">
                                             @foreach (\App\Models\Country::all() as $country)
                                                 <option value="{{ $country->id }}">{{ $country->name }}</option>
                                             @endforeach

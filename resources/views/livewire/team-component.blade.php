@@ -8,7 +8,7 @@
                         <form class="forms-sample">
                             <div class="form-group">
                                 <label for="Name">Name</label>
-                                <input type="text" wire:model="name" class="form-control" placeholder="Name">
+                                <input type="text" wire:model.defer="name" class="form-control" placeholder="Name">
                                 @error('name')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
@@ -38,7 +38,7 @@
                             </div> --}}
 
                             <div class="form-group mt-2">
-                                <x-select2 id="leauge_id" multiple wire:model='leauge_id' title="Leauge">
+                                <x-select2 id="leauge_id" multiple wire:model.defer='leauge_id' title="Leauge">
                                     @foreach (\App\Models\Leauge::all() as $leauge)
                                         <option value="{{ $leauge->id }}">{{ $leauge->name }}</option>
                                     @endforeach

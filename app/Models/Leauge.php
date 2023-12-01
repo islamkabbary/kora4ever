@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
 class Leauge extends Model
 {
     use HasFactory;
@@ -16,6 +15,11 @@ class Leauge extends Model
 
     public function teams()
     {
-        return $this->belongsToMany(Team::class, 'team_has_leauges');
+        return $this->belongsToMany(Team::class, 'team_has_leauges')->withPivot('Played', 'won', 'drawn', 'lost', 'gf', 'ga', 'gd', 'points', 'next');
+    }
+
+    public function matches()
+    {
+        return $this->hasMany(Matche::class, 'leauge_id', 'id');
     }
 }

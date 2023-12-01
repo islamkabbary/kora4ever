@@ -8,9 +8,15 @@
                 <div class="HeaderTeamCon">
                     <div class="row Head-Team">
                         <div class="LogoTeam">
-                            <img src="{{ env('APP_URL') . '/storage/' . $leauge->logo }}"
-                                alt="{{ __("messages.$leauge->name") }} 2021 - 2022" title="{{ __("messages.$leauge->name") }} 2021 - 2022"
-                               >
+                            @if (Storage::exists($leauge->logo))
+                                <img src="{{ env('APP_URL') . '/storage/' . $leauge->logo }}"
+                                    alt="{{ __("messages.$leauge->name") }} 2021 - 2022"
+                                    title="{{ __("messages.$leauge->name") }} 2021 - 2022">
+                            @else
+                                <img src="{{ env('APP_URL') . '/' . $leauge->logo }}"
+                                    alt="{{ __("messages.$leauge->name") }} 2021 - 2022"
+                                    title="{{ __("messages.$leauge->name") }} 2021 - 2022">
+                            @endif
                         </div>
                         <div class="NameTeam">
                             <h3>
@@ -51,8 +57,8 @@
                                 <div class="swiper-slide">
                                     <div class="ImageSliderFixedHeight">
                                         <a href="{{ route('team', ['id' => $team->id]) }}">
-                                        <img src="{{ asset($team->logo) }}" title="{{ __("messages.$team->name") }}"
-                                            alt="{{ __("messages.$team->name") }}">
+                                            <img src="{{ asset($team->logo) }}" title="{{ __("messages.$team->name") }}"
+                                                alt="{{ __("messages.$team->name") }}">
                                         </a>
                                     </div>
                                     <a href="#">{{ __("messages.$team->name") }}</a>
@@ -70,10 +76,17 @@
                         <div class="SecondNews">
                             <div class="secondNewsBlockImage">
                                 <a href="{{ route('Article', ['id' => $post->id]) }}">
-                                    <img src="{{ env('APP_URL') . '/storage/' . $post->media[0]->url }}"
-                                        class="OneSResultImage"
-                                        onerror="this.src='{{ asset('images/onerror/Large789x539.png') }}'"
-                                        title="{{ $post->title }}">
+                                    @if (count($post->media) > 0 && Storage::exists($post->media[0]->url))
+                                        <img src="{{ env('APP_URL') . '/storage/' . $post->media[0]->url }}"
+                                            class="OneSResultImage"
+                                            onerror="this.src='{{ asset('images/onerror/Large789x539.png') }}'"
+                                            title="{{ $post->title }}">
+                                    @else
+                                        <img src="{{ asset('images/them/onerror/Large789x539.png') }}"
+                                            class="OneSResultImage"
+                                            onerror="this.src='{{ asset('images/them/onerror/Large789x539.png') }}'"
+                                            title="{{ $post->title }}">
+                                    @endif
                                 </a>
                             </div>
                             <div class="secondNewsTitleON">
@@ -94,14 +107,14 @@
                                             @foreach ($post->tags->take(2) as $tag)
                                                 <div class="AOneTagSmall">
                                                     <a href="{{ route('TagNews', ['id' => $tag->id]) }}">
-                                                    <p>{{ $tag->name }} </p>
+                                                        <p>{{ $tag->name }} </p>
                                                     </a>
                                                 </div>
                                             @endforeach
                                         @else
                                             <div class="AOneTagSmall">
                                                 <a href="{{ route('TagNews', ['id' => 1]) }}">
-                                                <p>أخبار</p>
+                                                    <p>أخبار</p>
                                                 </a>
                                             </div>
                                         @endif
@@ -127,7 +140,7 @@
                                 <a href="{{ route('championship', ['id' => $leauge->id]) }}">All teams</a>
                                 @foreach ($teams as $teams)
                                     <a href="{{ route('team', ['id' => $teams->id]) }}">
-                                    {{ __("messages.$teams->name") }}
+                                        {{ __("messages.$teams->name") }}
                                     </a>
                                 @endforeach
                             </div>
@@ -199,7 +212,7 @@
                         <div id="datepicker" class="calendar "></div>
                     </div>
                 </div>
-                {{-- @if ($matches->count() > 0)
+                @if ($matches->count() > 0)
                     <h4 class="CHNameleague">{{ __("messages.$leauge->name") }}</h4>
                 @endif
                 <div class=" divListMatch">
@@ -212,7 +225,7 @@
                                             <div class="MPageRightOneMatch" id="MPageRightOneMatch_61152">
                                                 <div class="MPageImageOneMatchHeight">
                                                     @php
-                                                        $path = $match->teamOne->logos->pop()->path;
+                                                        $path = $match->teamOne->logo;
                                                         $name = $match->teamOne->name;
                                                     @endphp
                                                     <a href="">
@@ -228,7 +241,8 @@
                                                 </p>
                                             </div>
                                             <div class="MPageCenterOneMatch">
-                                                @if (date('H:i') >= date('H:i', strtotime(Carbon\Carbon::parse($match->time)->subMinutes(30))) && $match->time >= date('H:i'))
+                                                @if (date('H:i') >= date('H:i', strtotime(Carbon\Carbon::parse($match->time)->subMinutes(30))) &&
+                                                        $match->time >= date('H:i'))
                                                     <div class="row MPageCenterBlockInCenter">
                                                         <div class="MPageRightInCenter">
                                                             <p> -- </p>
@@ -314,7 +328,7 @@
                                             <div class="MPageLeftOneMatch" id="MPageLeftOneMatch_61152">
                                                 <div class="MPageImageOneMatchHeight">
                                                     @php
-                                                        $path2 = $match->teamTwo->logos->pop()->path;
+                                                        $path2 = $match->teamTwo->logo;
                                                         $name = $match->teamTwo->name;
                                                     @endphp
                                                     <a href="">
@@ -370,7 +384,7 @@
                                                         </li>
                                                         <li>
                                                             @php
-                                                                $name = \App\Models\Teams::find($one->team_id)->name;
+                                                                $name = \App\Models\Team::find($one->team_id)->name;
                                                             @endphp
                                                             <a href="">
                                                                 {{ __("messages.$name") }}
@@ -410,7 +424,7 @@
                             </li>
                         @endif
                     </ul>
-                </div> --}}
+                </div>
             </div>
             <div id="Chtab5" class="championshipsBlock">
                 <div>

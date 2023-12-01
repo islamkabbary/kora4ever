@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\News;
 use App\Models\Leauge;
-use Illuminate\Http\Request;
+use App\Models\Matche;
 use App\Models\TeamHasLeauge;
 
 class LeaugeController extends Controller
@@ -21,10 +22,10 @@ class LeaugeController extends Controller
         try {
             $leauge = Leauge::findOrFail($id);
             $teams = $leauge->teams;
-            // $matches = CreateMatch::where('leauge_id', $leauge->id)->where('date', Carbon::today()->toDateString())->get();
+            $matches = Matche::where('leauge_id', $leauge->id)->where('date', Carbon::today()->toDateString())->get();
             $news   = News::where('leauge_id', $id)->get();
             $table = TeamHasLeauge::where('leauge_id', $id)->orderBy('points', 'DESC')->get();
-            return view('website.championships.championship', ['leauge' => $leauge, 'teams' => $teams, 'news' => $news, 'table' => $table]);
+            return view('website.championships.championship', ['leauge' => $leauge, 'teams' => $teams, 'news' => $news, 'table' => $table, 'matches' => $matches]);
         } catch (\Throwable $th) {
         }
     }

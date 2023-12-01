@@ -6,10 +6,11 @@ use App\Models\Team;
 use App\Models\Matche;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class CreateMatcheComponent extends Component
 {
-    use WithFileUploads;
+    use WithFileUploads, LivewireAlert;
 
     public $team1;
     public $team2;
@@ -25,7 +26,6 @@ class CreateMatcheComponent extends Component
     public $channel_id;
     public $match_id;
 
-    protected $listeners = ['match_updated'];
     protected $rules = [
         'team1' => 'required|exists:teams,id',
         'team2' => 'required|exists:teams,id',
@@ -42,7 +42,6 @@ class CreateMatcheComponent extends Component
     public function render()
     {
         if ($this->leauge_id) {
-            // $teams = Team::where('leauge_id',$this->leauge_id);
             $teams = Team::whereHas('leauges', function ($q) {
                 $q->where('leauge_id', $this->leauge_id);
             })->get();
@@ -75,8 +74,8 @@ class CreateMatcheComponent extends Component
             $today->url_type = $this->url_type;
             $today->status = $this->status;
             $today->save();
-            $this->cleare();
-            $this->emit('match_updated');
+            $this->alert('success', "successfully updated");
+            $this->clear();
         } else {
             $today = new Matche();
             $today->team1 = $this->team1;
@@ -92,11 +91,12 @@ class CreateMatcheComponent extends Component
             $today->status = $this->status;
             $today->url_type = $this->url_type;
             $today->save();
-            $this->cleare();
+            $this->alert('success', "successfully added");
+            $this->clear();
         }
     }
 
-    public function cleare()
+    public function clear()
     {
         $this->team1 = null;
         $this->team2 = null;
