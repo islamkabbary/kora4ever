@@ -367,7 +367,7 @@
             </div>
         </div>
         <div class="LeftInner">
-            @livewire('left-side-bar-component', ['league' => $match->leauge->id])
+            @livewire('left-side-bar-component', ['league' => $match->leauge->id ?? 9])
         </div>
     </div>
 @endsection
