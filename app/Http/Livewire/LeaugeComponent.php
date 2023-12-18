@@ -37,7 +37,7 @@ class LeaugeComponent extends Component
             $leauge->type = $this->type;
             $leauge->country_id = $this->country_id;
             if (!is_string($this->image)) {
-                $leauge->logo = $this->image->store('Leauges', 'public');
+                $leauge->logo = $this->image->store('leauges', 'public');
             }
             $leauge->save();
             $this->clear();
@@ -48,7 +48,7 @@ class LeaugeComponent extends Component
             $leauge->name = $this->name;
             $leauge->type = $this->type;
             $leauge->country_id = $this->country_id;
-            $leauge->logo = $this->image->store('Leauges', 'public');
+            $leauge->logo = $this->image->store('leauges', 'public');
             $leauge->save();
             $this->clear();
             $this->alert('success', "successfully added");

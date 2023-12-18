@@ -3,13 +3,16 @@
         <div class="RightTvSection ">
             <div class="NewBlock">
                 <div class="NewsRightBlock">
+                    @if ($main_news)
                     <div class="OneNews">
                         <div class="LeaguesNews">
+                            @if ($main_news && $main_news->tags)
                             <a href="{{ route('TagNews', ['id' => $main_news->tags[0]->id]) }}">
                                 <p>
                                     {{ $main_news->tags[0]->name }}
                                 </p>
                             </a>
+                            @endif
                         </div>
                         <a href="{{ route('Article', ['id' => $main_news->id]) }}">
                             <img src="{{ env('APP_URL') . '/storage/' . $main_news->media[0]->url }}"
@@ -25,6 +28,7 @@
                             <span class="overlay"></span>
                         </a>
                     </div>
+                    @endif
                     <div class="RTwoNewsLeft">
                         @foreach ($five_main_news as $news)
                         <div class="OneNews">

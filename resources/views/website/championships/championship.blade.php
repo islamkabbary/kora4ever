@@ -8,19 +8,12 @@
                 <div class="HeaderTeamCon">
                     <div class="row Head-Team">
                         <div class="LogoTeam">
-                            @if (Storage::exists($leauge->logo))
-                                <img src="{{ env('APP_URL') . '/storage/' . $leauge->logo }}"
-                                    alt="{{ __("messages.$leauge->name") }} 2021 - 2022"
-                                    title="{{ __("messages.$leauge->name") }} 2021 - 2022">
-                            @else
-                                <img src="{{ env('APP_URL') . '/' . $leauge->logo }}"
-                                    alt="{{ __("messages.$leauge->name") }} 2021 - 2022"
-                                    title="{{ __("messages.$leauge->name") }} 2021 - 2022">
-                            @endif
+                            <img src="{{ env('APP_URL') . '/storage/' . $leauge->logo }}" alt="{{ $leauge->name }}"
+                                title="{{ $leauge->name }}">
                         </div>
                         <div class="NameTeam">
                             <h3>
-                                {{ __("messages.$leauge->name") }} 2021 - 2022
+                                {{ $leauge->name }}
                             </h3>
                             <span>
                                 تابع الدوري

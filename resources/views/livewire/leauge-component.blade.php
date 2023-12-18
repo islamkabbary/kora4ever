@@ -82,7 +82,7 @@
                                                 <td>
                                                     @if ($leauge->logo)
                                                         <img style="width: 100px;height: 80px;border-radius: 0px"
-                                                            src='{{ env('APP_URL') . '/storage/' . $leauge->logo }}'>
+                                                            src='{{ env('APP_URL') . 'storage/' . $leauge->logo }}'>
                                                     @endif
                                                 </td>
                                                 <td> {{ $leauge->type }} </td>
