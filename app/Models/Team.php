@@ -11,6 +11,6 @@ class Team extends Model
 
     public function leauges()
     {
-        return $this->belongsToMany(Leauge::class, 'team_has_leauges');
+        return $this->belongsToMany(Leauge::class);
     }
 }

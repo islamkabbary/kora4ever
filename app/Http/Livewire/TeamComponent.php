@@ -52,25 +52,7 @@ class TeamComponent extends Component
                 $team->logo = $this->logo->store("images/team-logos", 'public');
             }
             $team->save();
-            $team->leauges()->sync($this->leauge_id);
-            // foreach ($this->leauge_id as $leag) {
-            //     // dd(in_array($team->leauges->pluck('id')->toArray(),$leag));
-            //     // if(in_array($team->leauges->pluck('id')->toArray(),$leag)){
-
-            //     // }
-            //     TeamHasLeauge::create([
-            //         'team_id' => $team->id,
-            //         'leauge_id' => $leag,
-            //         'played' => 0,
-            //         'won' => 0,
-            //         'drawn' => 0,
-            //         'lost' => 0,
-            //         'gf' => 0,
-            //         'ga' => 0,
-            //         'gd' => 0,
-            //         'points' => 0,
-            //     ]);
-            // }
+            $team->leauges()->attach($this->leauge_id);
             $this->clear();
             $this->alert('success', "successfully updated");
         } else {
@@ -79,20 +61,7 @@ class TeamComponent extends Component
             $team->name = $this->name;
             $team->logo = $this->logo->store("images/team-logos", 'public');
             $team->save();
-            foreach ($this->leauge_id as $leag) {
-                TeamHasLeauge::create([
-                    'team_id' => $team->id,
-                    'leauge_id' => $leag,
-                    'played' => 0,
-                    'won' => 0,
-                    'drawn' => 0,
-                    'lost' => 0,
-                    'gf' => 0,
-                    'ga' => 0,
-                    'gd' => 0,
-                    'points' => 0,
-                ]);
-            }
+            $team->leauges()->attach($this->leauge_id);
             $this->clear();
             $this->alert('success', "successfully added");
         }
