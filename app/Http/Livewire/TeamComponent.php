@@ -44,6 +44,7 @@ class TeamComponent extends Component
 
     public function save()
     {
+        $this->validate();
         $nameLeauge = Leauge::find($this->leauge_id)->name;
         if ($this->team_id) {
             $team = Team::find($this->team_id);
