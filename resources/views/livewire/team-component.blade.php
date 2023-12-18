@@ -1,5 +1,4 @@
 <div>
-    @dump(123)
     <div class="container">
         <div class="row">
             <div class="col-md-10 grid-margin stretch-card mx-auto">
@@ -78,7 +77,7 @@
                             <td class="text-center">
                                 @if ($team->logo)
                                     <img style="width: 100px;height: 80px;border-radius: 0px"
-                                        src='{{ env('APP_URL') . '/storage/' . $team->logo }}'>
+                                        src='{{ env('APP_URL') . 'storage/' . $team->logo }}'>
                                 @endif
                             </td>
                             <td class="text-center">

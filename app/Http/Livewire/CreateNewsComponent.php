@@ -105,7 +105,6 @@ class CreateNewsComponent extends Component
                     }
                 }
                 // $this->clear();
-                dd(123);
                 return "success";
                 // $this->alert('success', "successfully added");
             } catch (\Throwable $th) {

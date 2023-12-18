@@ -18,7 +18,7 @@
                                     $name = $yesterday->leauge->name;
                                 @endphp
                                 <h3 class="TOPInCenterA">
-                                    {{ __("messages.$name") }}
+                                    {{ $name }}
                                 </h3>
                             </a>
                         </div>
@@ -28,11 +28,11 @@
                                     <div class="ImageOneMatchHeight">
                                         <img src="{{ $yesterday->teamOne->logo }}"
                                             onerror="this.src='images/mainlogo.png';"
-                                            title="{{ __('messages.' . $yesterday->teamOne['name']) }}"
-                                            alt="{{ __('messages.' . $yesterday->teamOne['name']) }}">
+                                            title="{{ $yesterday->teamOne['name'] }}"
+                                            alt="{{ $yesterday->teamOne['name'] }}">
                                     </div>
                                     <p class="MatchClubName">
-                                        {{ __('messages.' . $yesterday->teamOne['name']) }}
+                                        {{ $yesterday->teamOne['name'] }}
                                     </p>
                                 </div>
                                 <div class="CenterOneMatch">
@@ -54,12 +54,12 @@
                                     <div class="ImageOneMatchHeight">
                                         <img src="{{ $yesterday->teamTwo->logo }}"
                                             onerror="this.src='images/mainlogo.png';"
-                                            title="{{ __('messages.' . $yesterday->teamTwo['name']) }}"
-                                            alt="{{ __('messages.' . $yesterday->teamTwo['name']) }}"
+                                            title="{{ $yesterday->teamTwo['name'] }}"
+                                            alt="{{ $yesterday->teamTwo['name'] }}"
                                             class="gmImageflag">
                                     </div>
                                     <p class="MatchClubName">
-                                        {{ __('messages.' . $yesterday->teamTwo['name']) }}
+                                        {{ $yesterday->teamTwo['name']}}
                                     </p>
                                 </div>
                             </div>
@@ -81,7 +81,7 @@
                         <div class="CenterTOPInCenter">
                             <a href="{{ route('championship', ['id' => $today->leauge->id]) }}">
                                 <h3 class="TOPInCenterA">
-                                    {{ __('messages.' . $today->leauge->name) }}
+                                    {{ $today->leauge->name }}
                                 </h3>
                             </a>
                         </div>
@@ -91,11 +91,11 @@
                                     <div class="ImageOneMatchHeight">
                                         <img src="{{ $today->teamOne->logo }}"
                                             onerror="this.src='images/them/mainlogo.png';"
-                                            title="{{ __('messages.' . $today->teamOne['name']) }}"
-                                            alt="{{ __('messages.' . $today->teamOne['name']) }}">
+                                            title="{{ $today->teamOne['name'] }}"
+                                            alt="{{ $today->teamOne['name'] }}">
                                     </div>
                                     <p class="MatchClubName">
-                                        {{ __('messages.' . $today->teamOne['name']) }}
+                                        {{ $today->teamOne['name'] }}
                                     </p>
                                 </div>
                                 @if (date('H:i') >= date('H:i', strtotime(Carbon\Carbon::parse($today->time)->subMinutes(30))) &&
