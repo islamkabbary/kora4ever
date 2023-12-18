@@ -3,11 +3,15 @@
 namespace App\Http\Livewire;
 
 use App\Models\Team;
+use App\Models\Leauge;
 use Livewire\Component;
+use App\Helpers\FileHelper;
 use Livewire\WithPagination;
 use App\Models\TeamHasLeauge;
 use Livewire\WithFileUploads;
+use Illuminate\Support\Facades\Storage;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
+
 class TeamComponent extends Component
 {
     use WithFileUploads, WithPagination, LivewireAlert;
@@ -21,7 +25,7 @@ class TeamComponent extends Component
 
     protected $rules = [
         'name' => 'required|max:25',
-        'logo' => 'required',
+        'logo' => 'required|image|mimes:jpeg,png,jpg,gif|max:1024',
         "leauge_id" => 'required',
     ];
 
@@ -40,33 +44,41 @@ class TeamComponent extends Component
 
     public function save()
     {
+        $nameLeauge = Leauge::find($this->leauge_id)->name;
         if ($this->team_id) {
             $team = Team::find($this->team_id);
             $team->name = $this->name;
-            $team->logo = $this->logo;
-            $team->save();
-            foreach ($this->leauge_id as $leag) {
-                TeamHasLeauge::create([
-                    'team_id' => $team->id,
-                    'leauge_id' => $leag,
-                    'played' => 0,
-                    'won' => 0,
-                    'drawn' => 0,
-                    'lost' => 0,
-                    'gf' => 0,
-                    'ga' => 0,
-                    'gd' => 0,
-                    'points' => 0,
-                    'next' => $team->id,
-                ]);
+            if (!Storage::exists('public/' . $this->logo)) {
+                $team->logo = $this->logo->store("images/team-logos/$nameLeauge", 'public');
             }
+            $team->save();
+            $team->leauges()->sync($this->leauge_id);
+            // foreach ($this->leauge_id as $leag) {
+            //     // dd(in_array($team->leauges->pluck('id')->toArray(),$leag));
+            //     // if(in_array($team->leauges->pluck('id')->toArray(),$leag)){
+
+            //     // }
+            //     TeamHasLeauge::create([
+            //         'team_id' => $team->id,
+            //         'leauge_id' => $leag,
+            //         'played' => 0,
+            //         'won' => 0,
+            //         'drawn' => 0,
+            //         'lost' => 0,
+            //         'gf' => 0,
+            //         'ga' => 0,
+            //         'gd' => 0,
+            //         'points' => 0,
+            //         'next' => $team->id,
+            //     ]);
+            // }
             $this->clear();
             $this->alert('success', "successfully updated");
         } else {
             $this->validate();
             $team = new Team();
             $team->name = $this->name;
-            $team->logo = $this->logo;
+            $team->logo = $this->logo->store("images/team-logos/$nameLeauge", 'public');
             $team->save();
             foreach ($this->leauge_id as $leag) {
                 TeamHasLeauge::create([
@@ -91,12 +103,11 @@ class TeamComponent extends Component
     {
         $this->name = null;
         $this->logo = null;
-        $this->leauge_id = [];
+        $this->emit('reset');
     }
     function edit($team_id)
     {
         $team = Team::find($team_id);
-        // dd($team->leauges->pluck('id')->toArray());
         $this->team_id = $team->id;
         $this->name = $team->name;
         $this->logo = $team->logo;
@@ -106,5 +117,6 @@ class TeamComponent extends Component
     function delete($team_id)
     {
         Team::destroy($team_id);
+        $this->alert('success', "successfully deleted");
     }
 }
