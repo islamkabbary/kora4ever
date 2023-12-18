@@ -44,13 +44,12 @@ class TeamComponent extends Component
 
     public function save()
     {
-        $this->validate();
-        $nameLeauge = Leauge::find($this->leauge_id)->name;
         if ($this->team_id) {
+            $this->validate();
             $team = Team::find($this->team_id);
             $team->name = $this->name;
             if (!Storage::exists('public/' . $this->logo)) {
-                $team->logo = $this->logo->store("images/team-logos/$nameLeauge", 'public');
+                $team->logo = $this->logo->store("images/team-logos", 'public');
             }
             $team->save();
             $team->leauges()->sync($this->leauge_id);
@@ -79,7 +78,7 @@ class TeamComponent extends Component
             $this->validate();
             $team = new Team();
             $team->name = $this->name;
-            $team->logo = $this->logo->store("images/team-logos/$nameLeauge", 'public');
+            $team->logo = $this->logo->store("images/team-logos", 'public');
             $team->save();
             foreach ($this->leauge_id as $leag) {
                 TeamHasLeauge::create([
