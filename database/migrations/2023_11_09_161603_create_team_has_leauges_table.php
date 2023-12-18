@@ -25,7 +25,7 @@ return new class extends Migration
             $table->integer('ga')->default(0);
             $table->integer('gd')->default(0);
             $table->integer('points')->default(0);
-            $table->foreignId('next')->constrained('teams')->nullable();
+            // $table->foreignId('next')->constrained('teams')->nullable();
             $table->string('group')->nullable();
             $table->timestamps();
         });
