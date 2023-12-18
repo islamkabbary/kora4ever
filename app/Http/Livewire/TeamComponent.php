@@ -69,7 +69,6 @@ class TeamComponent extends Component
             //         'ga' => 0,
             //         'gd' => 0,
             //         'points' => 0,
-            //         'next' => $team->id,
             //     ]);
             // }
             $this->clear();
@@ -92,7 +91,6 @@ class TeamComponent extends Component
                     'ga' => 0,
                     'gd' => 0,
                     'points' => 0,
-                    'next' => $team->id,
                 ]);
             }
             $this->clear();
