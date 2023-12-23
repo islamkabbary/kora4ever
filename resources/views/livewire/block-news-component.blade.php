@@ -15,9 +15,8 @@
                     <div class="secondNewsBlockImage">
                         <a href="Article/26567/مران-الزمالك-مشاركة-شيكابالا-وحفني-وتأهيل-حازم-والمثلوثي-واوناجم">
                             <img class="secondNewsImage"
-                                src="{{ env('APP_URL') . '/storage/' . $news->media[0]->url }}"
-                                onerror="this.src='images/them/onerror/Large789x539.png';"
-                                title="{{ $news->tags[0]->name }}" alt="{{ $news->tags[0]->name }}">
+                                src="{{ env('APP_URL') . 'storage/' . $news->media->first()->url }}"
+                                onerror="this.src='images/them/onerror/Large789x539.png';">
                         </a>
                     </div>
                     <div class="secondNewsTitleON">
