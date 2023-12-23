@@ -33,12 +33,9 @@
                     <div class="RTwoNewsLeft">
                         @foreach ($five_main_news as $news)
                             <div class="OneNews">
-                                @php
-                                    Log::info($main_news->tags)
-                                @endphp
                                 <div class="LeaguesNews">
-                                    @if (count($main_news->tags) > 0)
-                                    <a href="{{ route('TagNews', ['id' => $main_news->tags->first()->id]) }}">
+                                    @if (count($news->tags) > 0)
+                                    <a href="{{ route('TagNews', ['id' => $news->tags->first()->id]) }}">
                                         <p>
                                             {{ $news->tags ? $news->tags->first()->name : $news->tags->first()->name }}
                                         </p>
@@ -46,7 +43,7 @@
                                     @endif
                                 </div>
                                 <a href="{{ route('Article', ['id' => $news->id]) }}">
-                                    @if (count($main_news->media) > 0)
+                                    @if (count($news->media) > 0)
                                     <img src="{{ env('APP_URL') . 'storage/' . $news->media->first()->url }}">
                                     @endif
                                 </a>
@@ -67,7 +64,7 @@
                     @foreach ($threeNewsUnderMain as $news)
                         <div class="OneNews">
                             <div class="LeaguesNews">
-                                @if (count($main_news->tags) > 0)
+                                @if (count($news->tags) > 0)
                                 <a href="{{ route('TagNews', ['id' => $news->tags->first()->id]) }}">
                                     <p>
                                         {{ $news->tags->first()->name ? $news->tags->first()->name : $news->tags->first()->name }}
@@ -76,7 +73,7 @@
                                 @endif
                             </div>
                             <a href="{{ route('Article', ['id' => $news->id]) }}">
-                                @if (count($main_news->media) > 0)
+                                @if (count($news->media) > 0)
                                 <img src="{{ env('APP_URL') . 'storage/' . $news->media->first()->url }}">
                                 @endif
                             </a>
