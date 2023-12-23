@@ -30,10 +30,12 @@
                             </a>
                         </div>
                     @endif
-                    @dd($five_main_news)
                     <div class="RTwoNewsLeft">
                         @foreach ($five_main_news as $news)
                             <div class="OneNews">
+                                @php
+                                    Log::info($main_news->tags)
+                                @endphp
                                 <div class="LeaguesNews">
                                     @if (count($main_news->tags) > 0)
                                     <a href="{{ route('TagNews', ['id' => $main_news->tags->first()->id]) }}">
