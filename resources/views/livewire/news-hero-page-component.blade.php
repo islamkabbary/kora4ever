@@ -30,6 +30,7 @@
                             </a>
                         </div>
                     @endif
+                    @dd($five_main_news)
                     <div class="RTwoNewsLeft">
                         @foreach ($five_main_news as $news)
                             <div class="OneNews">
