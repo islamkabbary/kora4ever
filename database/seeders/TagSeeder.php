@@ -2,10 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\Leauge;
 use App\Models\Tag;
 use App\Models\Team;
+use App\Models\Leauge;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class TagSeeder extends Seeder
 {
@@ -16,6 +17,7 @@ class TagSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('tags')->delete();
         $names = Team::all()->pluck('name')->toArray();
 
         foreach ($names as $name) {
