@@ -32,6 +32,7 @@
                     @endif
                     <div class="RTwoNewsLeft">
                         @foreach ($five_main_news as $news)
+                        @dd($news)
                             <div class="OneNews">
                                 <div class="LeaguesNews">
                                     @if (count($main_news->tags) > 0)
