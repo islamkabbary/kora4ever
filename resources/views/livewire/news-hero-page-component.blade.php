@@ -15,7 +15,9 @@
                                 @endif
                             </div>
                             <a href="{{ route('Article', ['id' => $main_news->id]) }}">
+                                @if ($main_news->media->first())
                                 <img src="{{ env('APP_URL') . 'storage/' . $main_news->media->first()->url }}">
+                                @endif
                             </a>
                             <div class="OneNewsTitleON">
                                 <h3>
@@ -41,7 +43,9 @@
                                     @endif
                                 </div>
                                 <a href="{{ route('Article', ['id' => $news->id]) }}">
+                                    @if ($main_news->media->first())
                                     <img src="{{ env('APP_URL') . 'storage/' . $news->media->first()->url }}">
+                                    @endif
                                 </a>
                                 <div class="OneNewsTitleON">
                                     <h3>
@@ -69,7 +73,9 @@
                                 @endif
                             </div>
                             <a href="{{ route('Article', ['id' => $news->id]) }}">
+                                @if ($main_news->media->first())
                                 <img src="{{ env('APP_URL') . 'storage/' . $news->media->first()->url }}">
+                                @endif
                             </a>
                             <div class="OneNewsTitleON">
                                 <h3>
