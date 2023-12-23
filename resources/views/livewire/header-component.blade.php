@@ -9,7 +9,7 @@
                 </div>
 
                 <div class="Mainlogo">
-                    <a href="/"><img src="{{ asset('images/them/mainlogo.png') }}" class="" alt="mainlogo" title=""></a>
+                    {{-- <a href="/"><img src="{{ asset('images/them/mainlogo.png') }}" class="" alt="mainlogo" title=""></a> --}}
                 </div>
             </div>
             <div class="row leftHeader">
