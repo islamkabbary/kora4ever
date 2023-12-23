@@ -32,13 +32,12 @@
                     @endif
                     <div class="RTwoNewsLeft">
                         @foreach ($five_main_news as $news)
-                        @dd($news->tags->first())
                             <div class="OneNews">
                                 <div class="LeaguesNews">
                                     @if (count($main_news->tags) > 0)
                                     <a href="{{ route('TagNews', ['id' => $main_news->tags->first()->id]) }}">
                                         <p>
-                                            {{ $news->tags ? $news->tags->pop()->name : $news->tags->first()->name }}
+                                            {{ $news->tags ? $news->tags->first()->name : $news->tags->first()->name }}
                                         </p>
                                     </a>
                                     @endif
