@@ -7,7 +7,7 @@
         </ul>
     </div>
     <div
-        style="max-height: 605px;overflow: auto;display: flex;flex-direction: column;gap: 12px;padding: 5px;position: relative;border: 1px solid #b06466;border-radius: 6px;">
+        style="max-height: 605px;overflow: auto;display: flex;flex-direction: column;gap: 12px;padding: 5px;position: relative;border: 1px solid #0025ff;border-radius: 6px;">
         @if ($yesterday->count() > 0)
             <div class="MatchInnerBlock" id="tab1" style="display:none">
                 @foreach ($yesterday as $yesterday)
@@ -22,11 +22,11 @@
                                 </h3>
                             </a>
                         </div>
-                        <a href="MatchDetails/61135/تصفيات-كاس-الامم-الافريقيى-غينيا-بيساو-موريشيوس">
+                        <a href="{{ route('MatchDetails', ['id' => $yesterday->id]) }}">
                             <div class="row RightALEftOneMatch">
                                 <div class="RightOneMatch">
                                     <div class="ImageOneMatchHeight">
-                                        <img src="{{ $yesterday->teamOne->logo }}"
+                                        <img src="{{ env('APP_URL') . 'storage/' . $yesterday->teamOne->logo }}"
                                             onerror="this.src='images/mainlogo.png';"
                                             title="{{ $yesterday->teamOne['name'] }}"
                                             alt="{{ $yesterday->teamOne['name'] }}">
@@ -52,14 +52,13 @@
                                 </div>
                                 <div class="LeftOneMatch">
                                     <div class="ImageOneMatchHeight">
-                                        <img src="{{ $yesterday->teamTwo->logo }}"
+                                        <img src="{{ env('APP_URL') . 'storage/' . $yesterday->teamTwo->logo }}"
                                             onerror="this.src='images/mainlogo.png';"
                                             title="{{ $yesterday->teamTwo['name'] }}"
-                                            alt="{{ $yesterday->teamTwo['name'] }}"
-                                            class="gmImageflag">
+                                            alt="{{ $yesterday->teamTwo['name'] }}" class="gmImageflag">
                                     </div>
                                     <p class="MatchClubName">
-                                        {{ $yesterday->teamTwo['name']}}
+                                        {{ $yesterday->teamTwo['name'] }}
                                     </p>
                                 </div>
                             </div>
@@ -85,14 +84,13 @@
                                 </h3>
                             </a>
                         </div>
-                        <a href="MatchDetails/61135/تصفيات-كاس-الامم-الافريقيى-غينيا-بيساو-موريشيوس">
+                        <a href="{{ route('MatchDetails', ['id' => $today->id]) }}">
                             <div class="row RightALEftOneMatch">
                                 <div class="RightOneMatch">
                                     <div class="ImageOneMatchHeight">
-                                        <img src="{{ $today->teamOne->logo }}"
+                                        <img src="{{ env('APP_URL') . 'storage/' . $today->teamOne->logo }}"
                                             onerror="this.src='images/them/mainlogo.png';"
-                                            title="{{ $today->teamOne['name'] }}"
-                                            alt="{{ $today->teamOne['name'] }}">
+                                            title="{{ $today->teamOne['name'] }}" alt="{{ $today->teamOne['name'] }}">
                                     </div>
                                     <p class="MatchClubName">
                                         {{ $today->teamOne['name'] }}
@@ -208,13 +206,12 @@
                                 @endif
                                 <div class="LeftOneMatch">
                                     <div class="ImageOneMatchHeight">
-                                        <img src="{{ $today->teamTwo->logo }}"
+                                        <img src="{{ env('APP_URL') . 'storage/' . $today->teamTwo->logo }}"
                                             onerror="this.src='images/them/mainlogo.png';"
-                                            title="{{ __('messages.' . $today->teamTwo['name']) }}"
-                                            alt="{{ __('messages.' . $today->teamTwo['name']) }}"
-                                            class="gmImageflag">
+                                            title="{{ $today->teamTwo['name'] }}"
+                                            alt="{{ $today->teamTwo['name'] }}" class="gmImageflag">
                                     </div>
-                                    <p class="MatchClubName">{{ __('messages.' . $today->teamTwo['name']) }}</p>
+                                    <p class="MatchClubName">{{ $today->teamTwo['name'] }}</p>
                                 </div>
                             </div>
                         </a>
@@ -242,21 +239,21 @@
                         <div class="CenterTOPInCenter">
                             <a href="{{ route('championship', ['id' => $tommorow->leauge->id]) }}">
                                 <h3 class="TOPInCenterA">
-                                    {{ __('messages.' . $tommorow->leauge->name) }}
+                                    {{ $tommorow->leauge->name }}
                                 </h3>
                             </a>
                         </div>
-                        <a href="MatchDetails/61135/تصفيات-كاس-الامم-الافريقيى-غينيا-بيساو-موريشيوس">
+                        <a href="{{ route('MatchDetails', ['id' => $tommorow->id]) }}">
                             <div class="row RightALEftOneMatch">
                                 <div class="RightOneMatch">
                                     <div class="ImageOneMatchHeight">
-                                        <img src="{{ $tommorow->teamOne->logo }}"
+                                        <img src="{{ env('APP_URL') . 'storage/' . $tommorow->teamOne->logo }}"
                                             onerror="this.src='images/mainlogo.png';"
-                                            title="{{ __('messages.' . $tommorow->teamOne['name']) }}"
-                                            alt="{{ __('messages.' . $tommorow->teamOne['name']) }}">
+                                            title="{{ $tommorow->teamOne['name'] }}"
+                                            alt="{{ $tommorow->teamOne['name'] }}">
                                     </div>
                                     <p class="MatchClubName">
-                                        {{ __('messages.' . $tommorow->teamOne['name']) }}
+                                        {{ $tommorow->teamOne['name'] }}
                                     </p>
                                 </div>
                                 <div class="CenterOneMatch">
@@ -279,14 +276,13 @@
                                 </div>
                                 <div class="LeftOneMatch">
                                     <div class="ImageOneMatchHeight">
-                                        <img src="{{ $tommorow->teamTwo->logo }}"
+                                        <img src="{{ env('APP_URL') . 'storage/' . $tommorow->teamTwo->logo }}"
                                             onerror="this.src='images/mainlogo.png';"
-                                            title="{{ __('messages.' . $tommorow->teamTwo['name']) }}"
-                                            alt="{{ __('messages.' . $tommorow->teamTwo['name']) }}"
-                                            class="gmImageflag">
+                                            title="{{ $tommorow->teamTwo['name'] }}"
+                                            alt="{{ $tommorow->teamTwo['name'] }}" class="gmImageflag">
                                     </div>
                                     <p class="MatchClubName">
-                                        {{ __('messages.' . $tommorow->teamTwo['name']) }}
+                                        {{ $tommorow->teamTwo['name'] }}
                                     </p>
                                 </div>
                             </div>
