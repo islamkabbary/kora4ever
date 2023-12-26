@@ -247,7 +247,7 @@
                             <div class="row RightALEftOneMatch">
                                 <div class="RightOneMatch">
                                     <div class="ImageOneMatchHeight">
-                                        <img src="{{ env('APP_URL') . 'storage/' . $tommorow->teamOne['logo'] }}"
+                                        <img src="{{ env('APP_URL') . 'storage/' . $tommorow->teamOne->logo }}"
                                             onerror="this.src='images/mainlogo.png';"
                                             title="{{ $tommorow->teamOne['name'] }}"
                                             alt="{{ $tommorow->teamOne['name'] }}">
@@ -276,7 +276,7 @@
                                 </div>
                                 <div class="LeftOneMatch">
                                     <div class="ImageOneMatchHeight">
-                                        <img src="{{ env('APP_URL') . 'storage/' . $tommorow->teamTwo['logo'] }}"
+                                        <img src="{{ env('APP_URL') . 'storage/' . $tommorow->teamTwo->logo }}"
                                             onerror="this.src='images/mainlogo.png';"
                                             title="{{ $tommorow->teamTwo['name'] }}"
                                             alt="{{ $tommorow->teamTwo['name'] }}" class="gmImageflag">
