@@ -50,11 +50,11 @@
                                 <div class="swiper-slide">
                                     <div class="ImageSliderFixedHeight">
                                         <a href="{{ route('team', ['id' => $team->id]) }}">
-                                            <img src="{{ asset($team->logo) }}" title="{{ __("messages.$team->name") }}"
-                                                alt="{{ __("messages.$team->name") }}">
+                                            <img src="{{ env('APP_URL') . 'storage/' . $team->logo }}"
+                                                title="{{ $team->name }}" alt="{{ $team->name }}">
                                         </a>
                                     </div>
-                                    <a href="#">{{ __("messages.$team->name") }}</a>
+                                    <a href="#">{{ $team->name }}</a>
                                 </div>
                             @endforeach
                         </div>
@@ -69,15 +69,10 @@
                         <div class="SecondNews">
                             <div class="secondNewsBlockImage">
                                 <a href="{{ route('Article', ['id' => $post->id]) }}">
-                                    @if (count($post->media) > 0 && Storage::exists($post->media[0]->url))
-                                        <img src="{{ env('APP_URL') . 'storage/' . $post->media[0]->url }}"
+                                    @if ($post->media->first())
+                                        <img src="{{ env('APP_URL') . 'storage/' . $post->media->first()->url }}"
                                             class="OneSResultImage"
                                             onerror="this.src='{{ asset('images/onerror/Large789x539.png') }}'"
-                                            title="{{ $post->title }}">
-                                    @else
-                                        <img src="{{ asset('images/them/onerror/Large789x539.png') }}"
-                                            class="OneSResultImage"
-                                            onerror="this.src='{{ asset('images/them/onerror/Large789x539.png') }}'"
                                             title="{{ $post->title }}">
                                     @endif
                                 </a>
@@ -133,7 +128,7 @@
                                 <a href="{{ route('championship', ['id' => $leauge->id]) }}">All teams</a>
                                 @foreach ($teams as $teams)
                                     <a href="{{ route('team', ['id' => $teams->id]) }}">
-                                        {{ __("messages.$teams->name") }}
+                                        {{ $teams->name }}
                                     </a>
                                 @endforeach
                             </div>
@@ -206,7 +201,7 @@
                     </div>
                 </div>
                 @if ($matches->count() > 0)
-                    <h4 class="CHNameleague">{{ __("messages.$leauge->name") }}</h4>
+                    <h4 class="CHNameleague">{{ $leauge->name }}</h4>
                 @endif
                 <div class=" divListMatch">
                     <ul class="LICardMatch">
@@ -223,13 +218,12 @@
                                                     @endphp
                                                     <a href="">
                                                         <img src='{{ asset("$path") }}' class="MPagegmImageflag"
-                                                            title="{{ __("messages.$name") }}"
-                                                            alt="{{ __("messages.$name") }}">
+                                                            title="{{ $name }}" alt="{{ $name }}">
                                                     </a>
                                                 </div>
                                                 <p class="MPageMatchClubName">
                                                     <a href="">
-                                                        {{ __("messages.$name") }}
+                                                        {{ $name }}
                                                     </a>
                                                 </p>
                                             </div>
@@ -325,14 +319,13 @@
                                                         $name = $match->teamTwo->name;
                                                     @endphp
                                                     <a href="">
-                                                        <img src='{{ asset("$path2") }}'
-                                                            title="{{ __("messages.$name") }}"
-                                                            alt="{{ __("messages.$name") }}" class="MPagegmImageflag">
+                                                        <img src='{{ asset("$path2") }}' title="{{ $name }}"
+                                                            alt="{{ $name }}" class="MPagegmImageflag">
                                                     </a>
                                                 </div>
                                                 <p class="MPageMatchClubName">
                                                     <a href="">
-                                                        {{ __("messages.$name") }}
+                                                        {{ $name }}
                                                     </a>
                                                 </p>
                                             </div>
@@ -380,7 +373,7 @@
                                                                 $name = \App\Models\Team::find($one->team_id)->name;
                                                             @endphp
                                                             <a href="">
-                                                                {{ __("messages.$name") }}
+                                                                {{ $name }}
                                                             </a>
                                                         </li>
                                                         <li>
@@ -423,7 +416,7 @@
                 <div>
                     <div class="row ChMatchesH">
                         <div class="row MatchHeaderTitle">
-                            <p> ترتيب الفرق فى {{ __("messages.$leauge->name") }}</p>
+                            <p> ترتيب الفرق فى {{ $leauge->name }}</p>
                         </div>
                     </div>
                 </div>
@@ -474,7 +467,7 @@
                                                 @php
                                                     $team_name = \App\Models\Team::find($team->team_id)->name;
                                                 @endphp
-                                                {{ __("messages.$team_name") }}
+                                                {{ $team_name }}
                                             </a>
                                         </li>
                                         <li>
