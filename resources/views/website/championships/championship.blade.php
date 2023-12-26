@@ -47,14 +47,17 @@
                     <div class="swiperTeamsInners">
                         <div class="swiper-wrapper">
                             @foreach ($teams as $team)
+                            @php
+                                $realTeam = App\Models\Team::find($team->team_id);
+                            @endphp
                                 <div class="swiper-slide">
                                     <div class="ImageSliderFixedHeight">
-                                        <a href="{{ route('team', ['id' => $team->id]) }}">
-                                            <img src="{{ env('APP_URL') . 'storage/' . $team->logo }}"
-                                                title="{{ $team->name }}" alt="{{ $team->name }}">
+                                        <a href="{{ route('team', ['id' => $realTeam->id]) }}">
+                                            <img src="{{ env('APP_URL') . 'storage/' . $realTeam->logo }}"
+                                                title="{{ $realTeam->name }}" alt="{{ $realTeam->name }}">
                                         </a>
                                     </div>
-                                    <a href="#">{{ $team->name }}</a>
+                                    <a href="#">{{ $realTeam->name }}</a>
                                 </div>
                             @endforeach
                         </div>
@@ -65,7 +68,7 @@
             </div>
             <div id="Chtab1" class="championshipsBlock ss">
                 <div class="championshipsNews">
-                    @foreach ($news as $post)
+                    {{-- @foreach ($news as $post)
                         <div class="SecondNews">
                             <div class="secondNewsBlockImage">
                                 <a href="{{ route('Article', ['id' => $post->id]) }}">
@@ -110,7 +113,7 @@
                                 </div>
                             </div>
                         </div>
-                    @endforeach
+                    @endforeach --}}
                 </div>
             </div>
             <div id="Chtab3" class="championshipsBlock">
