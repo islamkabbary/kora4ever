@@ -174,14 +174,14 @@
                                                         $path = $match->teamOne->logo;
                                                         $name = $match->teamOne->name;
                                                     @endphp
-                                                    <a href="{{ route('team', ['id'=>$match->$teamOne->id]) }}">
+                                                    <a href="{{ route('team', ['id'=>$match->teamOne->id]) }}">
                                                         <img src="{{ env('APP_ENV') . "storage/" . $path }}" class="MPagegmImageflag"
                                                             title="{{ $name }}"
                                                             alt="{{ $name }}">
                                                     </a>
                                                 </div>
                                                 <p class="MPageMatchClubName">
-                                                    <a href="{{ route('team', ['id'=>$match->$teamOne->id]) }}">
+                                                    <a href="{{ route('team', ['id'=>$match->teamOne->id]) }}">
                                                         {{ $name }}
                                                     </a>
                                                 </p>
@@ -275,14 +275,14 @@
                                                         $path2 = $match->teamTwo->logo;
                                                         $name = $match->teamTwo->name;
                                                     @endphp
-                                                    <a href="{{ route('team', ['id'=>$match->$teamTwo->id]) }}">
+                                                    <a href="{{ route('team', ['id'=>$match->teamTwo->id]) }}">
                                                         <img src="{{ env('APP_ENV') . "storage/" . $path }}"
                                                             title="{{ $name }}"
                                                             alt="{{ $name }}" class="MPagegmImageflag">
                                                     </a>
                                                 </div>
                                                 <p class="MPageMatchClubName">
-                                                    <a href="{{ route('team', ['id'=>$match->$teamTwo->id]) }}">
+                                                    <a href="{{ route('team', ['id'=>$match->teamTwo->id]) }}">
                                                         {{ $name }}
                                                     </a>
                                                 </p>
