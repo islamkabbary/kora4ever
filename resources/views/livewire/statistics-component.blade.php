@@ -34,33 +34,38 @@
                     </li>
                 </ul>
                 @foreach ($statistc as $stat)
-                    <div>
-                        <ul class="row DetailsStatistics">
-                            <li>
-                                <p>{{ $loop->iteration }}</p>
-                            </li>
-                            <li><a>{{ \App\Models\Team::find($stat->team_id)->name }}</a>
-                            </li>
-                            {{-- <li><a
-                                    href="{{ route('team', ['id' => \App\Models\Teams::find($stat->team_id)->id]) }}">{{ __('messages.' . \App\Models\Teams::find($stat->team_id)->name) }}</a>
-                            </li> --}}
-                            <li>
-                                <p>{{ $stat->played }}</p>
-                            </li>
-                            <li>
-                                <p>{{ $stat->won }}</p>
-                            </li>
-                            <li>
-                                <p>{{ $stat->drawn }}</p>
-                            </li>
-                            <li>
-                                <p>{{ $stat->lost }}</p>
-                            </li>
-                            <li>
-                                <p>{{ $stat->points }}</p>
-                            </li>
-                        </ul>
-                    </div>
+                @php
+                $Realteam = \App\Models\Team::find($team->team_id);
+            @endphp
+            @if ($Realteam)
+            <div>
+                <ul class="row DetailsStatistics">
+                    <li>
+                        <p>{{ $loop->iteration }}</p>
+                    </li>
+                    <li><a>{{ $Realteam->name }}</a>
+                    </li>
+                    {{-- <li><a
+                            href="{{ route('team', ['id' => \App\Models\Teams::find($stat->team_id)->id]) }}">{{ __('messages.' . \App\Models\Teams::find($stat->team_id)->name) }}</a>
+                    </li> --}}
+                    <li>
+                        <p>{{ $stat->played }}</p>
+                    </li>
+                    <li>
+                        <p>{{ $stat->won }}</p>
+                    </li>
+                    <li>
+                        <p>{{ $stat->drawn }}</p>
+                    </li>
+                    <li>
+                        <p>{{ $stat->lost }}</p>
+                    </li>
+                    <li>
+                        <p>{{ $stat->points }}</p>
+                    </li>
+                </ul>
+            </div>
+            @endif
                 @endforeach
             </div>
             <div class="row BlackHeaderBlock morechampionship">
