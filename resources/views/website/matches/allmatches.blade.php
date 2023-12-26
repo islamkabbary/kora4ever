@@ -141,7 +141,7 @@
                                                                 $name = $match->teamOne->name;
                                                             @endphp
                                                             <a href="{{ route('team', ['id' => $match->team1]) }}">
-                                                                <img src='{{ asset("$path") }}' class="MPagegmImageflag"
+                                                                <img src='{{ env('APP_ENV') . "storage/" . $path }}' class="MPagegmImageflag"
                                                                     title="{{$name}}"
                                                                     alt="{{ $name }}">
                                                             </a>
@@ -244,7 +244,7 @@
                                                                 $name = $match->teamTwo->name;
                                                             @endphp
                                                             <a href="{{ route('team', ['id' => $match->team2]) }}">
-                                                                <img src='{{ asset("$path2") }}'
+                                                                <img src='{{ env('APP_ENV') . "storage/" . $path2 }}'
                                                                     title="{{$name }}"
                                                                     alt="{{$name}}"
                                                                     class="MPagegmImageflag">
