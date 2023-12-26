@@ -35,7 +35,7 @@
                 </ul>
                 @foreach ($statistc as $stat)
                 @php
-                $Realteam = \App\Models\Team::find($team->team_id);
+                $Realteam = \App\Models\Team::find($stat->team_id);
             @endphp
             @if ($Realteam)
             <div>
