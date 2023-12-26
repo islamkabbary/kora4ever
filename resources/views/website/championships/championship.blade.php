@@ -31,11 +31,11 @@
                                 أخبار
                             </a>
                         </li>
-                        <li>
+                        {{-- <li>
                             <a href="" title="Chtab3">
                                 مباريات
                             </a>
-                        </li>
+                        </li> --}}
                         <li>
                             <a href="" title="Chtab5">
                                 ترتيب الفرق
@@ -116,7 +116,7 @@
                     @endforeach
                 </div>
             </div>
-            <div id="Chtab3" class="championshipsBlock">
+            {{-- <div id="Chtab3" class="championshipsBlock">
                 <div class="row ChMatchesH">
                     <div class="row MatchHeaderTitle">
                         <p> جميع المباريات</p>
@@ -129,9 +129,9 @@
                             </button>
                             <div class="dropdown-content" id="CHdropdownTeam1">
                                 <a href="{{ route('championship', ['id' => $leauge->id]) }}">All teams</a>
-                                @foreach ($teams as $teams)
-                                    <a href="{{ route('team', ['id' => $teams->id]) }}">
-                                        {{ $teams->name }}
+                                @foreach ($teams as $team)
+                                    <a href="{{ route('team', ['id' => $team->id]) }}">
+                                        {{ $team->name }}
                                     </a>
                                 @endforeach
                             </div>
@@ -140,7 +140,7 @@
                 </div>
                 <div style="position:relative">
                     <div class="row Week-calendar">
-                        {{-- <div dir="rtl" class="swiper swiperWeeksBlocks">
+                        <div dir="rtl" class="swiper swiperWeeksBlocks">
                             <ul class="swiper-wrapper swiper-WeekBlock ">
                                 <li class="swiper-slide">
                                     <a href="championships/1400/الدوري-المصري-الممتاز?date=06/11/2022">
@@ -193,11 +193,11 @@
                                     aria-hidden="true"></i></div>
                             <div class="swiper-prev swiper-prev-WeekBlock"><i class="fa fa-chevron-left"
                                     aria-hidden="true"></i></div>
-                        </div> --}}
+                        </div>
                         <div></div>
-                        {{-- <div class=" Match-calendar">
+                        <div class=" Match-calendar">
                             <i class="fa fa-calendar" aria-hidden="true"></i>
-                        </div> --}}
+                        </div>
                     </div>
                     <div class="row ">
                         <div id="datepicker" class="calendar "></div>
@@ -414,7 +414,7 @@
                         @endif
                     </ul>
                 </div>
-            </div>
+            </div> --}}
             <div id="Chtab5" class="championshipsBlock">
                 <div>
                     <div class="row ChMatchesH">

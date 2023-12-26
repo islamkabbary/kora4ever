@@ -9,11 +9,11 @@
                     <div class="row Head-Team">
                         <div class="LogoTeam">
                             <img src="{{ env('APP_URL') . 'storage/' . $team->logo }}"
-                                title="{{ __("messages.$team->name") }}" alt="{{ __("messages.$team->name") }}">
+                                title="{{ $team->name }}" alt="{{ $team->name }}">
                         </div>
                         <div class="NameTeam">
                             <h3>
-                                {{ __("messages.$team->name") }}
+                                {{ $team->name }}
                             </h3>
                         </div>
                     </div>
@@ -42,7 +42,7 @@
                 <div class="NumTeamOFCHamp">
                     <div class="row newSectionHeadBlock">
                         <div class="row newSectionHeadTitle">
-                            ترتيب {{ __("messages.$team->name") }}
+                            ترتيب {{ $team->name }}
                         </div>
                     </div>
                     @foreach ($leagues as $league)
@@ -58,8 +58,8 @@
                                 @endphp
                                 <div class="NameTeam">
                                     <h3>
-                                        <a href="#">
-                                            {{ __("messages.$team->name") }}
+                                        <a href="{{ route('team', ['id'=>$team->id]) }}">
+                                            {{ $team->name }}
                                         </a>
                                     </h3>
                                 </div>
@@ -105,7 +105,7 @@
                                         </li>
                                         <li>
                                             <a
-                                                href="{{ route('team', ['id' => $team->id]) }}">{{ __("messages.$team->name") }}</a>
+                                                href="{{ route('team', ['id' => $team->id]) }}">{{ $team->name }}</a>
                                         </li>
                                         <li>
                                             <p>{{ $result->played }}</p>
@@ -150,9 +150,9 @@
                                 <p> كل البطولات</p>
                             </button>
                             <div class="dropdown-content" id="TeamdropWeek1">
-                                <a href="/team/207/الأهلي?team=0"> كل البطولات</a>
+                                <a> كل البطولات</a>
                                 @foreach ($leagues as $leauge)
-                                    <a href="/team/207/الأهلي?league=1359"> {{ __('messages.' . $leauge->name) }} </a>
+                                    <a href="{{ route('championship', ['id'=>$leauge->id]) }}"> {{ $leauge->name }} </a>
                                 @endforeach
                             </div>
                         </div>
@@ -174,15 +174,15 @@
                                                         $path = $match->teamOne->logo;
                                                         $name = $match->teamOne->name;
                                                     @endphp
-                                                    <a href="">
-                                                        <img src='{{ asset("$path") }}' class="MPagegmImageflag"
-                                                            title="{{ __("messages.$name") }}"
-                                                            alt="{{ __("messages.$name") }}">
+                                                    <a href="{{ route('team', ['id'=>$match->$teamOne->id]) }}">
+                                                        <img src="{{ env('APP_ENV') . "storage/" . $path }}" class="MPagegmImageflag"
+                                                            title="{{ $name }}"
+                                                            alt="{{ $name }}">
                                                     </a>
                                                 </div>
                                                 <p class="MPageMatchClubName">
-                                                    <a href="">
-                                                        {{ __("messages.$name") }}
+                                                    <a href="{{ route('team', ['id'=>$match->$teamOne->id]) }}">
+                                                        {{ $name }}
                                                     </a>
                                                 </p>
                                             </div>
@@ -263,7 +263,7 @@
                                                     <p class="MPageTOPInCenterA">
                                                         {{ Carbon\Carbon::createFromFormat('H:i:s', $match->time)->format('h:i a') }}
                                                     </p>
-                                                    <a href="MatchDetails/61152/مباريات-دولية-ودية-كوريا-الجنوبية-مصر"
+                                                    <a href="{{ route('MatchDetails', ['id'=>$match->id]) }}"
                                                         class="moreDtls">
                                                         تفاصيل المباراة
                                                     </a>
@@ -275,15 +275,15 @@
                                                         $path2 = $match->teamTwo->logo;
                                                         $name = $match->teamTwo->name;
                                                     @endphp
-                                                    <a href="">
-                                                        <img src='{{ asset("$path2") }}'
-                                                            title="{{ __("messages.$name") }}"
-                                                            alt="{{ __("messages.$name") }}" class="MPagegmImageflag">
+                                                    <a href="{{ route('team', ['id'=>$match->$teamTwo->id]) }}">
+                                                        <img src="{{ env('APP_ENV') . "storage/" . $path }}"
+                                                            title="{{ $name }}"
+                                                            alt="{{ $name }}" class="MPagegmImageflag">
                                                     </a>
                                                 </div>
                                                 <p class="MPageMatchClubName">
-                                                    <a href="">
-                                                        {{ __("messages.$name") }}
+                                                    <a href="{{ route('team', ['id'=>$match->$teamTwo->id]) }}">
+                                                        {{ $name }}
                                                     </a>
                                                 </p>
                                             </div>
@@ -330,8 +330,8 @@
                                                             @php
                                                                 $name = \App\Models\Team::find($one->team_id)->name;
                                                             @endphp
-                                                            <a href="">
-                                                                {{ __("messages.$name") }}
+                                                            <a href="{{ route('team', ['id'=>$one->team_id]) }}">
+                                                                {{ $name }}
                                                             </a>
                                                         </li>
                                                         <li>
@@ -384,7 +384,7 @@
                                 <div class="SecondNews">
                                     <div class="secondNewsBlockImage">
                                         <a href="{{ route('Article', ['id' => $post->id]) }}">
-                                            <img src="{{ env('APP_URL') . 'storage/' . $post->media[0]->url }}"
+                                            <img src="{{ env('APP_URL') . 'storage/' . $post->media->first()->url }}"
                                                 class="OneSResultImage" title="{{ $post->title }}">
                                         </a>
                                     </div>
