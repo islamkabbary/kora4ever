@@ -25,7 +25,7 @@ Auth::routes();
 Route::get('/', [HomeController::class, "index"])->name('home');
 Route::get('/test', [HomeController::class, "test"])->name('home');
 Route::get('/all-news', [NewsController::class, "index"])->name('all_news');
-Route::get('/all-matches', [MatcheController::class, "index"])->name('all_matches');
+// Route::get('/all-matches', [MatcheController::class, "index"])->name('all_matches');
 Route::get('/news/{id}', [NewsController::class, "Article"])->name('Article');
 Route::get('/championship/{id}', [LeaugeController::class, "show"])->name('championship');
 Route::get('/championships', [LeaugeController::class, "index"])->name('all_championships');
