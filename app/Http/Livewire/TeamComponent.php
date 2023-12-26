@@ -161,6 +161,7 @@ class TeamComponent extends Component
 
     function delete($team_id)
     {
+        TeamHasLeauge::where('team_id',$team_id)->delete();
         Team::destroy($team_id);
         $this->alert('success', "successfully deleted");
     }

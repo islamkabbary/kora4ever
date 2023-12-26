@@ -47,17 +47,19 @@
                     <div class="swiperTeamsInners">
                         <div class="swiper-wrapper">
                             @foreach ($teams as $team)
-                            @php
-                                $realTeam = App\Models\Team::find($team->team_id);
-                            @endphp
+                                @php
+                                    $realTeam = App\Models\Team::find($team->team_id);
+                                @endphp
                                 <div class="swiper-slide">
-                                    <div class="ImageSliderFixedHeight">
-                                        <a href="{{ route('team', ['id' => $realTeam->id]) }}">
-                                            <img src="{{ env('APP_URL') . 'storage/' . $realTeam->logo }}"
-                                                title="{{ $realTeam->name }}" alt="{{ $realTeam->name }}">
-                                        </a>
-                                    </div>
-                                    <a href="#">{{ $realTeam->name }}</a>
+                                    @if ($realTeam)
+                                        <div class="ImageSliderFixedHeight">
+                                            <a href="{{ route('team', ['id' => $realTeam->id]) }}">
+                                                <img src="{{ env('APP_URL') . 'storage/' . $realTeam->logo }}"
+                                                    title="{{ $realTeam->name }}" alt="{{ $realTeam->name }}">
+                                            </a>
+                                        </div>
+                                        <a href="#">{{ $realTeam->name }}</a>
+                                    @endif
                                 </div>
                             @endforeach
                         </div>
@@ -68,7 +70,7 @@
             </div>
             <div id="Chtab1" class="championshipsBlock ss">
                 <div class="championshipsNews">
-                    @foreach ($news as $post)
+                    {{-- @foreach ($news as $post)
                         <div class="SecondNews">
                             <div class="secondNewsBlockImage">
                                 <a href="{{ route('Article', ['id' => $post->id]) }}">
@@ -113,7 +115,7 @@
                                 </div>
                             </div>
                         </div>
-                    @endforeach
+                    @endforeach --}}
                 </div>
             </div>
             {{-- <div id="Chtab3" class="championshipsBlock">
@@ -231,8 +233,7 @@
                                                 </p>
                                             </div>
                                             <div class="MPageCenterOneMatch">
-                                                @if (date('H:i') >= date('H:i', strtotime(Carbon\Carbon::parse($match->time)->subMinutes(30))) &&
-                                                        $match->time >= date('H:i'))
+                                                @if (date('H:i') >= date('H:i', strtotime(Carbon\Carbon::parse($match->time)->subMinutes(30))) && $match->time >= date('H:i'))
                                                     <div class="row MPageCenterBlockInCenter">
                                                         <div class="MPageRightInCenter">
                                                             <p> -- </p>
@@ -461,40 +462,45 @@
                             </ul>
                             <div>
                                 @foreach ($table as $i => $team)
-                                    <ul class="row DetailsStatistics">
-                                        <li>
-                                            <p>{{ $i + 1 }}</p>
-                                        </li>
-                                        <li>
-                                            <a href="#">
+                                    @php
+                                        $Realteam = \App\Models\Team::find($team->team_id);
+                                    @endphp
+                                    @if ($Realteam)
+                                        <ul class="row DetailsStatistics">
+                                            <li>
+                                                <p>{{ $i + 1 }}</p>
+                                            </li>
+                                            <li>
                                                 @php
-                                                    $team_name = \App\Models\Team::find($team->team_id)->name;
+                                                    $team_name = $Realteam->name;
                                                 @endphp
-                                                {{ $team_name }}
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">{{ $team->played }}</a>
-                                        </li>
-                                        <li>
-                                            <p>{{ $team->won }}</p>
-                                        </li>
-                                        <li>
-                                            <p>{{ $team->drawn }}</p>
-                                        </li>
-                                        <li>
-                                            <p>{{ $team->lost }}</p>
-                                        </li>
-                                        <li>
-                                            <p>{{ $team->gf }}</p>
-                                        </li>
-                                        <li>
-                                            <p>{{ $team->ga }}</p>
-                                        </li>
-                                        <li>
-                                            <p>{{ $team->gd }}</p>
-                                        </li>
-                                    </ul>
+                                                <a href="#">
+                                                    {{ $team_name }}
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">{{ $team->played }}</a>
+                                            </li>
+                                            <li>
+                                                <p>{{ $team->won }}</p>
+                                            </li>
+                                            <li>
+                                                <p>{{ $team->drawn }}</p>
+                                            </li>
+                                            <li>
+                                                <p>{{ $team->lost }}</p>
+                                            </li>
+                                            <li>
+                                                <p>{{ $team->gf }}</p>
+                                            </li>
+                                            <li>
+                                                <p>{{ $team->ga }}</p>
+                                            </li>
+                                            <li>
+                                                <p>{{ $team->gd }}</p>
+                                            </li>
+                                        </ul>
+                                    @endif
                                 @endforeach
 
                             </div>
