@@ -22,7 +22,7 @@
         <div class="RightInner">
             <div>
                 <div class="HeaderAllMatches">
-                    <div class="paddingContent">
+                    {{-- <div class="paddingContent">
                         <div class="row ChMatchesH">
                             <div class="row MatchHeaderTitle">
                                 <p> جميع المباريات</p>
@@ -90,7 +90,7 @@
                         <div class="row ">
                             <div id="datepicker" class="calendar "></div>
                         </div>
-                    </div>
+                    </div> --}}
                     {{-- <div class="row filterAllMatches">
                         <div class="filterNews">
                             <i class="fa fa-filter" aria-hidden="true"></i>
@@ -125,7 +125,7 @@
                         @endphp
                         @if ($leauge)
                             <h4 LeagueId="{{ $leauge->id }}" class="CHNameleague matchListArea">
-                                {{ __("messages.$leauge->name") }}</h4>
+                                {{ $leauge->name }}</h4>
                         @endif
                         @foreach ($matche as $match)
                             @if ($match->date == Carbon\Carbon::today()->toDateString())
@@ -142,13 +142,13 @@
                                                             @endphp
                                                             <a href="{{ route('team', ['id' => $match->team1]) }}">
                                                                 <img src='{{ asset("$path") }}' class="MPagegmImageflag"
-                                                                    title="{{ __("messages.$name") }}"
-                                                                    alt="{{ __("messages.$name") }}">
+                                                                    title="{{$name}}"
+                                                                    alt="{{ $name }}">
                                                             </a>
                                                         </div>
                                                         <p class="MPageMatchClubName">
                                                             <a href="{{ route('team', ['id' => $match->team1]) }}">
-                                                                {{ __("messages.$name") }}
+                                                                {{ $name }}
                                                             </a>
                                                         </p>
                                                     </div>
@@ -245,14 +245,14 @@
                                                             @endphp
                                                             <a href="{{ route('team', ['id' => $match->team2]) }}">
                                                                 <img src='{{ asset("$path2") }}'
-                                                                    title="{{ __("messages.$name") }}"
-                                                                    alt="{{ __("messages.$name") }}"
+                                                                    title="{{$name }}"
+                                                                    alt="{{$name}}"
                                                                     class="MPagegmImageflag">
                                                             </a>
                                                         </div>
                                                         <p class="MPageMatchClubName">
                                                             <a href="{{ route('team', ['id' => $match->team2]) }}">
-                                                                {{ __("messages.$name") }}
+                                                                {{ $name }}
                                                             </a>
                                                         </p>
                                                     </div>
@@ -320,7 +320,7 @@
                                                                         $name = \App\Models\Team::find($one->team_id)->name;
                                                                     @endphp
                                                                     <a href="{{ route('team', ['id' => $one->team_id]) }}">
-                                                                        {{ __("messages.$name") }}
+                                                                        {{ $name }}
                                                                     </a>
                                                                 </li>
                                                                 <li>
