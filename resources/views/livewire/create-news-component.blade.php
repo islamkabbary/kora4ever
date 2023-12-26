@@ -8,14 +8,17 @@
         }
     </style>
     <div class="container">
+        @if($errors->any())
+        {{ implode('', $errors->all('<div>:message</div>')) }}
+    @endif
         <div class="row">
             <div class="col-md-12 grid-margin stretch-card mx-auto">
-                <div class="card">
-                    <div class="card-body" style="background: gray">
+                <div class="card mt-4">
+                    <div class="card-body">
                         <section class="forms-sample">
                             {{-- Title --}}
                             <div class="form-group">
-                                <label for="Title" class="text-white">Title</label>
+                                <label for="Title" class="text-black">Title</label>
                                 <input type="text" wire:model="title" class="form-control" placeholder="Title">
                                 @error('title')
                                     <span class="text-danger">{{ $message }}</span>
@@ -29,7 +32,7 @@
                                     <x-slot name="wire_option">defer</x-slot>
                                     <x-slot name="title">body</x-slot>
                                 </x-label_editor_textarea>
-                                {{-- <label for="body" class="text-white">body</label> --}}
+                                {{-- <label for="body" class="text-black">body</label> --}}
                                 {{-- <textarea type="text" wire:model="body" class="form-control" placeholder="Body" rows="20"></textarea> --}}
                                 @error('body')
                                     <span class="text-danger">{{ $message }}</span>
@@ -37,7 +40,7 @@
                             </div>
                             {{-- Image --}}
                             <div class="form-group">
-                                <label for="Image" class="text-white">Image</label>
+                                <label for="Image" class="text-black">Image</label>
                                 <input type="file" wire:model.defer="image" class="form-control"
                                     placeholder="Image URL">
                                 @error('image')
@@ -46,7 +49,7 @@
                             </div>
                             {{-- Video --}}
                             <div class="form-group">
-                                <label for="Title" class="text-white">Video URL</label>
+                                <label for="Title" class="text-black">Video URL</label>
                                 <input type="text" wire:model="video_url" class="form-control"
                                     placeholder="Video URL">
                                 @error('video_url')
@@ -66,13 +69,13 @@
                             {{-- Tag --}}
                             {{-- Leauge --}}
                             <div class="form-group mt-2">
-                                <x-select2 wire:model='leauge_id' id="leauge_id" title="leauge">
+                                <x-select2 wire:model='championship_id' id="championship_id" title="leauge">
                                     <option>Select Leauge</option>
-                                    @foreach (\App\Models\Leauge::all() as $leauge)
+                                    @foreach (\App\Models\Championship::all() as $leauge)
                                         <option value="{{ $leauge->id }}"> {{ $leauge->name }} </option>
                                     @endforeach
                                 </x-select2>
-                                @error('leauge_id')
+                                @error('championship_id')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
@@ -95,19 +98,19 @@
                                 @if (!App\Models\News::where('show_as_main_news', 1)->first())
                                     <div style="grid-column: span 4 / span 4;">
                                         <input type="checkbox" wire:model="show_as_main_news">
-                                        <label for="show_as_main_news" class="text-white p-1">show as main news</label>
+                                        <label for="show_as_main_news" class="text-black p-1">show as main news</label>
                                     </div>
                                 @endif
                                 @if (App\Models\News::where('show_in_most_read', 1)->count() <= 5)
                                     <div style="grid-column: span 4 / span 4;">
                                         <input type="checkbox" wire:model="show_in_most_read">
-                                        <label for="show_in_most_read" class="text-white p-1">show in most read</label>
+                                        <label for="show_in_most_read" class="text-black p-1">show in most read</label>
                                     </div>
                                 @endif
                                 @if (App\Models\News::where('show_from_the_five_main_news', 1)->count() < 5)
                                     <div style="grid-column: span 4 / span 4;">
                                         <input type="checkbox" wire:model="show_from_the_five_main_news">
-                                        <label for="show_from_the_five_main_news" class="text-white p-1">show from the
+                                        <label for="show_from_the_five_main_news" class="text-black p-1">show from the
                                             five main news</label>
                                     </div>
                                 @endif
@@ -142,7 +145,7 @@
                             <td>
                                 @if ($news->media !== null)
                                     @foreach ($news->media as $photo)
-                                        <img width="50" src="{{ env('APP_URL') . '/storage/' . $photo->url }}"
+                                        <img width="50" src="{{ env('APP_URL') . 'storage/' . $photo->url }}"
                                             class="img-fluid">
                                     @endforeach
                                 @endif

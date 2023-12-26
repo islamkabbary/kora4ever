@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Models\Leauge;
 use App\Models\country_id;
+use App\Models\Championship;
 use Illuminate\Database\Seeder;
 
 class LeaugeSeeder extends Seeder
@@ -94,7 +94,7 @@ class LeaugeSeeder extends Seeder
             ],
         ];
         foreach ($leauges as  $leauge) {
-            $l = new Leauge;
+            $l = new Championship;
             $l->name = $leauge['name'];
             $l->type = $leauge['type'];
             $l->logo = $leauge['logo'];

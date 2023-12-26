@@ -2,9 +2,10 @@
 
 namespace Database\Seeders;
 
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class TeamsHasChampionshipSeeder extends Seeder
+class TypeLeagueSeeder extends Seeder
 {
     /**
      * Run the database seeds.

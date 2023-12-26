@@ -2,7 +2,7 @@
 <div>
     @if (isset($title))
         <label for="{{ $id }}"
-            class="text-white mb-[10px] ml-1 font-bold">{{ $title }}</label>
+            class="text-black mb-[10px] ml-1" style="font-weight: bold">{{ $title }}</label>
     @endif
     <div wire:ignore id="parent_{{ $id }}">
         <select {{ $attributes }} id="{{ $id }}" class="{{ $classSelect ?? '' }} dark:text-white w-full"

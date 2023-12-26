@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('team_has_leauges', function (Blueprint $table) {
             $table->id();
             $table->foreignId('team_id')->nullable()->constrained('teams');
-            $table->foreignId('leauge_id')->nullable()->constrained('leauges');
+            $table->foreignId('championship_id')->nullable()->constrained('championships');
             $table->integer('played')->default(0);
             $table->integer('won')->default(0);
             $table->integer('drawn')->default(0);
@@ -25,9 +25,10 @@ return new class extends Migration
             $table->integer('ga')->default(0);
             $table->integer('gd')->default(0);
             $table->integer('points')->default(0);
-            // $table->foreignId('next')->constrained('teams')->nullable();
+            $table->foreignId('next')->nullable()->constrained('teams');
             $table->string('group')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

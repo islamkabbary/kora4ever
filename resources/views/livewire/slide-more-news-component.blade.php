@@ -16,7 +16,7 @@
                             <div class="secondNewsBlockImage">
                                 <a href="Article/26497/منتخب-مصر-يواجه-إثيوبيا-لتصدر-مجموعته-في-التصفيات-المؤهلة-لكأس">
                                     <img class="secondNewsImage"
-                                        src="{{ env('APP_URL') . '/storage/' . $news[0]->media[0]->url }}"
+                                        src="{{ env('APP_URL') . 'storage/' . $news[0]->media[0]->url }}"
                                         onerror="this.src='images/them/onerror/Large789x539.png';"
                                         title="{{ $news[0]->tags[0]->name }}" alt="{{ $news[0]->tags[0]->name }}">
                                 </a>
@@ -50,7 +50,7 @@
                             <div class="secondNewsBlockImage">
                                 <a href="Article/26497/منتخب-مصر-يواجه-إثيوبيا-لتصدر-مجموعته-في-التصفيات-المؤهلة-لكأس">
                                     <img class="secondNewsImage"
-                                        src="{{ env('APP_URL') . '/storage/' . $news[0]->media[0]->url }}"
+                                        src="{{ env('APP_URL') . 'storage/' . $news[0]->media[0]->url }}"
                                         onerror="this.src='images/them/onerror/Large789x539.png';"
                                         title="{{ $news[0]->tags[0]->name }}" alt="{{ $news[0]->tags[0]->name }}">
                                 </a>
@@ -84,7 +84,7 @@
                             <div class="secondNewsBlockImage">
                                 <a href="Article/26497/منتخب-مصر-يواجه-إثيوبيا-لتصدر-مجموعته-في-التصفيات-المؤهلة-لكأس">
                                     <img class="secondNewsImage"
-                                        src="{{ env('APP_URL') . '/storage/' . $news[0]->media[0]->url }}"
+                                        src="{{ env('APP_URL') . 'storage/' . $news[0]->media[0]->url }}"
                                         onerror="this.src='images/them/onerror/Large789x539.png';"
                                         title="{{ $news[0]->tags[0]->name }}" alt="{{ $news[0]->tags[0]->name }}">
                                 </a>
@@ -118,7 +118,7 @@
                             <div class="secondNewsBlockImage">
                                 <a href="Article/26497/منتخب-مصر-يواجه-إثيوبيا-لتصدر-مجموعته-في-التصفيات-المؤهلة-لكأس">
                                     <img class="secondNewsImage"
-                                        src="{{ env('APP_URL') . '/storage/' . $news[0]->media[0]->url }}"
+                                        src="{{ env('APP_URL') . 'storage/' . $news[0]->media[0]->url }}"
                                         onerror="this.src='images/them/onerror/Large789x539.png';"
                                         title="{{ $news[0]->tags[0]->name }}" alt="{{ $news[0]->tags[0]->name }}">
                                 </a>
@@ -152,7 +152,7 @@
                             <div class="secondNewsBlockImage">
                                 <a href="Article/26497/منتخب-مصر-يواجه-إثيوبيا-لتصدر-مجموعته-في-التصفيات-المؤهلة-لكأس">
                                     <img class="secondNewsImage"
-                                        src="{{ env('APP_URL') . '/storage/' . $news[0]->media[0]->url }}"
+                                        src="{{ env('APP_URL') . 'storage/' . $news[0]->media[0]->url }}"
                                         onerror="this.src='images/them/onerror/Large789x539.png';"
                                         title="{{ $news[0]->tags[0]->name }}" alt="{{ $news[0]->tags[0]->name }}">
                                 </a>
@@ -186,7 +186,7 @@
                             <div class="secondNewsBlockImage">
                                 <a href="Article/26497/منتخب-مصر-يواجه-إثيوبيا-لتصدر-مجموعته-في-التصفيات-المؤهلة-لكأس">
                                     <img class="secondNewsImage"
-                                        src="{{ env('APP_URL') . '/storage/' . $news[0]->media[0]->url }}"
+                                        src="{{ env('APP_URL') . 'storage/' . $news[0]->media[0]->url }}"
                                         onerror="this.src='images/them/onerror/Large789x539.png';"
                                         title="{{ $news[0]->tags[0]->name }}" alt="{{ $news[0]->tags[0]->name }}">
                                 </a>
@@ -220,7 +220,7 @@
                             <div class="secondNewsBlockImage">
                                 <a href="Article/26497/منتخب-مصر-يواجه-إثيوبيا-لتصدر-مجموعته-في-التصفيات-المؤهلة-لكأس">
                                     <img class="secondNewsImage"
-                                        src="{{ env('APP_URL') . '/storage/' . $news[0]->media[0]->url }}"
+                                        src="{{ env('APP_URL') . 'storage/' . $news[0]->media[0]->url }}"
                                         onerror="this.src='images/them/onerror/Large789x539.png';"
                                         title="{{ $news[0]->tags[0]->name }}" alt="{{ $news[0]->tags[0]->name }}">
                                 </a>
@@ -254,7 +254,7 @@
                             <div class="secondNewsBlockImage">
                                 <a href="Article/26497/منتخب-مصر-يواجه-إثيوبيا-لتصدر-مجموعته-في-التصفيات-المؤهلة-لكأس">
                                     <img class="secondNewsImage"
-                                        src="{{ env('APP_URL') . '/storage/' . $news[0]->media[0]->url }}"
+                                        src="{{ env('APP_URL') . 'storage/' . $news[0]->media[0]->url }}"
                                         onerror="this.src='images/them/onerror/Large789x539.png';"
                                         title="{{ $news[0]->tags[0]->name }}" alt="{{ $news[0]->tags[0]->name }}">
                                 </a>
@@ -288,7 +288,7 @@
                             <div class="secondNewsBlockImage">
                                 <a href="Article/26497/منتخب-مصر-يواجه-إثيوبيا-لتصدر-مجموعته-في-التصفيات-المؤهلة-لكأس">
                                     <img class="secondNewsImage"
-                                        src="{{ env('APP_URL') . '/storage/' . $news[0]->media[0]->url }}"
+                                        src="{{ env('APP_URL') . 'storage/' . $news[0]->media[0]->url }}"
                                         onerror="this.src='images/them/onerror/Large789x539.png';"
                                         title="{{ $news[0]->tags[0]->name }}" alt="{{ $news[0]->tags[0]->name }}">
                                 </a>
@@ -322,7 +322,7 @@
                             <div class="secondNewsBlockImage">
                                 <a href="Article/26497/منتخب-مصر-يواجه-إثيوبيا-لتصدر-مجموعته-في-التصفيات-المؤهلة-لكأس">
                                     <img class="secondNewsImage"
-                                        src="{{ env('APP_URL') . '/storage/' . $news[0]->media[0]->url }}"
+                                        src="{{ env('APP_URL') . 'storage/' . $news[0]->media[0]->url }}"
                                         onerror="this.src='images/them/onerror/Large789x539.png';"
                                         title="{{ $news[0]->tags[0]->name }}" alt="{{ $news[0]->tags[0]->name }}">
                                 </a>

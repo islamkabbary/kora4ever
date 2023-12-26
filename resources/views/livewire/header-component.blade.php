@@ -1,5 +1,5 @@
 <div>
-    <header>
+    <header style="height: 100px">
         <div class="row">
             <div class="row rightHeader">
 
@@ -70,16 +70,16 @@
                 <div class="socialIconsBlock">
                     <p>تواصل معنا</p>
                     <div class="socialIcons">
-                        <a href="https://www.tiktok.com/@koraplus" target="_blank" rel="nofollow">
+                        <a href="https://www.tiktok.com/@kora4ever" target="_blank" rel="nofollow">
                             <img class="tiktoklogo" src="images/them/tiktoklogo.png" />
                         </a>
-                        <a href="https://www.facebook.com/koraplus" target="_blank" rel="nofollow">
+                        <a href="https://www.facebook.com/kora4ever" target="_blank" rel="nofollow">
                             <i class="fa fa-facebook" aria-hidden="true"></i>
                         </a>
-                        <a href="https://www.instagram.com/koraplus" target="_blank" rel="nofollow">
+                        <a href="https://www.instagram.com/kora4ever" target="_blank" rel="nofollow">
                             <i class="fa fa-instagram" aria-hidden="true"></i>
                         </a>
-                        <a href="https://twitter.com/korapluseg" target="_blank" rel="nofollow">
+                        <a href="https://twitter.com/kora4evereg" target="_blank" rel="nofollow">
                             <i class="fa fa-twitter" aria-hidden="true"></i>
                         </a>
                         <a href="https://www.youtube.com/channel/UCoTREVo1yJwXXDY0TbTA4EQ" target="_blank"
@@ -150,7 +150,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="https://koraplus.com/Program/Index?ID=129" target="_parent">
+                            <a href="https://kora4ever.com/Program/Index?ID=129" target="_parent">
                                 الاستوديو التحليلي
                             </a>
                         </li>
@@ -161,22 +161,22 @@
                             </a>
                         </li>
                         <li>
-                            <a href="https://koraplus.com/Program/Index?ID=131" target="_parent">
+                            <a href="https://kora4ever.com/Program/Index?ID=131" target="_parent">
                                 بوكسينج داي
                             </a>
                         </li>
                         <li>
-                            <a href="https://koraplus.com/Program/Index?ID=132" target="_parent">
+                            <a href="https://kora4ever.com/Program/Index?ID=132" target="_parent">
                                 أبطال بلس
                             </a>
                         </li>
                         <li>
-                            <a href="https://koraplus.com/Program/Index?ID=130" target="_parent">
+                            <a href="https://kora4ever.com/Program/Index?ID=130" target="_parent">
                                 فوتبول شات
                             </a>
                         </li>
                         <li>
-                            <a href="https://koraplus.com/Program/Index?ID=133" target="_parent">
+                            <a href="https://kora4ever.com/Program/Index?ID=133" target="_parent">
                                 VAR بلس
                             </a>
                         </li>
@@ -331,7 +331,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="https://koraplus.com/TagNews/1498/%D8%AA%D9%86%D8%B3-%D8%A7%D9%84%D8%B7%D8%A7%D9%88%D9%84%D8%A9/1"
+                            <a href="https://kora4ever.com/TagNews/1498/%D8%AA%D9%86%D8%B3-%D8%A7%D9%84%D8%B7%D8%A7%D9%88%D9%84%D8%A9/1"
                                 target="_self">
                                 تنس الطاولة
                             </a>
@@ -342,25 +342,25 @@
                             </a>
                         </li>
                         <li>
-                            <a href="https://koraplus.com/TagNews/964/%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D8%AD/1"
+                            <a href="https://kora4ever.com/TagNews/964/%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D8%AD/1"
                                 target="_self">
                                 السلاح
                             </a>
                         </li>
                         <li>
-                            <a href="https://koraplus.com/TagNews/403/%D8%A7%D9%84%D8%B1%D9%85%D8%A7%D9%8A%D8%A9/1"
+                            <a href="https://kora4ever.com/TagNews/403/%D8%A7%D9%84%D8%B1%D9%85%D8%A7%D9%8A%D8%A9/1"
                                 target="_self">
                                 الرماية
                             </a>
                         </li>
                         <li>
-                            <a href="https://koraplus.com/TagNews/302/%D8%A7%D9%84%D8%AA%D8%A7%D9%8A%D9%83%D9%88%D9%86%D8%AF%D9%88/1https://koraplus.com/TagNews/302/%D8%A7%D9%84%D8%AA%D8%A7%D9%8A%D9%83%D9%88%D9%86%D8%AF%D9%88/1"
+                            <a href="https://kora4ever.com/TagNews/302/%D8%A7%D9%84%D8%AA%D8%A7%D9%8A%D9%83%D9%88%D9%86%D8%AF%D9%88/1https://kora4ever.com/TagNews/302/%D8%A7%D9%84%D8%AA%D8%A7%D9%8A%D9%83%D9%88%D9%86%D8%AF%D9%88/1"
                                 target="_self">
                                 التايكوندو
                             </a>
                         </li>
                         <li>
-                            <a href="https://koraplus.com/TagNews/537/%D8%A7%D9%84%D9%85%D8%B5%D8%A7%D8%B1%D8%B9%D8%A9/1"
+                            <a href="https://kora4ever.com/TagNews/537/%D8%A7%D9%84%D9%85%D8%B5%D8%A7%D8%B1%D8%B9%D8%A9/1"
                                 target="_self">
                                 المصارعة
                             </a>
@@ -372,7 +372,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="https://koraplus.com/TagNews/1354/%D8%A7%D9%84%D8%AF%D8%B1%D8%A7%D8%AC%D8%A7%D8%AA/1"
+                            <a href="https://kora4ever.com/TagNews/1354/%D8%A7%D9%84%D8%AF%D8%B1%D8%A7%D8%AC%D8%A7%D8%AA/1"
                                 target="_self">
                                 الدراجات
                             </a>

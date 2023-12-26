@@ -2,26 +2,33 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Leauge;
 use Livewire\Component;
+use App\Models\Championship;
+use Livewire\WithPagination;
 use Livewire\WithFileUploads;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
-
 class LeaugeComponent extends Component
 {
-    use WithFileUploads, LivewireAlert;
-    public $name, $type, $image, $country_id, $leauge_id;
-
+    use WithFileUploads, LivewireAlert, WithPagination;
+    public $name, $type, $image, $country_id, $championship_id, $tournament_type, $season_id, $tournament_typeSearch, $typeSearch;
+    protected $paginationTheme = 'bootstrap';
     protected $rules = [
         'name' => 'required',
-        'type' => 'required',
-        'country_id' => 'nullable',
+        // 'season_id' => 'required',
+        'tournament_type' => 'required',
         'image' => 'required|image|max:1024',
     ];
 
     public function render()
     {
-        return view('livewire.leauge-component');
+        $championship = Championship::query();
+        if ($this->tournament_typeSearch) {
+            $championship->where('tournament_type', $this->tournament_typeSearch);
+        }
+        if ($this->typeSearch) {
+            $championship->where('type', $this->typeSearch);
+        }
+        return view('livewire.leauge-component', ['championships' => $championship->paginate(10)]);
     }
 
     public function updated($propertyName)
@@ -31,11 +38,13 @@ class LeaugeComponent extends Component
 
     public function save()
     {
-        if ($this->leauge_id) {
-            $leauge = Leauge::find($this->leauge_id);
+        if ($this->championship_id) {
+            $leauge = Championship::find($this->championship_id);
             $leauge->name = $this->name;
-            $leauge->type = $this->type;
-            $leauge->country_id = $this->country_id;
+            $leauge->type = $this->type ? $this->type : null;
+            // $leauge->season_id = $this->season_id;
+            $leauge->country_id = $this->country_id ? $this->country_id : null;
+            $leauge->tournament_type = $this->tournament_type;
             if (!is_string($this->image)) {
                 $leauge->logo = $this->image->store('leauges', 'public');
             }
@@ -44,10 +53,12 @@ class LeaugeComponent extends Component
             $this->alert('success', "successfully updated");
         } else {
             $this->validate();
-            $leauge = new Leauge();
+            $leauge = new Championship();
             $leauge->name = $this->name;
-            $leauge->type = $this->type;
-            $leauge->country_id = $this->country_id;
+            $leauge->type = $this->type ? $this->type : null;
+            // $leauge->season_id = $this->season_id;
+            $leauge->country_id = $this->country_id ? $this->country_id : null;
+            $leauge->tournament_type = $this->tournament_type;
             $leauge->logo = $this->image->store('leauges', 'public');
             $leauge->save();
             $this->clear();
@@ -63,19 +74,21 @@ class LeaugeComponent extends Component
         $this->country_id = null;
     }
 
-    function edit($leauge_id)
+    function edit($championship_id)
     {
-        $leauge = Leauge::find($leauge_id);
-        $this->leauge_id = $leauge->id;
+        $leauge = Championship::find($championship_id);
+        $this->championship_id = $leauge->id;
         $this->name = $leauge->name;
         $this->type = $leauge->type;
-        $this->country_id = $leauge->country_id;
         $this->image = $leauge->logo;
+        // $this->season_id = $leauge->season_id;
+        $this->country_id = $leauge->country_id;
+        $this->tournament_type = $leauge->tournament_type;
     }
 
-    function delete($leauge_id)
+    function delete($championship_id)
     {
-        Leauge::destroy($leauge_id);
+        Championship::destroy($championship_id);
         $this->alert('success', "successfully deleted");
     }
 }

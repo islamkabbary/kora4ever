@@ -21,7 +21,7 @@ class CreateMatcheComponent extends Component
     public $result_team2;
     public $time;
     public $date;
-    public $leauge_id;
+    public $championship_id;
     public $commentator_id;
     public $channel_id;
     public $match_id;
@@ -30,7 +30,7 @@ class CreateMatcheComponent extends Component
         'team1' => 'required|exists:teams,id',
         'team2' => 'required|exists:teams,id',
         'status' => 'nullable|in:fisrt half,end fisrt half,secound half,extra time 1,extra time 2,start soon,end',
-        'leauge_id' => 'required|exists:leauges,id',
+        'championship_id' => 'required|exists:leauges,id',
         'commentator_id' => 'nullable|exists:commentators,id',
         'channel_id' => 'nullable|exists:channels,id',
         'time' => 'required',
@@ -41,9 +41,9 @@ class CreateMatcheComponent extends Component
 
     public function render()
     {
-        if ($this->leauge_id) {
+        if ($this->championship_id) {
             $teams = Team::whereHas('leauges', function ($q) {
-                $q->where('leauge_id', $this->leauge_id);
+                $q->where('championship_id', $this->championship_id);
             })->get();
         } else {
             $teams = null;
@@ -64,7 +64,7 @@ class CreateMatcheComponent extends Component
             $today->team1 = $this->team1;
             $today->team2 = $this->team2;
             $today->channel_id = $this->channel_id;
-            $today->leauge_id = $this->leauge_id;
+            $today->championship_id = $this->championship_id;
             $today->commentator_id = $this->commentator_id;
             $today->result_team1 = $this->result_team1 ?  $this->result_team1 : 0;
             $today->result_team2 = $this->result_team2 ? $this->result_team2 : 0;
@@ -80,7 +80,7 @@ class CreateMatcheComponent extends Component
             $today = new Matche();
             $today->team1 = $this->team1;
             $today->team2 = $this->team2;
-            $today->leauge_id = $this->leauge_id;
+            $today->championship_id = $this->championship_id;
             $today->channel_id = $this->channel_id;
             $today->commentator_id = $this->commentator_id;
             $today->result_team1 = $this->result_team1 ?  $this->result_team1 : 0;
@@ -101,7 +101,7 @@ class CreateMatcheComponent extends Component
         $this->team1 = null;
         $this->team2 = null;
         $this->channel_id = null;
-        $this->leauge_id = null;
+        $this->championship_id = null;
         $this->commentator_id = null;
         $this->result_team1 = null;
         $this->result_team2 = null;
@@ -119,7 +119,7 @@ class CreateMatcheComponent extends Component
         $this->team1 = $today->team1;
         $this->team2 = $today->team2;
         $this->channel_id = $today->channel_id;
-        $this->leauge_id = $today->leauge_id;
+        $this->championship_id = $today->championship_id;
         $this->commentator_id = $today->commentator_id;
         $this->result_team1 = $today->result_team2;
         $this->result_team1 = $today->result_team2;
@@ -133,5 +133,6 @@ class CreateMatcheComponent extends Component
     function delete($match_id)
     {
         Matche::destroy($match_id);
+        $this->alert('success', "successfully deleted");
     }
 }

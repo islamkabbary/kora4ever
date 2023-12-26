@@ -13,7 +13,7 @@
                             <div class="SecondNews">
                                 <div class="secondNewsBlockImage">
                                     <a href="{{ route('Article', ['id' => $news->id]) }}">
-                                        <img src="{{ env('APP_URL') . '/storage/' . $news->media[0]->url }}"
+                                        <img src="{{ env('APP_URL') . 'storage/' . $news->media->first()->url }}"
                                             onerror="this.src='{{ asset('images/mainlogo.png') }}'"
                                             class="OneSResultImage">
                                     </a>

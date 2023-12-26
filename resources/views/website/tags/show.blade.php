@@ -12,7 +12,7 @@
                             <div class="SecondNews">
                                 <div class="secondNewsBlockImage">
                                     <a href="{{ route('Article', ['id' => $post->id]) }}">
-                                        <img src="{{ env('APP_URL') . '/storage/' . $post->media[0]->url }}"
+                                        <img src="{{ env('APP_URL') . 'storage/' . $post->media[0]->url }}"
                                             onerror="this.src='images/onerror/Large329x224.png'" class="OneSResultImage"
                                             title="{{ $post->title }}" alt="{{ $post->title }}">
                                     </a>

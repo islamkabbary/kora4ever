@@ -13,13 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('media_news', function (Blueprint $table) {
-            $table->id();
-            $table->enum('type', ['image','video'])->default('image');
-            $table->string('url',2000);
-            $table->foreignId('news_id')->nullable()->constrained('news');
-            $table->timestamps();
-            $table->softDeletes();
+        Schema::table('team_has_leauges', function (Blueprint $table) {
+            $table->foreignId('season_id')->nullable()->after('points')->constrained('seasons')->default(1);
+            $table->foreignId('updated_by')->constrained('users');
         });
     }
 
@@ -30,6 +26,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('media_news');
+        Schema::table('team_has_leauges', function (Blueprint $table) {
+            //
+        });
     }
 };

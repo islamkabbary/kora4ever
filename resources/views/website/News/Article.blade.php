@@ -43,7 +43,7 @@
                         </div>
                     @else
                         <div class="detailsMainImage">
-                            <img src="{{ env('APP_URL') . '/storage/' . $news->media[0]->url }}"
+                            <img src="{{ env('APP_URL') . 'storage/' . $news->media[0]->url }}"
                                 onerror="this.src='images/mainlogo.png'" title="{{ $news->title }}"
                                 alt="{{ $news->title }}">
                             <div class="imageCaption">
@@ -85,7 +85,7 @@
                             <div class="OneCollection">
                                 <div class="secondNewsBlockImage">
                                     <a href="{{ route('Article', ['id' => $last_post->id]) }}">
-                                        <img src="{{ env('APP_URL') . '/storage/' . $last_post->media[0]->url }}"
+                                        <img src="{{ env('APP_URL') . 'storage/' . $last_post->media[0]->url }}"
                                             onerror="this.src={{ asset('images/onerror/Large329x224.png') }}"
                                             class="OneCollectionImg">
                                     </a>

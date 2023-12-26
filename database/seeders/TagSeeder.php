@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Tag;
 use App\Models\Team;
-use App\Models\Leauge;
+use App\Models\Championship;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -26,7 +26,7 @@ class TagSeeder extends Seeder
             ]);
         }
 
-        $leauges = Leauge::all()->pluck('name')->toArray();
+        $leauges =  Championship::all()->pluck('name')->toArray();
 
         foreach ($leauges as $name) {
             Tag::create([

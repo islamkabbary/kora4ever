@@ -21,7 +21,7 @@
     {{-- <div class="DivNewsLeft margin20">
         <div class="NewsBlobkFull">
             @foreach ($news->photos as $photo)
-                <img src="{{ env('APP_URL') . '/storage/' . $news->media[0]->url }}" onerror="this.src='images/onerror/Large329x224.png'">
+                <img src="{{ env('APP_URL') . 'storage/' . $news->media[0]->url }}" onerror="this.src='images/onerror/Large329x224.png'">
             @endforeach
             <a href="{{ route('Article', ['id' => $news->id]) }}"> {{ $news->title }}</a>
         </div>
@@ -29,7 +29,7 @@
             <div class="NewsCon">
                 <a href="#" class="d-flex NewsCon">
                     @foreach ($news->photos as $photo)
-                        <img src="{{ env('APP_URL') . '/storage/' . $news->media[0]->url }}" onerror="this.src='images/onerror/Large214x146.png'">
+                        <img src="{{ env('APP_URL') . 'storage/' . $news->media[0]->url }}" onerror="this.src='images/onerror/Large214x146.png'">
                     @endforeach
                     <p>{{ $news->title }}</p>
                 </a>

@@ -13,13 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('leauges', function (Blueprint $table) {
+        Schema::create('championships', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->enum('type', ['league', 'cup', 'supercup', 'other'])->default('league');
+            $table->enum('tournament_type', ['international', 'continental', 'local', 'friendly_tournament', 'other'])->default('local');
+            $table->enum('type', ['league', 'cup', 'supercup'])->nullable();
+            $table->foreignId('season_id')->nullable()->constrained('seasons');
             $table->text('logo')->nullable();
             $table->foreignId('country_id')->nullable()->constrained('countries');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -30,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('leauges');
+        Schema::dropIfExists('championships');
     }
 };

@@ -7,7 +7,7 @@
         </ul>
     </div>
     <div
-        style="max-height: 605px;overflow: auto;display: flex;flex-direction: column;gap: 12px;padding: 5px;position: relative;border: 1px solid #0025ff;border-radius: 6px;">
+        style="max-height: 605px;overflow: auto;display: flex;flex-direction: column;gap: 12px;padding: 5px;position: relative;border: 1px solid #b06466;border-radius: 6px;">
         @if ($yesterday->count() > 0)
             <div class="MatchInnerBlock" id="tab1" style="display:none">
                 @foreach ($yesterday as $yesterday)

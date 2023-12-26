@@ -15,14 +15,14 @@ class TeamLeaugeComponent extends Component
 
 
     protected $paginationTheme = 'bootstrap';
-    public $team_id, $logo, $leauge_id, $played, $won, $drawn, $lost, $gf, $ga, $gd;
+    public $team_id, $logo, $championship_id, $played, $won, $drawn, $lost, $gf, $ga, $gd;
     protected $rules = [
-        "leauge_id" => 'required|exists:leauges,id',
+        "championship_id" => 'required|exists:leauges,id',
     ];
 
     public function render()
     {
-        $teams = \App\models\TeamHasLeauge::paginate(20);
+        $teams = \App\Models\TeamHasLeauge::paginate(20);
         return view('livewire.team-leauge-component', compact('teams'));
     }
 
@@ -34,14 +34,14 @@ class TeamLeaugeComponent extends Component
 
     public function save()
     {
-        // dd($this->leauge_id);
+        // dd($this->championship_id);
         $this->validate();
         if ($this->team_id) {
-            $team_has_leauge = TeamHasLeauge::where('leauge_id', $this->leauge_id)->where('team_id', $this->team_id)->first();
+            $team_has_leauge = TeamHasLeauge::where('championship_id', $this->championship_id)->where('team_id', $this->team_id)->first();
             if ($team_has_leauge) {
                 $team_has_leauge->update([
                     'team_id' => $this->team_id,
-                    'leauge_id' => $this->leauge_id,
+                    'championship_id' => $this->championship_id,
                     'played' => $this->played,
                     'won' => $this->won,
                     'drawn' => $this->drawn,
@@ -55,7 +55,7 @@ class TeamLeaugeComponent extends Component
             } else {
                 TeamHasLeauge::create([
                     'team_id' => $this->team_id,
-                    'leauge_id' => $this->leauge_id,
+                    'championship_id' => $this->championship_id,
                     'played' => $this->played,
                     'won' => $this->won,
                     'drawn' => $this->drawn,
@@ -81,7 +81,7 @@ class TeamLeaugeComponent extends Component
     public function clear()
     {
         $this->team_id = null;
-        $this->leauge_id = null;
+        $this->championship_id = null;
         $this->played = null;
         $this->won = null;
         $this->drawn = null;
@@ -94,9 +94,9 @@ class TeamLeaugeComponent extends Component
 
     function edit($team_id)
     {
-        $team = TeamHasLeauge::where('team_id', $team_id)->where('leauge_id', $this->leauge_id)->first();
+        $team = TeamHasLeauge::where('team_id', $team_id)->where('championship_id', $this->championship_id)->first();
         $this->team_id = $team_id;
-        $this->leauge_id = $team->leauge_id;
+        $this->championship_id = $team->championship_id;
         $this->played = $team->played;
         $this->won = $team->won;
         $this->drawn = $team->drawn;

@@ -99,7 +99,7 @@
                                     كل البطولات
                                 </button>
                                 <div class="dropdown-content" id="CHdropWeek1">
-                                    @foreach (App\Models\Leauge::take(7)->get() as $leauge)
+                                    @foreach (App\Models\Championship::take(7)->get() as $leauge)
                                     <a href="#" class="filterLeagues" LeagueId="{{ $leauge->id }}">{{ __("messages.$leauge->name") }}</a>
                                     @endforeach
                                 </div>
@@ -117,7 +117,7 @@
                 @if ($matches->count() > 0)
                     @foreach ($matches as $matche)
                         @php
-                            $leauge = App\Models\Leauge::where('id', $matche[0]['leauge_id'])
+                            $leauge = App\Models\Championship::where('id', $matche[0]['championship_id'])
                                 ->whereHas('matches', function ($q) {
                                     $q->where('date', Carbon\Carbon::today()->toDateString());
                                 })
@@ -280,7 +280,7 @@
                                             </div>
                                             @php
                                                 $twoTeams = App\Models\TeamHasLeauge::whereIn('team_id', [$match->team1, $match->team2])
-                                                    ->where('leauge_id', $match->leauge->id)
+                                                    ->where('championship_id', $match->leauge->id)
                                                     ->orderBy('points', 'DESC')
                                                     ->get();
                                             @endphp

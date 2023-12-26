@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Leauge;
+use App\Models\Championship;
 use Livewire\Component;
 use App\Models\TeamHasLeauge;
 
@@ -15,7 +15,7 @@ class StatisticsComponent extends Component
     }
     public function render()
     {
-        $statistc = TeamHasLeauge::where('leauge_id', $this->leauge)->orderBy('points', 'DESC')->get()->take(4);
+        $statistc = TeamHasLeauge::where('championship_id', $this->leauge)->orderBy('points', 'DESC')->get()->take(4);
         return view('livewire.statistics-component', ['statistc' => $statistc, 'leauge' => $this->leauge]);
     }
 }

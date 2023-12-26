@@ -30,7 +30,11 @@
     <link rel="shortcut icon" href="{{ asset('assets/assetsdash/images/favicon.png') }}" />
     @yield('styles')
     @livewireStyles
-
+<style>
+    .swal2-container .swal2-popup .swal2-title{
+        color: black;
+    }
+</style>
 </head>
 
 <body>

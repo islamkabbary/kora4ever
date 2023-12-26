@@ -16,7 +16,7 @@ class News extends Model
 
     public function leauge()
     {
-        return $this->belongsTo(Leauge::class,'leauge_id','id');
+        return $this->belongsTo(Championship::class,'championship_id','id');
     }
 
     public function team()

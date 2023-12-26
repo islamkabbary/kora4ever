@@ -1,5 +1,5 @@
 'use strict';
-var _0x3bda = ["AIzaSyCBOaPI3aQSa-LC9DELs-LHhnFKTwS_hV0", "koraplus-9880c.firebaseapp.com", "koraplus-9880c", "koraplus-9880c.appspot.com", "722078363369", "1:722078363369:web:3dcbfa910f26dfd6c80a78", "G-KNNC4MZ64V", "initializeApp", "messaging", "Unable to get permission to notify.", "log", "catch", "News", "then", "Notification permission granted.", "getToken", "requestPermission", "Message received. ", "innerHTML", "stringify", "notification", "parse",
+var _0x3bda = ["AIzaSyCBOaPI3aQSa-LC9DELs-LHhnFKTwS_hV0", "kora4ever-9880c.firebaseapp.com", "kora4ever-9880c", "kora4ever-9880c.appspot.com", "722078363369", "1:722078363369:web:3dcbfa910f26dfd6c80a78", "G-KNNC4MZ64V", "initializeApp", "messaging", "Unable to get permission to notify.", "log", "catch", "News", "then", "Notification permission granted.", "getToken", "requestPermission", "Message received. ", "innerHTML", "stringify", "notification", "parse",
     "body", "showNotification", "getRegistrations", "serviceWorker", "onMessage", "result", "error", "status", ';"', ';" is subscribed', "https://iid.googleapis.com/iid/v1/", "rel/topics/", "", "POST", "key=AAAAqB85buk:APA91bGbhc45FEZq27DAPiCut6up3hS1w2Z0iqSk4GAsT20OeuDomFX_nrZw4F_Hg2cYd57_iod1ySuZ371rouD0mCtDnkzbS1CAa6bq5KELOBGgrFacEqo189-rkZCJgYJrquC5hctI"];
 var firebaseConfig = {
     apiKey: _0x3bda[0],

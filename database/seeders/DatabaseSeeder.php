@@ -21,7 +21,8 @@ class DatabaseSeeder extends Seeder
             TeamSeeder::class,
             TagSeeder::class,
             CommentatorSeeder::class,
-            ChannelSeeder::class
+            ChannelSeeder::class,
+            SeasonSeeder::class,
         ]);
     }
 }

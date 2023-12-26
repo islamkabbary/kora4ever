@@ -3,15 +3,18 @@
 namespace App\Http\Livewire;
 
 use App\Models\Tag;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 
 class TagComponent extends Component
 {
-    public $name ,$tag_id;
+    use LivewireAlert;
+    public $name, $tag_id;
 
     protected $rules = [
         'name' => 'required',
     ];
+
     public function render()
     {
         return view('livewire.tag-component');
@@ -27,18 +30,19 @@ class TagComponent extends Component
     {
         $this->validate();
         if ($this->tag_id) {
-            $tag= Tag::find($this->tag_id);
-        }else{
+            $tag = Tag::find($this->tag_id);
+        } else {
             $tag = new Tag();
         }
-        $tag->name = $this->name ;
+        $tag->name = $this->name;
         $tag->save();
-        $this->cleare();
+        $this->alert('success', "successfully");
+        $this->clear();
     }
 
-    public function cleare()
+    public function clear()
     {
-        $this->name = null ;
+        $this->name = null;
     }
 
     public function edit($tag_id)
@@ -51,5 +55,6 @@ class TagComponent extends Component
     function delete($tag_id)
     {
         Tag::destroy($tag_id);
+        $this->alert('success', "deleted");
     }
 }

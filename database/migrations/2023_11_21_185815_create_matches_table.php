@@ -21,7 +21,7 @@ return new class extends Migration
             $table->integer('result_team2')->default(0);
             $table->string('match_url')->nullable();
             $table->string('url_type')->nullable();
-            $table->foreignId('leauge_id')->constrained('leauges')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('championship_id')->constrained('championships')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('commentator_id')->nullable()->constrained('commentators')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('channel_id')->nullable()->constrained('channels')->onUpdate('cascade')->onDelete('cascade');
             $table->enum('status' , ['fisrt half' , 'end fisrt half' , 'secound half' , 'extra time 1' , 'extra time 2' , 'start soon', 'end'])->nullable();

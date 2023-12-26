@@ -11,7 +11,7 @@ $(document).ready(function () {
     //if (landingCookie != 'false') {
     //    $('.landingPageBLock').show()
     //}
-    //$("#koraPlusLandingLogo").click(function () {
+    //$("#kora4everLandingLogo").click(function () {
     //    $(".landingPageBLock").fadeOut(800);
 
     //    createCookie("landing",'false',1);

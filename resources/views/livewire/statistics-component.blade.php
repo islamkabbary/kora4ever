@@ -4,7 +4,7 @@
             {{-- <div class="row BlackHeaderBlock">
                 <a href="#" class="row">
                     <p class="TitleBlocksHeader">
-                        احصائيات {{ __('messages.' . App\Models\Leauge::find($leauge)->name) }}
+                        احصائيات {{ __('messages.' . App\Models\Championship::find($leauge)->name) }}
                     </p>
                     <img src="{{ asset('images/redcorner.png') }}">
                 </a>
@@ -64,7 +64,7 @@
                 @endforeach
             </div>
             <div class="row BlackHeaderBlock morechampionship">
-                {{-- <a href="{{ route('championships', ['id' => App\Models\Leauge::find($leauge)->id]) }}" class="row" --}}
+                {{-- <a href="{{ route('championships', ['id' => App\Models\Championship::find($leauge)->id]) }}" class="row" --}}
                 {{-- data-ur1313m3t="true"> --}}
                 <p class="TitleBlocksHeader">
                     المزيد

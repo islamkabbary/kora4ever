@@ -26,7 +26,7 @@ class NewsController extends Controller
             // $news->title = $request->title;
             // $news->body = $request->body;
             // $news->team_id = $request->team_id;
-            // $news->leauge_id = $request->leauge_id;
+            // $news->championship_id = $request->championship_id;
             // $news->show_as_main_news = $request->show_as_main_news ? true : false;
             // $news->show_in_most_read = $request->show_in_most_read ? true : false;
             // $news->show_from_the_five_main_news = $request->show_from_the_five_main_news ? true : false;

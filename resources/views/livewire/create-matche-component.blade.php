@@ -11,13 +11,13 @@
                             {{-- Leauge --}}
                             <div class="form-group">
                                 <label for="exampleSelectGender">Leauge</label>
-                                <select class="form-control" wire:model='leauge_id' id="exampleSelectGender">
+                                <select class="form-control" wire:model='championship_id' id="exampleSelectGender">
                                     <option>Select Leauge</option>
-                                    @foreach (\App\Models\Leauge::all() as $leauge)
+                                    @foreach (\App\Models\Championship::all() as $leauge)
                                         <option value="{{ $leauge->id }}"> {{ $leauge->name }} </option>
                                     @endforeach
                                 </select>
-                                @error('leauge_id')
+                                @error('championship_id')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>

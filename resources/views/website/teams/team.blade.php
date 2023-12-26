@@ -8,7 +8,7 @@
                 <div class="HeaderTeamCon">
                     <div class="row Head-Team">
                         <div class="LogoTeam">
-                            <img src="{{ env('APP_URL') . '/storage/' . $team->logo }}"
+                            <img src="{{ env('APP_URL') . 'storage/' . $team->logo }}"
                                 title="{{ __("messages.$team->name") }}" alt="{{ __("messages.$team->name") }}">
                         </div>
                         <div class="NameTeam">
@@ -49,11 +49,11 @@
                         <div class="TableChamNad">
                             <div class="row Head-Team">
                                 <div class="LogoTeam-League">
-                                    <img src="{{ env('APP_URL') . '/storage/' . $league->logo }}" alt="logo league">
+                                    <img src="{{ env('APP_URL') . 'storage/' . $league->logo }}" alt="logo league">
                                 </div>
                                 @php
                                     $result = \App\Models\TeamHasLeauge::where('team_id', $team->id)
-                                        ->where('leauge_id', $league->id)
+                                        ->where('championship_id', $league->id)
                                         ->first();
                                 @endphp
                                 <div class="NameTeam">
@@ -291,7 +291,7 @@
                                     </div>
                                     @php
                                         $twoTeams = App\Models\TeamHasLeauge::whereIn('team_id', [$match->team1, $match->team2])
-                                            ->where('leauge_id', $match->leauge->id)
+                                            ->where('championship_id', $match->leauge->id)
                                             ->orderBy('points', 'DESC')
                                             ->get();
                                     @endphp
@@ -384,7 +384,7 @@
                                 <div class="SecondNews">
                                     <div class="secondNewsBlockImage">
                                         <a href="{{ route('Article', ['id' => $post->id]) }}">
-                                            <img src="{{ env('APP_URL') . '/storage/' . $post->media[0]->url }}"
+                                            <img src="{{ env('APP_URL') . 'storage/' . $post->media[0]->url }}"
                                                 class="OneSResultImage" title="{{ $post->title }}">
                                         </a>
                                     </div>

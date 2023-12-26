@@ -16,9 +16,10 @@ return new class extends Migration
         Schema::create('media_leauges_and_teams', function (Blueprint $table) {
             $table->id();
             $table->string('url',2000);
-            $table->foreignId('leauge_id')->nullable()->constrained('leauges');
+            $table->foreignId('championship_id')->nullable()->constrained('championships');
             $table->foreignId('team_id')->nullable()->constrained('teams');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

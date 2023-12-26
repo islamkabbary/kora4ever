@@ -8,7 +8,7 @@
                 <div class="HeaderTeamCon">
                     <div class="row Head-Team">
                         <div class="LogoTeam">
-                            <img src="{{ env('APP_URL') . '/storage/' . $leauge->logo }}" alt="{{ $leauge->name }}"
+                            <img src="{{ env('APP_URL') . 'storage/' . $leauge->logo }}" alt="{{ $leauge->name }}"
                                 title="{{ $leauge->name }}">
                         </div>
                         <div class="NameTeam">
@@ -70,7 +70,7 @@
                             <div class="secondNewsBlockImage">
                                 <a href="{{ route('Article', ['id' => $post->id]) }}">
                                     @if (count($post->media) > 0 && Storage::exists($post->media[0]->url))
-                                        <img src="{{ env('APP_URL') . '/storage/' . $post->media[0]->url }}"
+                                        <img src="{{ env('APP_URL') . 'storage/' . $post->media[0]->url }}"
                                             class="OneSResultImage"
                                             onerror="this.src='{{ asset('images/onerror/Large789x539.png') }}'"
                                             title="{{ $post->title }}">
@@ -340,7 +340,7 @@
                                     </div>
                                     @php
                                         $twoTeams = App\Models\TeamHasLeauge::whereIn('team_id', [$match->team1, $match->team2])
-                                            ->where('leauge_id', $match->leauge->id)
+                                            ->where('championship_id', $match->leauge->id)
                                             ->orderBy('points', 'DESC')
                                             ->get();
                                     @endphp

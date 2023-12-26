@@ -17,7 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('logo')->nullable();
+            $table->enum('national_or_team', ['national_team', 'team'])->default('team');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

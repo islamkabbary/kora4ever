@@ -30,7 +30,7 @@
                     <div class="card">
                         <a class="card-img-link"
                             href="Article/25401/ملخص-مباراة-البنك-الأهلي-وسيراميكا-كليوباترا-بالجولة-الحادية-والعشرون-الدوري">
-                            <img src="{{ env('APP_URL') . '/storage/' . $news[0]->media[0]->url }}" class="card-img-top"
+                            <img src="{{ env('APP_URL') . 'storage/' . $news[0]->media[0]->url }}" class="card-img-top"
                                 onerror="this.src='images/them/onerror/Large329x224.png';" title="البنك الأهلي"
                                 alt="البنك الأهلي">
                             <img src="images/them/tvicon.png" class="IconPlayDontMiss" alt="tvicon">

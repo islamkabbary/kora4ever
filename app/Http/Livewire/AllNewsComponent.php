@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Leauge;
+use App\Models\Championship;
 use App\Models\News;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -17,7 +17,7 @@ class AllNewsComponent extends Component
     public function render()
     {
         $news   = News::orderBy('created_at', 'DESC')->paginate(60);
-        $leauges = Leauge::orderBy('id', 'asc')->take(3)->get();
+        $leauges = Championship::orderBy('id', 'asc')->take(3)->get();
         return view('livewire.all-news-component',['all_news' => $news , 'leauges' => $leauges]);
     }
 }

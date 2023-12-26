@@ -19,7 +19,7 @@ return new class extends Migration
             $table->longText('body');
             $table->enum('type', ['post','video'])->default('post');
             $table->foreignId('team_id')->constrained('teams');
-            $table->foreignId('leauge_id')->constrained('leauges');
+            $table->foreignId('championship_id')->constrained('championships');
             $table->foreignId('news_id')->nullable()->constrained('news');
             $table->boolean('show_as_main_news')->default(false);
             $table->boolean('show_from_the_five_main_news')->default(false);

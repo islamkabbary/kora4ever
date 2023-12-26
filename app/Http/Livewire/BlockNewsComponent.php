@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Leauge;
+use App\Models\Championship;
 use App\Models\News;
 use Livewire\Component;
 
@@ -12,8 +12,13 @@ class BlockNewsComponent extends Component
 
     public function render()
     {
-        $nameLeauge = Leauge::find($this->league)->name;
-        $fourNews = News::take(4)->get();
+        $nameLeauge = Championship::find($this->league)->name;
+        $fourNews = News::whereHas('leauge', function ($q) {
+            $q->where("id", $this->league);
+            $q->where("show_as_main_news", false);
+            $q->where("show_from_the_five_main_news", false);
+            $q->where("show_in_most_read", false);
+        })->take(4)->get();
         return view('livewire.block-news-component', ['fourNews' => $fourNews, 'nameLeauge' => $nameLeauge]);
     }
 }

@@ -5,18 +5,15 @@ namespace App\Http\Livewire;
 use App\Models\News;
 use Livewire\Component;
 use App\Models\NewsHasTag;
-use App\Helpers\FileHelper;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\File;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
-
 class CreateNewsComponent extends Component
 {
     use WithFileUploads, LivewireAlert;
 
-    public $title, $body, $image, $video_url, $tag_id = [], $news_id, $leauge_id, $team_id, $show_as_main_news, $show_from_the_five_main_news, $show_in_most_read;
+    public $title, $body, $image, $video_url, $tag_id = [], $news_id, $championship_id, $team_id, $show_as_main_news, $show_from_the_five_main_news, $show_in_most_read;
     protected $listeners = ['add'];
 
     protected $rules = [
@@ -24,7 +21,7 @@ class CreateNewsComponent extends Component
         'body' => 'required',
         'tag_id' => 'required',
         'team_id' => 'required',
-        'leauge_id' => 'required',
+        'championship_id' => 'required',
         'image' => 'required|image|max:1024',
     ];
 
@@ -47,7 +44,7 @@ class CreateNewsComponent extends Component
                 $news->body = $this->body;
                 $news->title = $this->title;
                 $news->team_id = $this->team_id;
-                $news->leauge_id = $this->leauge_id;
+                $news->championship_id = $this->championship_id;
                 $news->created_by = Auth::user()->id;
                 $news->show_as_main_news = $this->show_as_main_news ? true : false;
                 $news->show_in_most_read = $this->show_in_most_read ? true : false;
@@ -67,22 +64,20 @@ class CreateNewsComponent extends Component
                     if (!is_string($this->image)) {
                         $img = $this->image->store('news', 'public');
                         $news->media()->delete();
-                        // $news->media()->create(['url' => $img]);
                     }
                 }
             } catch (\Throwable $th) {
                 Log::info("CreateNewsComponent" . $th->getMessage());
             }
             $this->clear();
-            return "success";
-            // $this->alert('success', "successfully updated");
+            $this->alert('success', "successfully updated");
         } else {
             try {
                 $news = new News;
                 $news->title = $this->title;
                 $news->body = $this->body;
                 $news->team_id = $this->team_id;
-                $news->leauge_id = $this->leauge_id;
+                $news->championship_id = $this->championship_id;
                 $news->show_as_main_news = $this->show_as_main_news ? true : false;
                 $news->show_in_most_read = $this->show_in_most_read ? true : false;
                 $news->show_from_the_five_main_news = $this->show_from_the_five_main_news ? true : false;
@@ -104,9 +99,8 @@ class CreateNewsComponent extends Component
                         $news->media()->create(['url' => $img]);
                     }
                 }
-                // $this->clear();
-                return "success";
-                // $this->alert('success', "successfully added");
+                $this->clear();
+                $this->alert('success', "successfully added");
             } catch (\Throwable $th) {
                 Log::info("CreateNewsComponent" . $th->getMessage());
             }
@@ -118,10 +112,11 @@ class CreateNewsComponent extends Component
         $this->title = null;
         $this->body = null;
         $this->image = null;
-        $this->leauge_id = null;
+        $this->championship_id = null;
         $this->team_id = null;
         $this->video_url = null;
-        $this->tag_id = null;
+        // $this->tag_id = null;
+        $this->dispatchBrowserEvent('reset');
     }
 
     function edit($news_id)
@@ -133,7 +128,7 @@ class CreateNewsComponent extends Component
         $this->image = $news->media->pop()->url;
         $this->tag_id = $news->tags->pluck('id')->toArray();
         $this->team_id = $news->team->pluck('id')->toArray();
-        $this->leauge_id = $news->leauge->pluck('id')->toArray();
+        $this->championship_id = $news->leauge->pluck('id')->toArray();
         $this->dispatchBrowserEvent('setBody', ["body" => $news->body]);
     }
 
@@ -141,7 +136,13 @@ class CreateNewsComponent extends Component
     function delete($news_id)
     {
         $news = News::find($news_id);
-        $news->media()->delete();
+        if ($news->media) {
+            $news->media()->delete();
+        }
+        if ($news->tags) {
+            $news->tags()->delete();
+        }
         $news->delete();
+        $this->alert('success', "successfully deleted");
     }
 }

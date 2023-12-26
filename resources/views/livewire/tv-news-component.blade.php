@@ -24,7 +24,7 @@
                                 </a>
                             </div>
                             <a href="Article/26528/روبوت-التحكيم-جاهز-للظهور-في-مونديال-2022">
-                                <img src="https://koraplus.com/images/them/2022/6/large/164336757069520220609030434434.jpg"
+                                <img src="https://kora4ever.com/images/them/2022/6/large/164336757069520220609030434434.jpg"
                                     class="OneTvSectionIcon" onerror="this.src='images/them/onerror/Large789x539.png';"
                                     title="روبوت للتحكيم" alt="روبوت للتحكيم">
                                 <img src="images/them/tvicon.png" class="IconPlayTVs" alt="tvicon">
@@ -59,7 +59,7 @@
                                     </div>
                                     <a class="card-img-link"
                                         href="Article/26499/حوار-بلس-كريم-رمزي-يكشف-كواليس-خاصة-بمستقبل-موسيماني-مع">
-                                        <img src="https://koraplus.com/images/them/2022/6/large-3/162671102047720220608040826826.jpg"
+                                        <img src="https://kora4ever.com/images/them/2022/6/large-3/162671102047720220608040826826.jpg"
                                             class="card-img-top" onerror="this.src='images/them/onerror/Large264x180.png';"
                                             title="موسيماني" alt="موسيماني">
                                         <img src="images/them/tvicon.png" class="IconPlayDontMiss" alt="tvicon">
@@ -81,7 +81,7 @@
                                     </div>
                                     <a class="card-img-link"
                                         href="Article/26441/حوار-بلس-سوء-حظ-للمنتخب-المصري-جائزة-جديدة-لمحمد-صلاح">
-                                        <img src="https://koraplus.com/images/them/2022/6/large-3/2871874097202206051058465846.jpg"
+                                        <img src="https://kora4ever.com/images/them/2022/6/large-3/2871874097202206051058465846.jpg"
                                             class="card-img-top" onerror="this.src='images/them/onerror/Large264x180.png';"
                                             title="منتخب مصر" alt="منتخب مصر">
                                         <img src="images/them/tvicon.png" class="IconPlayDontMiss" alt="tvicon">
@@ -103,7 +103,7 @@
                                     </div>
                                     <a class="card-img-link"
                                         href="Article/26304/حكاية-محمد-الشوربجي-من-الالتفاف-بعلم-مصر-إلى-اللعب-باسم">
-                                        <img src="https://koraplus.com/images/them/2022/6/large-3/2871874097202206010150375037.jpg"
+                                        <img src="https://kora4ever.com/images/them/2022/6/large-3/2871874097202206010150375037.jpg"
                                             class="card-img-top" onerror="this.src='images/them/onerror/Large264x180.png';"
                                             title="الشوربجي" alt="الشوربجي">
                                         <img src="images/them/tvicon.png" class="IconPlayDontMiss" alt="tvicon">
@@ -137,7 +137,7 @@
                         <div class="swiper-slide">
                             <div class="row writersBlockCenter">
                                 <a href="Article/26480/إيطاليا-مع-مانشيني-الفوقان-بعد-فوات-الأوان">
-                                    <img src="https://koraplus.com/images/them/2022/6/large/1619696029370202206081059505950.jpg"
+                                    <img src="https://kora4ever.com/images/them/2022/6/large/1619696029370202206081059505950.jpg"
                                         onerror="this.src='images/them/onerror/Large789x539.png';" title="إبراهيم جاد"
                                         alt="إبراهيم جاد">
                                 </a>
@@ -154,7 +154,7 @@
                         <div class="swiper-slide">
                             <div class="row writersBlockCenter">
                                 <a href="Article/25273/خدعوك-فقالوا-بنزيما-هو-الأفضل">
-                                    <img src="https://koraplus.com/images/them/2022/1/large/287187409720220110035000500.jpg"
+                                    <img src="https://kora4ever.com/images/them/2022/1/large/287187409720220110035000500.jpg"
                                         onerror="this.src='images/them/onerror/Large789x539.png';" title="محمد عمارة"
                                         alt="محمد عمارة">
                                 </a>
@@ -170,7 +170,7 @@
                         <div class="swiper-slide">
                             <div class="row writersBlockCenter">
                                 <a href="Article/25161/عفاريت-كورتوا-ونجاح-صلاح">
-                                    <img src="https://koraplus.com/images/them/2022/5/large/2871874097202205290421252125.jpg"
+                                    <img src="https://kora4ever.com/images/them/2022/5/large/2871874097202205290421252125.jpg"
                                         onerror="this.src='images/them/onerror/Large789x539.png';" title="عمرو الجرزاوي"
                                         alt="عمرو الجرزاوي">
                                 </a>
@@ -186,7 +186,7 @@
                         <div class="swiper-slide">
                             <div class="row writersBlockCenter">
                                 <a href="Article/24680/الملهمة-بنت-الجيران-وحب-الطفولة-التي-تزوجها-محمد-صلاح">
-                                    <img src="https://koraplus.com/images/them/2022/6/large/287187409720220601074102412.jpg"
+                                    <img src="https://kora4ever.com/images/them/2022/6/large/287187409720220601074102412.jpg"
                                         onerror="this.src='images/them/onerror/Large789x539.png';" title="محمد غنيم"
                                         alt="محمد غنيم">
                                 </a>
@@ -203,7 +203,7 @@
                         <div class="swiper-slide">
                             <div class="row writersBlockCenter">
                                 <a href="Article/24470/التسديد-حلو-وبسمسم-رسالة-إلى-رمضان-صبحي">
-                                    <img src="https://koraplus.com/images/them/2022/5/large/2871874097202205240440494049.jpg"
+                                    <img src="https://kora4ever.com/images/them/2022/5/large/2871874097202205240440494049.jpg"
                                         onerror="this.src='images/them/onerror/Large789x539.png';" title="محمد داود"
                                         alt="محمد داود">
                                 </a>
@@ -220,7 +220,7 @@
                         <div class="swiper-slide">
                             <div class="row writersBlockCenter">
                                 <a href="Article/23840/موسيماني-الإفريقي-وموسيمانى-المحلي">
-                                    <img src="https://koraplus.com/images/them/2022/4/large/287187409720220410110148148.jpg"
+                                    <img src="https://kora4ever.com/images/them/2022/4/large/287187409720220410110148148.jpg"
                                         onerror="this.src='images/them/onerror/Large789x539.png';" title="مروان الشافعي"
                                         alt="مروان الشافعي">
                                 </a>

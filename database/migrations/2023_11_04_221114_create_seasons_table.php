@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('media_news', function (Blueprint $table) {
+        Schema::create('seasons', function (Blueprint $table) {
             $table->id();
-            $table->enum('type', ['image','video'])->default('image');
-            $table->string('url',2000);
-            $table->foreignId('news_id')->nullable()->constrained('news');
+            $table->string('name');
+            $table->date('from')->nullable();
+            $table->date('to')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('media_news');
+        Schema::dropIfExists('seasons');
     }
 };

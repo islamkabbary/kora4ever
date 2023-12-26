@@ -25,7 +25,7 @@ Auth::routes();
 Route::get('/', [HomeController::class, "index"])->name('home');
 Route::get('/all-news', [NewsController::class, "index"])->name('all_news');
 Route::get('/all-matches', [MatcheController::class, "index"])->name('all_matches');
-Route::get('/Article/{id}', [NewsController::class, "Article"])->name('Article');
+Route::get('/news/{id}', [NewsController::class, "Article"])->name('Article');
 Route::get('/championship/{id}', [LeaugeController::class, "show"])->name('championship');
 Route::get('/championships', [LeaugeController::class, "index"])->name('all_championships');
 Route::get('/team/{id}', [TeamController::class, 'show'])->name('team');
@@ -41,7 +41,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
         //News
         Route::get('/create-news', [NewsController::class, 'create'])->name('create_news');
         //League
-        Route::get('/leagues', [LeaugeController::class, 'create'])->name('create_leagues');
+        Route::get('/championships', [LeaugeController::class, 'create'])->name('create_leagues');
         //Tag
         Route::get('/tag', [TagController::class, 'create'])->name('create_tags');
         //Team

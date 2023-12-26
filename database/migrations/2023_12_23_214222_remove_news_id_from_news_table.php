@@ -13,13 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('media_news', function (Blueprint $table) {
-            $table->id();
-            $table->enum('type', ['image','video'])->default('image');
-            $table->string('url',2000);
-            $table->foreignId('news_id')->nullable()->constrained('news');
-            $table->timestamps();
-            $table->softDeletes();
+        Schema::table('news', function (Blueprint $table) {
+            $table->dropForeign('news_id');
         });
     }
 
@@ -30,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('media_news');
+        Schema::table('news', function (Blueprint $table) {
+            //
+        });
     }
 };
