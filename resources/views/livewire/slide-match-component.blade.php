@@ -246,15 +246,18 @@
                         <a href="{{ route('MatchDetails', ['id' => $tommorow->id]) }}">
                             <div class="row RightALEftOneMatch">
                                 <div class="RightOneMatch">
+                                @if ($tommorow->teamOne)
+
                                     <div class="ImageOneMatchHeight">
                                         <img src="{{ env('APP_URL') . 'storage/' . $tommorow->teamOne }}"
-                                            onerror="this.src='images/mainlogo.png';"
-                                            title="{{ $tommorow->teamOne['name'] }}"
-                                            alt="{{ $tommorow->teamOne['name'] }}">
+                                        onerror="this.src='images/mainlogo.png';"
+                                        title="{{ $tommorow->teamOne['name'] }}"
+                                        alt="{{ $tommorow->teamOne['name'] }}">
                                     </div>
                                     <p class="MatchClubName">
                                         {{ $tommorow->teamOne['name'] }}
                                     </p>
+                                    @endif
                                 </div>
                                 <div class="CenterOneMatch">
                                     <div class="row CenterBlockInCenter">
