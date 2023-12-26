@@ -321,14 +321,19 @@
                                                     </ul>
                                                     <div>
                                                         @foreach ($twoTeams as $one)
+                                                                    @php
+                                                                        $Team = \App\Models\Team::find($one->team_id);
+                                                                        if($Team){
+                                                                            $name = $Team->name;
+                                                                        }else {
+                                                                            $name = null;
+                                                                        }
+                                                                    @endphp
                                                             <ul class="row DetailsStatistics">
                                                                 <li>
                                                                     <p>#</p>
                                                                 </li>
                                                                 <li>
-                                                                    @php
-                                                                        $name = \App\Models\Team::find($one->team_id)->name;
-                                                                    @endphp
                                                                     <a href="{{ route('team', ['id' => $one->team_id]) }}">
                                                                         {{ $name }}
                                                                     </a>
