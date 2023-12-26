@@ -86,6 +86,7 @@
                         </div>
                         <a href="{{ route('MatchDetails', ['id' => $today->id]) }}">
                             <div class="row RightALEftOneMatch">
+                                @if ($today->teamOne)
                                 <div class="RightOneMatch">
                                     <div class="ImageOneMatchHeight">
                                         <img src="{{ env('APP_URL') . 'storage/' . $today->teamOne->logo }}"
@@ -96,6 +97,7 @@
                                         {{ $today->teamOne['name'] }}
                                     </p>
                                 </div>
+                                @endif
                                 @if (date('H:i') >= date('H:i', strtotime(Carbon\Carbon::parse($today->time)->subMinutes(30))) &&
                                         $today->time >= date('H:i'))
                                     {{-- Start Soon --}}
