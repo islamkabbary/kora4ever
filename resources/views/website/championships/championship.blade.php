@@ -15,14 +15,6 @@
                             <h3>
                                 {{ $leauge->name }}
                             </h3>
-                            <span>
-                                تابع الدوري
-                            </span>
-                            <div class="ArticleShareArea" style="border:none">
-                                <div class="shareiconAbs">
-                                    <img src="{{ asset('images/shareicon.png') }}" alt="shareicon">
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <ul class="row listUl">

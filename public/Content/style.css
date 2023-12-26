@@ -3510,7 +3510,8 @@ footer {
 }
 
 .NameTeam {
-    margin-right: 30px;
+    margin-right: 10px;
+    margin-top: 8px;
 }
 
 .NameTeam h2 {
@@ -3521,7 +3522,7 @@ footer {
     color: #000;
     font-size: 1em;
     font-family: helveticaregular;
-    margin-bottom: 10px
+    /* margin-bottom: 10px */
 }
 
 .NameTeam h3 a {
