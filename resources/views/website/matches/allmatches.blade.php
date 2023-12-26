@@ -139,10 +139,11 @@
                                                             @php
                                                             if($match->teamOne){
                                                                 $path = $match->teamOne->logo;
+                                                                $name = $match->teamOne->name;
                                                             }else {
                                                                 $path = null;
+                                                                $name = null;
                                                             }
-                                                                $name = $match->teamOne->name;
                                                             @endphp
                                                             <a href="{{ route('team', ['id' => $match->team1]) }}">
                                                                 <img src='{{ env('APP_ENV') . "storage/" . $path }}' class="MPagegmImageflag"
@@ -246,10 +247,11 @@
                                                             @php
                                                             if($match->teamTwo){
                                                                 $path2 = $match->teamTwo->logo;
+                                                                $name = $match->teamTwo->name;
                                                             }else {
                                                                 $path2 = null;
+                                                                $name = null;
                                                             }
-                                                                $name = $match->teamTwo->name;
                                                             @endphp
                                                             <a href="{{ route('team', ['id' => $match->team2]) }}">
                                                                 <img src='{{ env('APP_ENV') . "storage/" . $path2 }}'
