@@ -40,9 +40,9 @@
                 <li>
                     <a href="{{ route('all_news') }}">الأخبار</a>
                 </li>
-                <li class="">
+                {{-- <li class="">
                     <a href="{{ route('all_matches') }}" target="_parent">المباريات</a>
-                </li>
+                </li> --}}
                 <li>
                     <a href="#">سياسة الخصوصية</a>
                 </li>

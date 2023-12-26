@@ -21,9 +21,9 @@
                         <li>
                             <a href="{{ route('all_news') }}" target="_self">الأخبار</a>
                         </li>
-                        <li>
+                        {{-- <li>
                             <a href="{{ route('all_matches') }}" target="_parent">المباريات</a>
-                        </li>
+                        </li> --}}
                         <li>
                             <a href="{{ route('championship', ['id' => 9]) }}" target="_self">الدوري المصري</a>
                         </li>
