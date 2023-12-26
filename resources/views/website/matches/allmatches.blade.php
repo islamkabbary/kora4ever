@@ -137,7 +137,11 @@
                                                     <div class="MPageRightOneMatch" id="MPageRightOneMatch_61152">
                                                         <div class="MPageImageOneMatchHeight">
                                                             @php
+                                                            if($match->teamOne){
                                                                 $path = $match->teamOne->logo;
+                                                            }else {
+                                                                $path = null;
+                                                            }
                                                                 $name = $match->teamOne->name;
                                                             @endphp
                                                             <a href="{{ route('team', ['id' => $match->team1]) }}">
