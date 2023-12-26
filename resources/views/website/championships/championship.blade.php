@@ -50,8 +50,8 @@
                                 @php
                                     $realTeam = App\Models\Team::find($team->team_id);
                                 @endphp
-                                <div class="swiper-slide">
                                     @if ($realTeam)
+                                <div class="swiper-slide">
                                         <div class="ImageSliderFixedHeight">
                                             <a href="{{ route('team', ['id' => $realTeam->id]) }}">
                                                 <img src="{{ env('APP_URL') . 'storage/' . $realTeam->logo }}"
@@ -59,8 +59,8 @@
                                             </a>
                                         </div>
                                         <a href="#">{{ $realTeam->name }}</a>
+                                    </div>
                                     @endif
-                                </div>
                             @endforeach
                         </div>
                     </div>
