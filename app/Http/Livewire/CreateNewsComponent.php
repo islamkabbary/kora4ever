@@ -37,18 +37,17 @@ class CreateNewsComponent extends Component
 
     public function add()
     {
-        $this->validate();
         if ($this->news_id) {
             try {
                 $news = News::find($this->news_id);
-                $news->body = $this->body;
-                $news->title = $this->title;
-                $news->team_id = $this->team_id;
-                $news->championship_id = $this->championship_id;
-                $news->created_by = Auth::user()->id;
-                $news->show_as_main_news = $this->show_as_main_news ? true : false;
-                $news->show_in_most_read = $this->show_in_most_read ? true : false;
-                $news->show_from_the_five_main_news = $this->show_from_the_five_main_news ? true : false;
+                $news->body = $this->body ? $this->body : $news->body;
+                $news->title = $this->title ? $this->title : $news->title;
+                $news->team_id = $this->team_id ? $this->team_id : $news->team_id;
+                $news->championship_id = $this->championship_id ? $this->championship_id : $news->championship_id;
+                $news->updated_by = Auth::user()->id;
+                $news->show_as_main_news = $this->show_as_main_news;
+                $news->show_in_most_read = $this->show_in_most_read;
+                $news->show_from_the_five_main_news = $this->show_from_the_five_main_news;
                 $news->save();
                 if ($this->tag_id) {
                     foreach ($this->tag_id as $tag) {
@@ -73,6 +72,7 @@ class CreateNewsComponent extends Component
             $this->alert('success', "successfully updated");
         } else {
             try {
+                $this->validate();
                 $news = new News;
                 $news->title = $this->title;
                 $news->body = $this->body;
@@ -129,6 +129,9 @@ class CreateNewsComponent extends Component
         $this->tag_id = $news->tags->pluck('id')->toArray();
         $this->team_id = $news->team->pluck('id')->toArray();
         $this->championship_id = $news->leauge->pluck('id')->toArray();
+        $this->show_as_main_news = $news->show_as_main_news;
+        $this->show_in_most_read = $news->show_in_most_read;
+        $this->show_from_the_five_main_news = $news->show_from_the_five_main_news;
         $this->dispatchBrowserEvent('setBody', ["body" => $news->body]);
     }
 

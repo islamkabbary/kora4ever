@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="charset=utf-8" />
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-    {{-- <link href="images/them/favicon.ico" rel="shortcut icon" type="image/x-icon" /> --}}
+    <link href="{{ asset('images/smoll_logo.png') }}" rel="shortcut icon" type="image/x-icon" />
     <meta name="application-name" content="kora4ever" />
     <meta name="msapplication-starturl" content="https://kora4ever.com//" />
     <meta name="msapplication-tooltip" content="kora4ever" />

@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use Carbon\Carbon;
 use App\Models\News;
-use App\Models\Championship;
+use App\Models\Team;
 use App\Models\Matche;
+use App\Models\Championship;
 use App\Models\TeamHasLeauge;
 
 class LeaugeController extends Controller
@@ -21,7 +22,7 @@ class LeaugeController extends Controller
     {
         try {
             $leauge = Championship::findOrFail($id);
-            $teams = $leauge->teams;
+            $teams = TeamHasLeauge::where('championship_id',$id)->get();
             $matches = Matche::where('championship_id', $leauge->id)->where('date', Carbon::today()->toDateString())->get();
             $news   = News::where('championship_id', $id)->get();
             $table = TeamHasLeauge::where('championship_id', $id)->orderBy('points', 'DESC')->get();

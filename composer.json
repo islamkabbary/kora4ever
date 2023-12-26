@@ -6,14 +6,15 @@
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
-        "guzzlehttp/guzzle": "^7.2",
+        "guzzlehttp/guzzle": "^7.4",
         "jantinnerezo/livewire-alert": "^2.2",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
         "laravel/ui": "^4.2",
         "livewire/livewire": "^2.5",
-        "php-open-source-saver/jwt-auth": "^2.1"
+        "php-open-source-saver/jwt-auth": "^2.1",
+        "symfony/dom-crawler": "^7.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

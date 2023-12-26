@@ -18,9 +18,6 @@
                         <div class="swiper-slide tab-link " data-tab="tab-2">
                             <p> منتخب مصر </p>
                         </div>
-                        <div class="swiper-slide tab-link" data-tab="tab-3">
-                            <p> عاجل بلس</p>
-                        </div>
                         <div class="swiper-slide tab-link" data-tab="tab-4">
                             <p>أهداف الدوري المصري </p>
                         </div>

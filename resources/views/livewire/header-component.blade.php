@@ -9,7 +9,7 @@
                 </div>
 
                 <div class="Mainlogo">
-                    {{-- <a href="/"><img src="{{ asset('images/them/mainlogo.png') }}" class="" alt="mainlogo" title=""></a> --}}
+                    <a href="/"><img src="{{ asset('images/logo.png') }}" width="90" height="90" class="" alt="mainlogo" title=""></a>
                 </div>
             </div>
             <div class="row leftHeader">
@@ -34,7 +34,7 @@
                             <a href="{{ route('championship', ['id' => 3]) }}" target="_self">الدوري الاسباني</a>
                         </li>
                         <li>
-                            <a href="{{ route('championship', ['id' => 25]) }}" target="_self">الدوري السعودي</a>
+                            <a href="{{ route('championship', ['id' => 11]) }}" target="_self">الدوري السعودي</a>
                         </li>
                     </ul>
                 </div>
@@ -145,11 +145,6 @@
                     <h2><a href="#" target="_parent">TV+</a></h2>
                     <ul>
                         <li>
-                            <a href="TagVideos/516/عاجل-بلس/1" target="_parent">
-                                عاجل بلس
-                            </a>
-                        </li>
-                        <li>
                             <a href="https://kora4ever.com/Program/Index?ID=129" target="_parent">
                                 الاستوديو التحليلي
                             </a>
@@ -167,7 +162,6 @@
                         </li>
                         <li>
                             <a href="https://kora4ever.com/Program/Index?ID=132" target="_parent">
-                                أبطال بلس
                             </a>
                         </li>
                         <li>
@@ -177,7 +171,6 @@
                         </li>
                         <li>
                             <a href="https://kora4ever.com/Program/Index?ID=133" target="_parent">
-                                VAR بلس
                             </a>
                         </li>
                         <li>
@@ -187,9 +180,6 @@
                             </a>
                         </li>
                         <li>
-                            <a href="SearchVideos/فيديو-بلس/1" target="_parent">
-                                فيديو بلس
-                            </a>
                         </li>
                     </ul>
                 </li>

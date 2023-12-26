@@ -57,19 +57,6 @@
                                             </p>
                                         </a>
                                     </div>
-                                    <a class="card-img-link"
-                                        href="Article/26499/حوار-بلس-كريم-رمزي-يكشف-كواليس-خاصة-بمستقبل-موسيماني-مع">
-                                        <img src="https://kora4ever.com/images/them/2022/6/large-3/162671102047720220608040826826.jpg"
-                                            class="card-img-top" onerror="this.src='images/them/onerror/Large264x180.png';"
-                                            title="موسيماني" alt="موسيماني">
-                                        <img src="images/them/tvicon.png" class="IconPlayDontMiss" alt="tvicon">
-                                    </a>
-                                    <div class="card-body">
-                                        <a href="Article/26499/حوار-بلس-كريم-رمزي-يكشف-كواليس-خاصة-بمستقبل-موسيماني-مع">
-                                            <p class="card-text">حوار بلس | كريم رمزي يكشف كواليس خاصة بمستقبل
-                                                موسيماني مع الأهلي ما بين الرحيل والبقاء</p>
-                                        </a>
-                                    </div>
                                 </div>
                                 <div class="card">
                                     <div class="LeaguesNews">
@@ -79,19 +66,7 @@
                                             </p>
                                         </a>
                                     </div>
-                                    <a class="card-img-link"
-                                        href="Article/26441/حوار-بلس-سوء-حظ-للمنتخب-المصري-جائزة-جديدة-لمحمد-صلاح">
-                                        <img src="https://kora4ever.com/images/them/2022/6/large-3/2871874097202206051058465846.jpg"
-                                            class="card-img-top" onerror="this.src='images/them/onerror/Large264x180.png';"
-                                            title="منتخب مصر" alt="منتخب مصر">
-                                        <img src="images/them/tvicon.png" class="IconPlayDontMiss" alt="tvicon">
-                                    </a>
-                                    <div class="card-body">
-                                        <a href="Article/26441/حوار-بلس-سوء-حظ-للمنتخب-المصري-جائزة-جديدة-لمحمد-صلاح">
-                                            <p class="card-text">حوار بلس | سوء حظ للمنتخب المصري.. جائزة جديدة
-                                                لمحمد صلاح.. وحسم مستقبل فرجاني</p>
-                                        </a>
-                                    </div>
+
                                 </div>
                                 <div class="card">
                                     <div class="LeaguesNews">
