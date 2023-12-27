@@ -62,7 +62,7 @@
             </div>
             <div id="Chtab1" class="championshipsBlock ss">
                 <div class="championshipsNews">
-                    {{-- @foreach ($news as $post)
+                    @foreach ($news as $post)
                         <div class="SecondNews">
                             <div class="secondNewsBlockImage">
                                 <a href="{{ route('Article', ['id' => $post->id]) }}">
@@ -107,7 +107,7 @@
                                 </div>
                             </div>
                         </div>
-                    @endforeach --}}
+                    @endforeach
                 </div>
             </div>
             {{-- <div id="Chtab3" class="championshipsBlock">
