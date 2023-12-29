@@ -25,9 +25,9 @@
                                 <select class="form-control" wire:model='national_or_team'
                                     style="border: 1px solid black">
                                     <option>Select tournament type</option>
-                                    {{-- @foreach (get_enum_values('teams', 'national_or_team') as $leauge)
+                                    @foreach (get_enum_values('teams', 'national_or_team') as $leauge)
                                         <option value="{{ $leauge }}"> {{ $leauge }} </option>
-                                    @endforeach --}}
+                                    @endforeach
                                 </select>
                                 @error('national_or_team')
                                     <span class="text-danger">{{ $message }}</span>
@@ -117,10 +117,10 @@
                                                 wire:click='delete({{ $team->id }})' role='button'>X</a>
 
                                             <!-- Button trigger modal -->
-                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                            {{-- <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                                 data-bs-target="#staticBackdrop_{{ $team->id }}">
                                                 xxx
-                                            </button>
+                                            </button> --}}
                                             <!-- Modal -->
                                             <div class="modal fade" id="staticBackdrop_{{ $team->id }}" wire:ignore.self
                                                 data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"

@@ -45,10 +45,10 @@ class TeamComponent extends Component
 
     public function render()
     {
-        if ($this->selectLeague) {
-            // $this->edit();
-            dd($this->editPointsID);
-        }
+        // if ($this->selectLeague) {
+        //     // $this->edit();
+        //     dd($this->editPointsID);
+        // }
         $teams = Team::query();
         if ($this->leaugeSearch) {
             $teams->whereHas('leauges', function ($q) {
@@ -66,16 +66,15 @@ class TeamComponent extends Component
     public function save()
     {
         if ($this->team_id) {
-            $this->validate();
             $team = Team::find($this->team_id);
             $team->name = $this->name;
             if (!Storage::exists('public/' . $this->logo)) {
                 $team->logo = $this->logo->store("images/team-logos", 'public');
             }
             $team->save();
-            $team->leauges()->attach($this->championship_id);
-            $this->clear();
+            $team->leauges()->syncWithPivotValues($this->championship_id, ['updated_by' => auth()->id()]);
             $this->alert('success', "successfully updated");
+            $this->clear();
         } else {
             $this->validate();
             $team = new Team();
@@ -83,42 +82,42 @@ class TeamComponent extends Component
             $team->national_or_team = $this->national_or_team;
             $team->logo = $this->logo->store("images/team-logos", 'public');
             $team->save();
-            $team->leauges()->attach($this->championship_id);
+            $team->leauges()->sync([$this->championship_id]);
             $this->clear();
             $this->alert('success', "successfully added");
         }
     }
 
-    public function savePoints($teamId)
-    {
-        $TeamHasLeauge = TeamHasLeauge::where('team_id', $teamId)->where('championship_id', $this->selectLeague)->where('season_id', 1)->first();
-        if ($TeamHasLeauge) {
-            $TeamHasLeauge->played = $this->played;
-            $TeamHasLeauge->won = $this->won;
-            $TeamHasLeauge->drawn = $this->drawn;
-            $TeamHasLeauge->lost = $this->lost;
-            $TeamHasLeauge->gf = $this->gf;
-            $TeamHasLeauge->ga = $this->ga;
-            $TeamHasLeauge->gd = $this->gd;
-            $TeamHasLeauge->points = $this->points;
-            $TeamHasLeauge->updated_by = auth()->id();
-            $TeamHasLeauge->save();
-            $TeamHasLeauge->clear();
-            $this->alert('success', "successfully updated");
-        } else {
-            $TeamHasLeauge = new TeamHasLeauge;
-            $TeamHasLeauge->played = $this->played;
-            $TeamHasLeauge->won = $this->won;
-            $TeamHasLeauge->drawn = $this->drawn;
-            $TeamHasLeauge->lost = $this->lost;
-            $TeamHasLeauge->gf = $this->gf;
-            $TeamHasLeauge->ga = $this->ga;
-            $TeamHasLeauge->gd = $this->gd;
-            $TeamHasLeauge->points = $this->points;
-            $TeamHasLeauge->save();
-            $this->alert('success', "successfully added");
-        }
-    }
+    // public function savePoints($teamId)
+    // {
+    //     $TeamHasLeauge = TeamHasLeauge::where('team_id', $teamId)->where('championship_id', $this->selectLeague)->where('season_id', 1)->first();
+    //     if ($TeamHasLeauge) {
+    //         $TeamHasLeauge->played = $this->played;
+    //         $TeamHasLeauge->won = $this->won;
+    //         $TeamHasLeauge->drawn = $this->drawn;
+    //         $TeamHasLeauge->lost = $this->lost;
+    //         $TeamHasLeauge->gf = $this->gf;
+    //         $TeamHasLeauge->ga = $this->ga;
+    //         $TeamHasLeauge->gd = $this->gd;
+    //         $TeamHasLeauge->points = $this->points;
+    //         $TeamHasLeauge->updated_by = auth()->id();
+    //         $TeamHasLeauge->save();
+    //         $TeamHasLeauge->clear();
+    //         $this->alert('success', "successfully updated");
+    //     } else {
+    //         $TeamHasLeauge = new TeamHasLeauge;
+    //         $TeamHasLeauge->played = $this->played;
+    //         $TeamHasLeauge->won = $this->won;
+    //         $TeamHasLeauge->drawn = $this->drawn;
+    //         $TeamHasLeauge->lost = $this->lost;
+    //         $TeamHasLeauge->gf = $this->gf;
+    //         $TeamHasLeauge->ga = $this->ga;
+    //         $TeamHasLeauge->gd = $this->gd;
+    //         $TeamHasLeauge->points = $this->points;
+    //         $TeamHasLeauge->save();
+    //         $this->alert('success', "successfully added");
+    //     }
+    // }
 
     public function clear()
     {
@@ -136,25 +135,26 @@ class TeamComponent extends Component
         $this->dispatchBrowserEvent('reset');
     }
 
-    function edit($teamId)
-    {
-        $TeamHasLeauge = TeamHasLeauge::where('team_id', $teamId)->where('championship_id', $this->selectLeague)->where('season_id', 1)->first();
-        $this->played = $TeamHasLeauge->played;
-        $this->won = $TeamHasLeauge->won;
-        $this->drawn = $TeamHasLeauge->drawn;
-        $this->lost = $TeamHasLeauge->lost;
-        $this->gf = $TeamHasLeauge->gf;
-        $this->ga = $TeamHasLeauge->ga;
-        $this->gd = $TeamHasLeauge->gd;
-        $this->points = $TeamHasLeauge->points;
-    }
+    // function editPoints($teamId)
+    // {
+    //     $TeamHasLeauge = TeamHasLeauge::where('team_id', $teamId)->where('championship_id', $this->selectLeague)->where('season_id', 1)->first();
+    //     $this->played = $TeamHasLeauge->played;
+    //     $this->won = $TeamHasLeauge->won;
+    //     $this->drawn = $TeamHasLeauge->drawn;
+    //     $this->lost = $TeamHasLeauge->lost;
+    //     $this->gf = $TeamHasLeauge->gf;
+    //     $this->ga = $TeamHasLeauge->ga;
+    //     $this->gd = $TeamHasLeauge->gd;
+    //     $this->points = $TeamHasLeauge->points;
+    // }
 
-    function editPoints($team_id)
+    function edit($team_id)
     {
         $team = Team::find($team_id);
         $this->team_id = $team->id;
         $this->name = $team->name;
         $this->logo = $team->logo;
+        $this->national_or_team = $team->national_or_team;
         $this->championship_id = $team->leauges->pluck('id')->toArray();
         // dD($this->championship_id);
     }

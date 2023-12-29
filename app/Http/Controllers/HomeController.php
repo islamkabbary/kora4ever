@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 use Symfony\Component\DomCrawler\Crawler;
 
 class HomeController extends Controller
@@ -29,14 +30,13 @@ class HomeController extends Controller
     }
     public function test()
     {
-        $client = new Client();
-        $response = $client->request('GET', 'https://api-football-v1.p.rapidapi.com/v3/fixtures/statistics?fixture=215662', [
-            'headers' => [
-                'X-RapidAPI-Host' => 'api-football-v1.p.rapidapi.com',
-                'X-RapidAPI-Key' => 'e83859b104msh9423cacb53ce1fbp1714aajsn3ee97296effa',
-            ],
-        ]);
+        $apiToken = 'QynUaKIAH9MkCUpAGYB0wVu1GzrigxFUIIbSG7jOZcAxzmvhnaufcJLIqq9t';
+        $response = Http::withHeaders([
+            'Content-Type' => 'application/json',
+            'Accept' => 'application/json',
+        ])->get('https://api.sportmonks.com/v3/football/leagues/countries/11', ['api_token' => $apiToken]);
+        // ])->get('https://api.sportmonks.com/v3/core/countries/11', ['api_token' => $apiToken]);
 
-        return $response->getBody()->getContents();
+        return $response->body();
     }
 }

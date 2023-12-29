@@ -9,4 +9,9 @@ class Tag extends Model
 {
     use HasFactory;
     // use HasFactory,SoftDeletes;
+    protected $fillable = [
+        'name',
+        // other fillable attributes...
+    ];
+
 }

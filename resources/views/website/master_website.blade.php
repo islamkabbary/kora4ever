@@ -24,6 +24,8 @@
     <link rel="stylesheet" href="{{ asset('Content/justifiedGallery.css?v=1') }}" />
     <link rel="stylesheet" href="{{ asset('Content/lg-thumbnail.css?v=1') }}" />
     @livewireStyles
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8055751295880864"
+     crossorigin="anonymous"></script>
 </head>
 
 <body>

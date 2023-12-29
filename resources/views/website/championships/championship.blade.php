@@ -36,7 +36,7 @@
                         </li>
                     </ul>
                 </div>
-                {{-- <div class="AllTeamsBlockInners">
+                <div class="AllTeamsBlockInners">
                     <div class="swiperTeamsInners">
                         <div class="swiper-wrapper">
                             @foreach ($teams as $team)
@@ -52,7 +52,7 @@
                                                     title="{{ $realTeam->name }}" alt="{{ $realTeam->name }}">
                                             </a>
                                         </div>
-                                        <a href="#">{{ $realTeam->name }}</a>
+                                        <a href="{{ route('team', ['id'=>$realTeam->id]) }}">{{ $realTeam->name }}</a>
                                     </div>
                                 @endif
                             @endforeach
@@ -60,7 +60,7 @@
                     </div>
                     <div class="swiper-next"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
                     <div class="swiper-prev"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
-                </div> --}}
+                </div>
             </div>
             <div id="Chtab1" class="championshipsBlock ss">
                     @livewire('news-championship-component', ['leauge_id' => $leauge->id])

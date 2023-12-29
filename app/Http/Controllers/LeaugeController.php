@@ -21,11 +21,9 @@ class LeaugeController extends Controller
     {
         try {
             $leauge = Championship::findOrFail($id);
-            $teams = TeamHasLeauge::where('championship_id',$id)->get();
+            $teams = TeamHasLeauge::where('championship_id', $id)->orderBy('points', 'DESC')->get();
             // $matches = Matche::where('championship_id', $leauge->id)->where('date', Carbon::today()->toDateString())->get();
-            $table = TeamHasLeauge::where('championship_id', $id)->orderBy('points', 'DESC')->get();
-            // return view('website.championships.championship', ['leauge' => $leauge, 'teams' => $teams, 'news' => $news, 'table' => $table, 'matches' => $matches]);
-            return view('website.championships.championship', ['leauge' => $leauge]);
+            return view('website.championships.championship', ['leauge' => $leauge, 'teams' => $teams]);
         } catch (\Throwable $th) {
         }
     }

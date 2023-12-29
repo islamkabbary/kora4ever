@@ -13,12 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('teams', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->text('logo')->nullable();
-            $table->timestamps();
-            $table->softDeletes();
+        Schema::table('teams', function (Blueprint $table) {
+            $table->enum('national_or_team', ['national_team', 'team'])->default('team')->after('logo');
         });
     }
 
@@ -29,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('teams');
+        Schema::table('teams', function (Blueprint $table) {
+            $table->dropColumn('national_or_team');
+        });
     }
 };
