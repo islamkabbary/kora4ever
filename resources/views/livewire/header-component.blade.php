@@ -70,9 +70,9 @@
                 <div class="socialIconsBlock">
                     <p>تواصل معنا</p>
                     <div class="socialIcons">
-                        <a href="https://www.tiktok.com" target="_blank" rel="nofollow">
+                        {{-- <a href="https://www.tiktok.com" target="_blank" rel="nofollow">
                             <img class="tiktoklogo" src="images/them/tiktoklogo.png" />
-                        </a>
+                        </a> --}}
                         <a href="https://www.facebook.com" target="_blank" rel="nofollow">
                             <i class="fa fa-facebook" aria-hidden="true"></i>
                         </a>
