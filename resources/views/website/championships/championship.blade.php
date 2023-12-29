@@ -9,7 +9,8 @@
                     <div class="row Head-Team">
                         <div class="LogoTeam">
                             <img src="{{ env('APP_URL') . 'storage/' . $leauge->logo }}" alt="{{ $leauge->name }}"
-                                title="{{ $leauge->name }}">
+                                title="{{ $leauge->name }}"
+                                onerror="this.src='{{ asset('images/them/onerror/Large789x539.png') }}'">
                         </div>
                         <div class="NameTeam">
                             <h3>
@@ -35,80 +36,34 @@
                         </li>
                     </ul>
                 </div>
-                <div class="AllTeamsBlockInners">
+                {{-- <div class="AllTeamsBlockInners">
                     <div class="swiperTeamsInners">
                         <div class="swiper-wrapper">
                             @foreach ($teams as $team)
                                 @php
                                     $realTeam = App\Models\Team::find($team->team_id);
                                 @endphp
-                                    @if ($realTeam)
-                                <div class="swiper-slide">
+                                @if ($realTeam)
+                                    <div class="swiper-slide">
                                         <div class="ImageSliderFixedHeight">
                                             <a href="{{ route('team', ['id' => $realTeam->id]) }}">
                                                 <img src="{{ env('APP_URL') . 'storage/' . $realTeam->logo }}"
+                                                    onerror="this.src='{{ asset('images/them/onerror/Large789x539.png') }}'"
                                                     title="{{ $realTeam->name }}" alt="{{ $realTeam->name }}">
                                             </a>
                                         </div>
                                         <a href="#">{{ $realTeam->name }}</a>
                                     </div>
-                                    @endif
+                                @endif
                             @endforeach
                         </div>
                     </div>
                     <div class="swiper-next"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
                     <div class="swiper-prev"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
-                </div>
+                </div> --}}
             </div>
             <div id="Chtab1" class="championshipsBlock ss">
-                <div class="championshipsNews">
-                    @foreach ($news as $post)
-                        <div class="SecondNews">
-                            <div class="secondNewsBlockImage">
-                                <a href="{{ route('Article', ['id' => $post->id]) }}">
-                                    @if ($post->media->first())
-                                        <img src="{{ env('APP_URL') . 'storage/' . $post->media->first()->url }}"
-                                            class="OneSResultImage"
-                                            onerror="this.src='{{ asset('images/onerror/Large789x539.png') }}'"
-                                            title="{{ $post->title }}">
-                                    @endif
-                                </a>
-                            </div>
-                            <div class="secondNewsTitleON">
-                                <h3>
-                                    <a href="{{ route('Article', ['id' => $post->id]) }}">
-                                        {{ $post->title }}
-                                    </a>
-                                </h3>
-                                <div class="ArticleDateBlock">
-                                    <div class="row ArticleDate">
-                                        <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                        <p>{{ $post->created_at->diffForHumans() }}</p>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="row ArticleTagSmall">
-                                        @if ($post->tags)
-                                            @foreach ($post->tags->take(2) as $tag)
-                                                <div class="AOneTagSmall">
-                                                    <a href="{{ route('TagNews', ['id' => $tag->id]) }}">
-                                                        <p>{{ $tag->name }} </p>
-                                                    </a>
-                                                </div>
-                                            @endforeach
-                                        @else
-                                            <div class="AOneTagSmall">
-                                                <a href="{{ route('TagNews', ['id' => 1]) }}">
-                                                    <p>أخبار</p>
-                                                </a>
-                                            </div>
-                                        @endif
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
+                    @livewire('news-championship-component', ['leauge_id' => $leauge->id])
             </div>
             {{-- <div id="Chtab3" class="championshipsBlock">
                 <div class="row ChMatchesH">
@@ -409,96 +364,7 @@
                 </div>
             </div> --}}
             <div id="Chtab5" class="championshipsBlock">
-                <div>
-                    <div class="row ChMatchesH">
-                        <div class="row MatchHeaderTitle">
-                            <p> ترتيب الفرق فى {{ $leauge->name }}</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="Group-Championships">
-                    <div class="head-Group">
-                        <a href="">
-                        </a>
-                    </div>
-                    <div class="TableChamNad">
-                        <div class="TeamsStatistics MatchPageStatistics">
-                            <ul class="row HeadStatistics">
-                                <li>
-                                    <p>الترتيب</p>
-                                </li>
-                                <li>
-                                    <p>الفريق</p>
-                                </li>
-                                <li>
-                                    <p>ل</p>
-                                </li>
-                                <li>
-                                    <p>ف</p>
-                                </li>
-                                <li>
-                                    <p>ه</p>
-                                </li>
-                                <li>
-                                    <p>ت</p>
-                                </li>
-                                <li>
-                                    <p>له</p>
-                                </li>
-                                <li>
-                                    <p>عليه</p>
-                                </li>
-                                <li>
-                                    <p>نقاط</p>
-                                </li>
-                            </ul>
-                            <div>
-                                @foreach ($table as $i => $team)
-                                    @php
-                                        $Realteam = \App\Models\Team::find($team->team_id);
-                                    @endphp
-                                    @if ($Realteam)
-                                        <ul class="row DetailsStatistics">
-                                            <li>
-                                                <p>{{ $i + 1 }}</p>
-                                            </li>
-                                            <li>
-                                                @php
-                                                    $team_name = $Realteam->name;
-                                                @endphp
-                                                <a href="#">
-                                                    {{ $team_name }}
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">{{ $team->played }}</a>
-                                            </li>
-                                            <li>
-                                                <p>{{ $team->won }}</p>
-                                            </li>
-                                            <li>
-                                                <p>{{ $team->drawn }}</p>
-                                            </li>
-                                            <li>
-                                                <p>{{ $team->lost }}</p>
-                                            </li>
-                                            <li>
-                                                <p>{{ $team->gf }}</p>
-                                            </li>
-                                            <li>
-                                                <p>{{ $team->ga }}</p>
-                                            </li>
-                                            <li>
-                                                <p>{{ $team->gd }}</p>
-                                            </li>
-                                        </ul>
-                                    @endif
-                                @endforeach
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @livewire('ranking-of-team-component', ['leauge_id' => $leauge->id])
             </div>
             <div id="Chtab7" class="championshipsBlock">
                 <div class="row AlbumleftBlock">

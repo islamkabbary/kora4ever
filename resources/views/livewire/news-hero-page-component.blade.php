@@ -16,7 +16,7 @@
                             </div>
                             <a href="{{ route('Article', ['id' => $main_news->id]) }}">
                                 @if ($main_news->media->first())
-                                <img src="{{ env('APP_URL') . 'storage/' . $main_news->media->first()->url }}">
+                                <img src="{{ env('APP_URL') . 'storage/' . $main_news->media->first()->url }}" onerror="this.src='images/them/onerror/Large789x539.png';">
                                 @endif
                             </a>
                             <div class="OneNewsTitleON">
@@ -44,7 +44,7 @@
                                 </div>
                                 <a href="{{ route('Article', ['id' => $news->id]) }}">
                                     @if (count($news->media) > 0)
-                                    <img src="{{ env('APP_URL') . 'storage/' . $news->media->first()->url }}">
+                                    <img src="{{ env('APP_URL') . 'storage/' . $news->media->first()->url }}" onerror="this.src='images/them/onerror/Large789x539.png';">
                                     @endif
                                 </a>
                                 <div class="OneNewsTitleON">
@@ -74,7 +74,7 @@
                             </div>
                             <a href="{{ route('Article', ['id' => $news->id]) }}">
                                 @if (count($news->media) > 0)
-                                <img src="{{ env('APP_URL') . 'storage/' . $news->media->first()->url }}">
+                                <img src="{{ env('APP_URL') . 'storage/' . $news->media->first()->url }}" onerror="this.src='images/them/onerror/Large789x539.png';">
                                 @endif
                             </a>
                             <div class="OneNewsTitleON">

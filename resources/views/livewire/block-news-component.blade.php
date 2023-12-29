@@ -1,11 +1,10 @@
 <div>
     <div class="newAddedSection">
         <div class="row BlackHeaderBlock">
-            <a href="section/35/كورة-مصرية/1">
+            <a href="{{ route('championship', ['id'=>$leauge->id]) }}">
                 <p class="TitleBlocksHeader">
-                    {{ $nameLeauge }}
+                    {{ $leauge->name }}
                 </p>
-                {{-- <img src="images/them/redcorner.png"> --}}
             </a>
         </div>
         <div>
@@ -15,7 +14,7 @@
                     <div class="secondNewsBlockImage">
                         <a href="{{ route('Article', ['id' => $news->id]) }}">
                             @if ($news->media->first())
-                            <img class="secondNewsImage"
+                            <img class="secondNewsImage" width="310px" height="206px"
                                 src="{{ env('APP_URL') . 'storage/' . $news->media->first()->url }}"
                                 onerror="this.src='images/them/onerror/Large789x539.png';">
                             @endif

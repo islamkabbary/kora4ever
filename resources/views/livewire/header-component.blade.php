@@ -70,19 +70,19 @@
                 <div class="socialIconsBlock">
                     <p>تواصل معنا</p>
                     <div class="socialIcons">
-                        <a href="https://www.tiktok.com/@kora4ever" target="_blank" rel="nofollow">
+                        <a href="https://www.tiktok.com" target="_blank" rel="nofollow">
                             <img class="tiktoklogo" src="images/them/tiktoklogo.png" />
                         </a>
-                        <a href="https://www.facebook.com/kora4ever" target="_blank" rel="nofollow">
+                        <a href="https://www.facebook.com" target="_blank" rel="nofollow">
                             <i class="fa fa-facebook" aria-hidden="true"></i>
                         </a>
-                        <a href="https://www.instagram.com/kora4ever" target="_blank" rel="nofollow">
+                        <a href="https://www.instagram.com" target="_blank" rel="nofollow">
                             <i class="fa fa-instagram" aria-hidden="true"></i>
                         </a>
-                        <a href="https://twitter.com/kora4evereg" target="_blank" rel="nofollow">
+                        <a href="https://twitter.com" target="_blank" rel="nofollow">
                             <i class="fa fa-twitter" aria-hidden="true"></i>
                         </a>
-                        <a href="https://www.youtube.com/channel/UCoTREVo1yJwXXDY0TbTA4EQ" target="_blank"
+                        <a href="https://www.youtube.com" target="_blank"
                             rel="nofollow">
                             <i class="fa fa-youtube-play" aria-hidden="true"></i>
                         </a>

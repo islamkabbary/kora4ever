@@ -20,7 +20,6 @@
     <link rel="stylesheet" href="{{ asset('assets/assetsdash/css/select2.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/assetsdash/css/select2-bootstrap.min.css') }}">
     <!-- End plugin css for this page -->
-    {{-- <link rel="stylesheet" href="{{ asset('https://pro.fontawesome.com/releases/v5.10.0/css/all.css') }}" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" /> --}}
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <link href="{{ asset('images/logo2.png') }}" rel="icon" type="image/ico" />
     <!-- Layout styles -->
@@ -30,11 +29,11 @@
     <link rel="shortcut icon" href="{{ asset('assets/assetsdash/images/favicon.png') }}" />
     @yield('styles')
     @livewireStyles
-<style>
-    .swal2-container .swal2-popup .swal2-title{
-        color: black;
-    }
-</style>
+    <style>
+        .swal2-container .swal2-popup .swal2-title {
+            color: black;
+        }
+    </style>
 </head>
 
 <body>

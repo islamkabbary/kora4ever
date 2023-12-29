@@ -9,16 +9,15 @@ use Livewire\Component;
 class BlockNewsComponent extends Component
 {
     public $league;
-
     public function render()
     {
-        $nameLeauge = Championship::find($this->league)->name;
+        $leauge = Championship::find($this->league);
         $fourNews = News::whereHas('leauge', function ($q) {
             $q->where("id", $this->league);
             $q->where("show_as_main_news", false);
             $q->where("show_from_the_five_main_news", false);
             $q->where("show_in_most_read", false);
         })->take(4)->get();
-        return view('livewire.block-news-component', ['fourNews' => $fourNews, 'nameLeauge' => $nameLeauge]);
+        return view('livewire.block-news-component', ['fourNews' => $fourNews, 'leauge' => $leauge]);
     }
 }

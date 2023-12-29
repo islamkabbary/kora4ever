@@ -88,7 +88,7 @@
         </div>
         <div class="row socialIconsFooter">
             <a href="#" rel="nofollow">
-                <img class="tiktoklogo" src="images/them/redtiktoklogo.png" />
+                <img class="tiktoklogo" src="images/them/tiktoklogo.png" />
             </a>
             <a href="#" rel="nofollow">
                 <i class="fa fa-facebook" aria-hidden="true"></i>

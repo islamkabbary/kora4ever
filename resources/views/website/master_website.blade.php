@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="{{ asset('Content/lg-zoom.css?v=1') }}" />
     <link rel="stylesheet" href="{{ asset('Content/justifiedGallery.css?v=1') }}" />
     <link rel="stylesheet" href="{{ asset('Content/lg-thumbnail.css?v=1') }}" />
+    @livewireStyles
 </head>
 
 <body>
@@ -66,7 +67,7 @@
         </div>
         <div class="row socialIconsFooter">
             {{-- <a href="#" rel="nofollow">
-                <img class="tiktoklogo" src="images/them/redtiktoklogo.png" />
+                <img class="tiktoklogo" src="images/them/tiktoklogo.png" />
             </a> --}}
             <a href="#" rel="nofollow">
                 <i class="fa fa-facebook" aria-hidden="true"></i>
@@ -94,6 +95,7 @@
     <script src="{{ asset('Scripts/jquery.cookie.js') }}"></script>
     {{-- <script src="{{ asset('Scripts/poll.js') }}"></script> --}}
     <script src="{{ asset('Scripts/jquery.li-scroller-rtl.1.0.js') }}"></script>
+    @livewireScripts
 </body>
 
 </html>
