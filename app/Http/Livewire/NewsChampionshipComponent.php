@@ -15,7 +15,7 @@ class NewsChampionshipComponent extends Component
 
     public function render()
     {
-        $news = News::where('championship_id', $this->leauge_id)->paginate(9);
+        $news = News::where('championship_id', $this->leauge_id)->orderBy('created_at', 'desc')->paginate(9);
         return view('livewire.news-championship-component', ['news' => $news]);
     }
 }
