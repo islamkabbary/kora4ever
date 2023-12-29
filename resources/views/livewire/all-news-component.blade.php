@@ -35,14 +35,14 @@
                                         @if ($news->tags)
                                             @foreach ($news->tags->take(2) as $tag)
                                                 <div class="AOneTagSmall">
-                                                    <a href="TagNews/{{ $tag->id }}">
+                                                    <a href="{{ route('TagNews', ['id'=>$tag->id]) }}">
                                                         <p>{{ $tag->name }} </p>
                                                     </a>
                                                 </div>
                                             @endforeach
                                         @else
                                             <div class="AOneTagSmall">
-                                                <a href="TagNews/1">
+                                                <a href="{{ route('TagNews', ['id'=>$tag->id]) }}">
                                                     <p>أخبار</p>
                                                 </a>
                                             </div>
