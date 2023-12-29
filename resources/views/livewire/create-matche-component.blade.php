@@ -185,13 +185,13 @@
                                     @foreach (\App\Models\Matche::all() as $match)
                                         <tr class="text-center">
                                             <td> {{ $loop->iteration }} </td>
-                                            <td> {{ $match->teamOne->name }} </td>
-                                            <td> {{ $match->result_team1 }} </td>
-                                            <td> {{ $match->teamTwo->name }} </td>
-                                            <td> {{ $match->result_team2 }} </td>
-                                            <td> {{ $match->leauge->name }} </td>
-                                            <td> {{ $match->date }} </td>
-                                            <td> {{ $match->time }} </td>
+                                            <td> {{ $match->teamOne->name ?? "" }} </td>
+                                            <td> {{ $match->result_team1 ?? "" }} </td>
+                                            <td> {{ $match->teamTwo->name ?? "" }} </td>
+                                            <td> {{ $match->result_team2 ?? "" }} </td>
+                                            <td> {{ $match->leauge->name ?? "" }} </td>
+                                            <td> {{ $match->date ?? "" }} </td>
+                                            <td> {{ $match->time ?? "" }} </td>
                                             <td><a class='btn btn-success btn-sm text-light'
                                                     title='edit {{ $match->name }}'
                                                     wire:click='edit({{ $match->id }})' role='button'>Edit</a>
