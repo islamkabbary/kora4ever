@@ -82,7 +82,7 @@ class TeamComponent extends Component
             $team->national_or_team = $this->national_or_team;
             $team->logo = $this->logo->store("images/team-logos", 'public');
             $team->save();
-            $team->leauges()->sync([$this->championship_id]);
+            $team->leauges()->syncWithPivotValues($this->championship_id, ['updated_by' => auth()->id()]);
             $this->clear();
             $this->alert('success', "successfully added");
         }

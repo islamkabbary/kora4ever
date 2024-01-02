@@ -30,7 +30,7 @@ class CreateMatcheComponent extends Component
         'team1' => 'required|exists:teams,id',
         'team2' => 'required|exists:teams,id',
         'status' => 'nullable|in:fisrt half,end fisrt half,secound half,extra time 1,extra time 2,start soon,end',
-        'championship_id' => 'required|exists:leauges,id',
+        'championship_id' => 'required|exists:championships,id',
         'commentator_id' => 'nullable|exists:commentators,id',
         'channel_id' => 'nullable|exists:channels,id',
         'time' => 'required',
@@ -49,11 +49,6 @@ class CreateMatcheComponent extends Component
             $teams = null;
         }
         return view('livewire.create-matche-component', ['teams' => $teams]);
-    }
-
-    public function updated($propertyName)
-    {
-        $this->validateOnly($propertyName);
     }
 
     public function save()
