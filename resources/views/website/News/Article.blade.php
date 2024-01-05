@@ -7,6 +7,7 @@
                 padding: 0px 75px !important;
             }
         }
+
         @media (min-width: 425px) {
             .customPageHiro {
                 margin-top: 100px;
@@ -44,7 +45,7 @@
                     @else
                         <div class="detailsMainImage">
                             <img src="{{ env('APP_URL') . 'storage/' . $news->media->first()->url }}"
-                                onerror="this.src='images/them/onerror/Large789x539.png';" title="{{ $news->title }}"
+                            onerror="this.src='images/them/onerror/Large789x539.png';" title="{{ $news->title }}"
                                 alt="{{ $news->title }}">
                             <div class="imageCaption">
                                 <p>{{ $news->title }}</p>
@@ -77,7 +78,10 @@
                     </h4>
                     <div class="row">
                         @php
-                            $last = App\Models\News::orderBy('id', 'desc')
+                            $last = App\Models\News::whereHas('leauge', function ($q) use($news){
+                                $q->where('id', $news->championship_id);
+                            })
+                                ->orderBy('created_at', 'desc')
                                 ->take(3)
                                 ->get();
                         @endphp

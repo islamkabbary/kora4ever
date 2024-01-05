@@ -122,14 +122,18 @@
                                     $q->where('date', Carbon\Carbon::today()->toDateString());
                                 })
                                 ->first();
+                            // $matches = $matches->groupBy('date');
                         @endphp
                         @if ($leauge)
                             <h4 LeagueId="{{ $leauge->id }}" class="CHNameleague matchListArea">
                                 {{ $leauge->name }}</h4>
-                        @endif
-                        @foreach ($matche as $match)
-                            @if ($match->date == Carbon\Carbon::today()->toDateString())
-                                <div class=" divListMatch matchListArea" LeagueId="73">
+                            @foreach ($dateMatches as $match)
+                                {{-- @dd($match) --}}
+                                {{-- <h4 LeagueId="{{ $match->id }}" class="CHNameleague matchListArea">
+                                {{ $match->date }}</h4> --}}
+                                {{-- @dd($match) --}}
+                                {{-- @if ($match->date == Carbon\Carbon::today()->toDateString()) --}}
+                                <div class="divListMatch matchListArea" LeagueId="{{ $leauge ? $leauge->id : '0' }}">
                                     <ul class="LICardMatch">
                                         <li class="row" matchid="{{ $match->id }}">
                                             <div class="row CHcenterBlock">
@@ -137,17 +141,17 @@
                                                     <div class="MPageRightOneMatch" id="MPageRightOneMatch_61152">
                                                         <div class="MPageImageOneMatchHeight">
                                                             @php
-                                                            if($match->teamOne){
-                                                                $path = $match->teamOne->logo;
-                                                                $name = $match->teamOne->name;
-                                                            }else {
-                                                                $path = null;
-                                                                $name = null;
-                                                            }
+                                                                if ($match->teamOne) {
+                                                                    $path = $match->teamOne->logo;
+                                                                    $name = $match->teamOne->name;
+                                                                } else {
+                                                                    $path = null;
+                                                                    $name = null;
+                                                                }
                                                             @endphp
                                                             <a href="{{ route('team', ['id' => $match->team1]) }}">
-                                                                <img src='{{ env('APP_ENV') . "storage/" . $path }}' class="MPagegmImageflag"
-                                                                    title="{{$name}}"
+                                                                <img src='{{ env('APP_ENV') . 'storage/' . $path }}'
+                                                                    class="MPagegmImageflag" title="{{ $name }}"
                                                                     alt="{{ $name }}">
                                                             </a>
                                                         </div>
@@ -236,7 +240,7 @@
                                                             </div>
                                                         @endif
                                                         <div class="MPageCenterTOPInCenter">
-                                                            <a href="{{ route('MatchDetails', ['id'=>$match->id]) }}"
+                                                            <a href="{{ route('MatchDetails', ['id' => $match->id]) }}"
                                                                 class="moreDtls">
                                                                 تفاصيل المباراة
                                                             </a>
@@ -245,18 +249,17 @@
                                                     <div class="MPageLeftOneMatch" id="MPageLeftOneMatch_61152">
                                                         <div class="MPageImageOneMatchHeight">
                                                             @php
-                                                            if($match->teamTwo){
-                                                                $path2 = $match->teamTwo->logo;
-                                                                $name = $match->teamTwo->name;
-                                                            }else {
-                                                                $path2 = null;
-                                                                $name = null;
-                                                            }
+                                                                if ($match->teamTwo) {
+                                                                    $path2 = $match->teamTwo->logo;
+                                                                    $name = $match->teamTwo->name;
+                                                                } else {
+                                                                    $path2 = null;
+                                                                    $name = null;
+                                                                }
                                                             @endphp
                                                             <a href="{{ route('team', ['id' => $match->team2]) }}">
-                                                                <img src='{{ env('APP_ENV') . "storage/" . $path2 }}'
-                                                                    title="{{$name }}"
-                                                                    alt="{{$name}}"
+                                                                <img src='{{ env('APP_ENV') . 'storage/' . $path2 }}'
+                                                                    title="{{ $name }}" alt="{{ $name }}"
                                                                     class="MPagegmImageflag">
                                                             </a>
                                                         </div>
@@ -321,14 +324,14 @@
                                                     </ul>
                                                     <div>
                                                         @foreach ($twoTeams as $one)
-                                                                    @php
-                                                                        $Team = \App\Models\Team::find($one->team_id);
-                                                                        if($Team){
-                                                                            $name = $Team->name;
-                                                                        }else {
-                                                                            $name = null;
-                                                                        }
-                                                                    @endphp
+                                                            @php
+                                                                $Team = \App\Models\Team::find($one->team_id);
+                                                                if ($Team) {
+                                                                    $name = $Team->name;
+                                                                } else {
+                                                                    $name = null;
+                                                                }
+                                                            @endphp
                                                             <ul class="row DetailsStatistics">
                                                                 <li>
                                                                     <p>#</p>
@@ -366,17 +369,9 @@
                                         </li>
                                     </ul>
                                 </div>
-                            @else
-                                <li class="row" matchid="0">
-                                    <div class="row newSectionHeadBlock">
-                                        <div class="row newSectionHeadTitle">
-                                            <p class="text-center"> {{ __('messages.No matches today') }}
-                                            </p>
-                                        </div>
-                                    </div>
-                                </li>
-                            @endif
-                        @endforeach
+                                {{-- @endif --}}
+                            @endforeach
+                        @endif
                     @endforeach
                 @endif
             </div>

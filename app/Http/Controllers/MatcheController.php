@@ -11,7 +11,8 @@ class MatcheController extends Controller
     public function index()
     {
         $matches = Matche::all()->groupBy('championship_id');
-        return view('website.matches.allmatches', ['matches' => $matches]);
+        $dateMatches = Matche::all()->groupBy('date');
+        return view('website.matches.allmatches', ['matches' => $matches,'dateMatches' => $dateMatches]);
     }
 
     public function create()

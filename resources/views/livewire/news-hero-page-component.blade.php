@@ -3,13 +3,16 @@
         <div class="RightTvSection ">
             <div class="NewBlock">
                 <div class="NewsRightBlock">
+                    @php
+                        $tags = [];
+                    @endphp
                     @if ($main_news)
                         <div class="OneNews">
                             <div class="LeaguesNews">
                                 @if ($main_news && count($main_news->tags)>0)
                                     <a href="{{ route('TagNews', ['id' => $main_news->tags->first()->id]) }}">
                                         <p>
-                                            {{ $main_news->tags->first()->name }}
+                                            {{ $tags[] = $main_news->get_tag($tags,$main_news->tags) }}
                                         </p>
                                     </a>
                                 @endif
@@ -37,7 +40,7 @@
                                     @if (count($news->tags) > 0)
                                     <a href="{{ route('TagNews', ['id' => $news->tags->first()->id]) }}">
                                         <p>
-                                            {{ $news->tags ? $news->tags->first()->name : $news->tags->first()->name }}
+                                            {{ $tags[] = $news->get_tag($tags,$news->tags) }}
                                         </p>
                                     </a>
                                     @endif
@@ -67,7 +70,7 @@
                                 @if (count($news->tags) > 0)
                                 <a href="{{ route('TagNews', ['id' => $news->tags->first()->id]) }}">
                                     <p>
-                                        {{ $news->tags->first()->name ? $news->tags->first()->name : $news->tags->first()->name }}
+                                        {{ $tags[] =  $news->get_tag($tags,$news->tags) }}
                                     </p>
                                 </a>
                                 @endif

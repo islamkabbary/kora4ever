@@ -5,16 +5,19 @@ namespace App\Http\Livewire;
 use App\Models\News;
 use Livewire\Component;
 use App\Models\NewsHasTag;
+use Livewire\WithPagination;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
+
 class CreateNewsComponent extends Component
 {
-    use WithFileUploads, LivewireAlert;
+    use WithFileUploads, LivewireAlert, WithPagination;
 
-    public $title, $body, $image, $video_url, $tag_id = [], $news_id, $championship_id, $team_id, $show_as_main_news, $show_from_the_five_main_news, $show_in_most_read;
+    public $title, $body, $image, $video_url, $tag_id = [], $news_id, $championship_id, $team_id, $show_as_main_news, $show_from_the_five_main_news, $show_in_most_read,$search;
     protected $listeners = ['add'];
+    protected $paginationTheme = 'bootstrap';
 
     protected $rules = [
         'title' => 'required',
@@ -27,7 +30,12 @@ class CreateNewsComponent extends Component
 
     public function render()
     {
-        return view('livewire.create-news-component');
+        $all_news = News::query();
+        if ($this->search) {
+            $all_news->where('title', 'like', '%' . $this->search . '%');
+        }
+        $all_news = $all_news->orderBy('created_at', 'DESC')->paginate(20);
+        return view('livewire.create-news-component', ['all_news' => $all_news]);
     }
 
     public function updated($propertyName)
@@ -42,12 +50,12 @@ class CreateNewsComponent extends Component
                 $news = News::find($this->news_id);
                 $news->body = $this->body ? $this->body : $news->body;
                 $news->title = $this->title ? $this->title : $news->title;
-                $news->team_id = $this->team_id ? $this->team_id : $news->team_id;
-                $news->championship_id = $this->championship_id ? $this->championship_id : $news->championship_id;
+                $news->team_id = is_array($this->team_id) ? $news->team_id : $news->team_id;
+                $news->championship_id = is_array($this->championship_id) ? $news->championship_id : $news->championship_id;
                 $news->updated_by = Auth::user()->id;
-                $news->show_as_main_news = $this->show_as_main_news;
-                $news->show_in_most_read = $this->show_in_most_read;
-                $news->show_from_the_five_main_news = $this->show_from_the_five_main_news;
+                $news->show_as_main_news = $this->show_as_main_news ? 1 : 0;
+                $news->show_in_most_read = $this->show_in_most_read ? 1 : 0;
+                $news->show_from_the_five_main_news = $this->show_from_the_five_main_news ? 1 : 0;
                 $news->save();
                 if ($this->tag_id) {
                     foreach ($this->tag_id as $tag) {

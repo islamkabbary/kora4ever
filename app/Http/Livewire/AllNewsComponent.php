@@ -16,7 +16,7 @@ class AllNewsComponent extends Component
 
     public function render()
     {
-        $news   = News::orderBy('created_at', 'DESC')->paginate(12);
+        $news = News::orderBy('created_at', 'DESC')->paginate(24);
         $leauges = Championship::orderBy('id', 'asc')->take(3)->get();
         return view('livewire.all-news-component', ['all_news' => $news, 'leauges' => $leauges]);
     }

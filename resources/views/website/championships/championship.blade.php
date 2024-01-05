@@ -24,11 +24,11 @@
                                 أخبار
                             </a>
                         </li>
-                        {{-- <li>
+                        <li>
                             <a href="" title="Chtab3">
                                 مباريات
                             </a>
-                        </li> --}}
+                        </li>
                         <li>
                             <a href="" title="Chtab5">
                                 ترتيب الفرق
@@ -65,14 +65,14 @@
             <div id="Chtab1" class="championshipsBlock ss">
                     @livewire('news-championship-component', ['leauge_id' => $leauge->id])
             </div>
-            {{-- <div id="Chtab3" class="championshipsBlock">
+            <div id="Chtab3" class="championshipsBlock">
                 <div class="row ChMatchesH">
                     <div class="row MatchHeaderTitle">
                         <p> جميع المباريات</p>
                     </div>
                     <div class="filterNews">
-                        <i class="fa fa-filter" aria-hidden="true"></i>
-                        <div class="dropdown">
+                        {{-- <i class="fa fa-filter" aria-hidden="true"></i> --}}
+                        {{-- <div class="dropdown">
                             <button class="dropbtn CHdropdownTeam">
                                 <p> الفرق</p>
                             </button>
@@ -84,14 +84,14 @@
                                     </a>
                                 @endforeach
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
-                <div style="position:relative">
+                {{-- <div style="position:relative">
                     <div class="row Week-calendar">
                         <div dir="rtl" class="swiper swiperWeeksBlocks">
                             <ul class="swiper-wrapper swiper-WeekBlock ">
-                                <li class="swiper-slide">
+                                 <li class="swiper-slide">
                                     <a href="championships/1400/الدوري-المصري-الممتاز?date=06/11/2022">
                                         11 يونيو 2022
                                     </a>
@@ -151,7 +151,7 @@
                     <div class="row ">
                         <div id="datepicker" class="calendar "></div>
                     </div>
-                </div>
+                </div> --}}
                 @if ($matches->count() > 0)
                     <h4 class="CHNameleague">{{ $leauge->name }}</h4>
                 @endif
@@ -362,7 +362,7 @@
                         @endif
                     </ul>
                 </div>
-            </div> --}}
+            </div>
             <div id="Chtab5" class="championshipsBlock">
                 @livewire('ranking-of-team-component', ['leauge_id' => $leauge->id])
             </div>
