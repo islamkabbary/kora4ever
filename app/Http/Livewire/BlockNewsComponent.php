@@ -18,6 +18,7 @@ class BlockNewsComponent extends Component
             $q->where("show_from_the_five_main_news", false);
             $q->where("show_in_most_read", false);
         })->orderBy('created_at', 'desc')->take(4)->get();
+        dd($fourNews);
         return view('livewire.block-news-component', ['fourNews' => $fourNews, 'leauge' => $leauge]);
     }
 }
